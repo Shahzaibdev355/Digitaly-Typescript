@@ -1,0 +1,71 @@
+{
+    "navbar": {
+        "subheader-para": "您正在使用 DIGITALY 官方网站的 Beta 版本。我们欢迎您的反馈",
+      "link1": "机构",
+      "link2": "服务",
+      "link3": "成就",
+      "link4": "招聘",
+      "link5": "联系我们"
+    },
+    "section1": {
+      "title1": "让我们一起打造您的在线",
+      "title2": "未来",
+      "description": "通过数字化了解我们"
+    },
+    "home-Section2": {
+      "para1": "‘我们热衷于客户的成功，并以交付对其业务产生积极影响的成果而自豪。无论您是希望提高销售额，增加网站流量，还是改善在线形象，",
+      "para2": "我们都在这里为您提供帮助。’",
+      "para3": "总经理 DIGITALY"
+    },
+    "services-section": {
+      "service-heading": "服务",
+      "para1": "我们的服务为您",
+      "para2": "提供数字化成功",
+      "service-card1": {
+        "para1": "移动应用",
+        "para2": "开发"
+      },
+      "service-card2": {
+        "para1": "网站",
+        "para2": "开发"
+      },
+      "service-card3": {
+        "para1": "搜索引擎优化",
+        "para2": "优化"
+      },
+      "service-card4": {
+        "para1": "图形",
+        "para2": "设计"
+      },
+      "service-card5": {
+        "para1": "内容",
+        "para2": "创作"
+      },
+      "service-card6": {
+        "para1": "专业",
+        "para2": "摄影"
+      }
+    },
+    "project-section": {
+      "main-heading": "项目",
+      "heading1": "我们的项目",
+      "para1": "探索我们的作品集，发现我们最近为客户完成的多样化项目。从优化在线形象到设计创新的数字化战略，我们最近的成就反映了我们的专业知识和奉献精神。您的品牌可能是我们不断增长的作品集中下一个成功的故事。",
+      "btn": "探索"
+    },
+    "testimonial-section": {
+      "heading1": "参考",
+      "heading2": "他们比我们更好地评价我们",
+      "heading3": "！",
+      "review-card1": {
+        "text": "我们与<strong>DIGITALY</strong>一起设计了我们的网站。现在他们是我们网站所有更改的开发服务提供商。"
+      }
+    },
+    "footer": {
+      "heading": "迈向您的未来",
+      "para1": "您是否想了解更多关于我们的专业知识、我们的机构及其背后的人才的信息？",
+      "para2": "与他们讨论您的项目，并获得您需要的解决方案！",
+      "btn": "联系我们",
+      "para3": "让我们共同打造您的在线未来。"
+    }
+  }
+  

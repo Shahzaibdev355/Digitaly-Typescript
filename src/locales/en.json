@@ -1,0 +1,102 @@
+{
+  "navbar": {
+    "subheader-para":"You are on the Beta version of the official DIGITALY website. We welcome your feedback!",
+    "link1": "Agency",
+    "link2": "Services",
+    "link3": "Achievements",
+    "link4": "Recruitment",
+    "link5": "Contact"
+  },
+  "section1": {
+    "title1": "Let's build your online ",
+    "title2": "future together",
+    "description": "Discover us through digital"
+  },
+
+  "home-Section2": {
+    "para1": "‘We're passionate about our clients' success, and pride ourselves on delivering results that have a positive impact on their business. Whether you're looking to increase sales, drive more traffic to your website, or improve your online presence,",
+    "para2": "is here to help you.’",
+    "para3": "Managing Director DIGITALY"
+  },
+
+  "services-section": {
+    "service-heading": "SERVICES",
+    "para1": "Our services for your",
+    "para2": "digital success",
+
+    "service-card1": {
+      "para1": "Mobile Application",
+      "para2": "Development"
+    },
+    "service-card2": {
+      "para1": "Website",
+      "para2": "Development"
+    },
+    "service-card3": {
+      "para1": "SEO",
+      "para2": "Optimization"
+    },
+    "service-card4": {
+      "para1": "Graphics",
+      "para2": "Creation"
+    },
+    "service-card5": {
+      "para1": "Content",
+      "para2": "Creation"
+      
+    },
+    "service-card6": {
+      "para1": "Professional",
+      "para2": "Photography"
+    }
+  },
+
+  "project-section":{
+    "main-heading" : "PROJECTS",
+    "heading1": "Our projects",
+    "para1": "Explore our portfolio and discover the diversity of projects we have recently completed for our clients. From optimising online presence to designing innovative digital strategies, our recent achievements reflect our expertise and dedication. Your brand could be the next success story in our growing portfolio.",
+    "btn": "Discover"
+  },
+
+
+  "testimonial-section":{
+    "heading1": "REFERENCES",
+    "heading2": "They talk about us ",
+    "heading3": "better than we do!",
+
+    "review-card1":{
+      "text":"We designed our website with <strong>DIGITALY</strong>. They are now our development service provider for all changes to the site."
+    }
+  },
+
+
+
+  "footer":{
+    "heading": "Towards your future",
+    "para1": "Would you like to find out more about our expertise, our agency and the talent behind it?",
+    "para2": "Come and discuss your project with them, and get the solutions you need!",
+    "btn": "Contact us",
+
+     "para3": "Let's build your future together online."
+  },
+
+
+
+
+
+
+  "contactPage": {
+    "heading": "Heading towards your Digital Revolution!",
+
+    "strong": "Welcome to our contact page !",
+    "para1Line1": "Are you looking for the ideal partner to propel your company into a digital future?",
+    "para1Line2": "Then you've come to the right place! At DIGITALY, we know how crucial it is how crucial",
+    "para1Line3": "it is to to find a trusted expert to help you realise your digital digital ambitions.",
+    "para1Line4": "And our mission is simple: to prove that we are that partner who will",
+    "para1Line5": "to help you succeed.",
+
+    "strong2": "Why choose DIGITALY?",
+    "para2Line1": "We offer tailor-made solutions, adapted to your needs and your objectives, to",
+    "para2Line2": "stand out from the crowd in an ever-changing digital world."
+  }
+}

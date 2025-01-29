@@ -1,0 +1,70 @@
+{
+  "navbar": {
+    "subheader-para": "Sie befinden sich auf der Beta-Version der offiziellen DIGITALY-Website. Wir freuen uns über Ihr Feedback!",
+    "link1": "Agentur",
+    "link2": "Dienstleistungen",
+    "link3": "Erfolge",
+    "link4": "Rekrutierung",
+    "link5": "Kontakt"
+  },
+  "section1": {
+    "title1": "Lassen Sie uns gemeinsam Ihre ",
+    "title2": "Online Zukunft gestalten",
+    "description": "Entdecken Sie uns durch Digitales"
+  },
+  "home-Section2": {
+    "para1": "‘Wir sind leidenschaftlich an den Erfolgen unserer Kunden interessiert und stolz darauf, Ergebnisse zu liefern, die einen positiven Einfluss auf ihr Geschäft haben. Ob Sie den Umsatz steigern, mehr Traffic auf Ihre Website lenken oder Ihre Online-Präsenz verbessern möchten,",
+    "para2": "ist hier, um Ihnen zu helfen.’",
+    "para3": "Geschäftsführer DIGITALY"
+  },
+  "services-section": {
+    "service-heading": "DIENSTLEISTUNGEN",
+    "para1": "Unsere Dienstleistungen für Ihren",
+    "para2": "digitalen Erfolg",
+    "service-card1": {
+      "para1": "Mobile Anwendung",
+      "para2": "Entwicklung"
+    },
+    "service-card2": {
+      "para1": "Website",
+      "para2": "Entwicklung"
+    },
+    "service-card3": {
+      "para1": "SEO",
+      "para2": "Optimierung"
+    },
+    "service-card4": {
+      "para1": "Grafiken",
+      "para2": "Erstellung"
+    },
+    "service-card5": {
+      "para1": "Inhalt",
+      "para2": "Erstellung"
+    },
+    "service-card6": {
+      "para1": "Professionelle",
+      "para2": "Fotografie"
+    }
+  },
+  "project-section": {
+    "main-heading": "PROJEKTE",
+    "heading1": "Unsere Projekte",
+    "para1": "Entdecken Sie unser Portfolio und die Vielfalt der Projekte, die wir kürzlich für unsere Kunden abgeschlossen haben. Von der Optimierung der Online-Präsenz bis hin zur Gestaltung innovativer digitaler Strategien spiegeln unsere jüngsten Erfolge unser Fachwissen und Engagement wider. Ihre Marke könnte die nächste Erfolgsgeschichte in unserem wachsenden Portfolio sein.",
+    "btn": "Entdecken"
+  },
+  "testimonial-section": {
+    "heading1": "REFERENZEN",
+    "heading2": "Sie sprechen besser über uns",
+    "heading3": "als wir selbst!",
+    "review-card1": {
+      "text": "Wir haben unsere Website mit <strong>DIGITALY</strong> gestaltet. Sie sind jetzt unser Entwicklungsdienstleister für alle Änderungen an der Seite."
+    }
+  },
+  "footer": {
+    "heading": "In Richtung Ihrer Zukunft",
+    "para1": "Möchten Sie mehr über unser Fachwissen, unsere Agentur und die Talente dahinter erfahren?",
+    "para2": "Kommen Sie vorbei und besprechen Sie Ihr Projekt mit ihnen, und finden Sie die Lösungen, die Sie benötigen!",
+    "btn": "Kontaktieren Sie uns",
+    "para3": "Lassen Sie uns gemeinsam Ihre Zukunft online gestalten."
+  }
+}

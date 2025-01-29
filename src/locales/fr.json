@@ -1,0 +1,117 @@
+{
+  "navbar": {
+    "subheader-para": "Vous êtes sur la version Bêta du site officiel de DIGITALY. Vos retours sont les bienvenus !",
+    "link1": "L’Entreprise",
+    "link2": "Services",
+    "link3": "Communauté",
+    "link4": "Carrières",
+    "link5": "Shop",
+    "link6": "Contact"
+  },
+
+  "section1": {
+    "title1": "Construisons ensemble votre ",
+    "title2": "futur en ligne",
+    "description": "Découvrez nous au travers du digital"
+  },
+
+  "home-Section2": {
+    "para1": "“Nous sommes passionnés par le succès de nos clients, et nous sommes fiers de leur fournir des résultats qui ont un impact positif sur leur entreprise. Que vous cherchiez à augmenter vos ventes, à attirer plus de trafic sur votre site web, ou à améliorer votre présence en ligne,",
+    "para2": "est là pour vous aider.”",
+    "para3": "Directeur Général DIGITALY"
+  },
+
+  "services-section": {
+    "service-heading": "SERVICES",
+    "para1": "Nos services pour votre",
+    "para2": "Succès digital",
+    "service-card1": {
+      "para1": "Développement",
+      "para2": "D'Applications Mobiles"
+    },
+    "service-card2": {
+      "para1": "Développement",
+      "para2": "Site Web"
+    },
+    "service-card3": {
+      "para1": "Optimisation",
+      "para2": "SEO"
+    },
+    "service-card4": {
+      "para1": "Création",
+      "para2": "Graphique"
+    },
+    "service-card5": {
+      "para1": "Création",
+      "para2": "de Contenu"
+    },
+    "service-card6": {
+      "para1": "Photographie",
+      "para2": "Professionnelle"
+    }
+  },
+
+  "project-section": {
+    "main-heading" : "PROJETS",
+    "heading1": "Nos Réalisations",
+    "para1": "Explorez notre portfolio, découvrez la diversité des projets que nous avons récemment menés à bien pour nos clients. De l'optimisation de la présence en ligne à la conception de stratégies digitale novatrices, nos réalisations récentes reflètent notre expertise et notre dévouement. Votre marque pourrait être la prochaine success story dans notre portfolio en expansion.",
+    "btn": "Découvrir"
+  },
+
+  "testimonial-section": {
+    "heading1": "RÉFÉRENCES",
+    "heading2": "Ils parle de nous ",
+    "heading3": "mieux que nous !",
+
+    "review-card1": {
+      "text": "Nous avons conçu notre site web avec <strong>DIGITALY</strong>. C'est désormais notre prestataire en développement pour toutes les évolutions du sites."
+    }
+  },
+
+  "footer": {
+    "heading": "Vers votre futur",
+    "para1": "Vous souhaitez en savoir plus sur nos expertises, notre agence et les talents qui l’animent ?",
+    "para2": "Venez discuter avec eux de votre projet et obtenez des solutions pertinentes !",
+    "btn": "Nous Contacter",
+
+    "para3": "Construisons ensemble votre futur en ligne.",
+
+    "subHeading1": "L’Entreprise",
+    "link1": "L’Entreprise",
+    "link2": "Carrières",
+    "link3": "Partenaires",
+
+    
+
+    "subHeading2": "SERVICES",
+    "link6": "Développement de Site Web",
+    "link7": "Développement d’App Mobiles",
+    "link8": "Assistance & Maintenance",
+    "link9": "MVP Développement",
+    "link10": "Logiciel Personnalisé",
+    "link11": "Web Consulting",
+    "link12": "UX/UI Design",
+
+    "subHeading3": "Carrières",
+    "link13": "Rejoignez Discord",
+    "link14": "Forum"
+  },
+
+
+  
+ 
+
+  "contactPage": {
+    "heading": "Cap sur Votre Révolution Digitale !",
+    "strong": "Bienvenue sur notre page de contact !",
+    "para1Line1": "Vous cherchez le partenaire idéal pour propulser votre société dans un futur digital ?",
+    "para1Line2": "Vous êtes au bon endroit ! Chez DIGITALY, nous savons à quel point il est crucial de",
+    "para1Line3": "trouver un expert de confiance pour réaliser vos ambitions digitales.",
+    "para1Line4": " Et notre mission est simple : prouver que nous sommes ce partenaire qui vous",
+    "para1Line5": "accompagne vers le succès.",
+
+    "strong2": "Pourquoi choisir DIGITALY ?",
+    "para2Line1": "Nous offrons des solutions sur mesure, adaptées à vos besoins et à vos objectifs, pour",
+    "para2Line2": "vous démarquer dans un monde numérique en constante évolution."
+  }
+}

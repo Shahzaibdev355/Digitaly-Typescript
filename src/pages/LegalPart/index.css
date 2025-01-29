@@ -1,0 +1,123 @@
+.LegalHeroImg {
+    position: relative;
+}
+
+.LegalHeroImg img {
+    width: 100%;
+    height: auto;
+}
+
+.LegalHeroImg h1 {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    /* font-weight: 600; */
+}
+
+
+
+
+
+
+
+
+
+.LegalHeading p{
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+.gradient-text-Legal-heading{
+    /* background: linear-gradient(to right, #003699, #8DB9FB, #003699); */
+    background: linear-gradient(to right, #5A8FF1, #B3D4FF, #5A8FF1);
+    /* background: linear-gradient(to right, #E6F0FF, #B3D4FF, #E6F0FF); */
+    /* background: linear-gradient(to right, #A1C6FF, #F0F8FF, #A1C6FF); */
+
+
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+
+  font-size: 34px;
+  font-weight: 700;
+}
+
+
+
+.legalCard-container{
+    width: 90%;
+    margin: auto;
+    display: flex; /* Ensures centering alignment for the container */
+    justify-content: center; /* Centers the row inside */
+    margin-bottom: 4pc;
+}
+
+.legalCard-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: center; /* Ensures the entire row stays centered */
+    gap: 20px; /* Adds space between the cards instead of using margin */
+}
+
+.legalCard-1,
+.legalCard-2,
+.legalCard-3,
+.legalCard-4{
+    background: rgba(0, 54, 153, 1);
+    padding-left: 0px;
+    padding-right: 0px;
+    border-radius: 18px;
+
+    /* margin-left: 10px;
+    margin-right: 10px; */
+
+    height: 470px;
+
+    flex: 1 1 calc(25% - 40px); /* Distributes cards evenly with space for gap */
+    box-sizing: border-box; /* Ensures padding doesn't break layout */
+}
+
+.legalCard-1 img,
+.legalCard-2 img,
+.legalCard-3 img,
+.legalCard-4 img{
+    width: 100%;
+}
+
+
+.legalCard-1-text{
+    padding-top: 2.5pc;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 1.5pc;
+}
+
+.legalCard-1-text h2{
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.legalCard-1-text p{
+    color: white;
+    font-size: 14.5px;
+    margin-bottom: 0px;
+    /* font-weight: 400; */
+}
+
+
+.legalCard-2,
+.legalCard-3{
+     /* margin-left: 10px;
+    margin-right: 10px; */
+}

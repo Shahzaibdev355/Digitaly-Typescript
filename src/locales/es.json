@@ -1,0 +1,71 @@
+{
+    "navbar": {
+        "subheader-para": "Estás en la versión Beta del sitio web oficial de DIGITALY. ¡Agradecemos tus comentarios!",
+      "link1": "Agencia",
+      "link2": "Servicios",
+      "link3": "Logros",
+      "link4": "Reclutamiento",
+      "link5": "Contacto"
+    },
+    "section1": {
+      "title1": "Construyamos juntos tu ",
+      "title2": "futuro en línea",
+      "description": "Descúbrenos a través de lo digital"
+    },
+    "home-Section2": {
+      "para1": "‘Nos apasiona el éxito de nuestros clientes y nos enorgullece ofrecer resultados que tienen un impacto positivo en su negocio. Ya sea que busques aumentar ventas, generar más tráfico a tu sitio web o mejorar tu presencia en línea,",
+      "para2": "estamos aquí para ayudarte.’",
+      "para3": "Director General DIGITALY"
+    },
+    "services-section": {
+      "service-heading": "SERVICIOS",
+      "para1": "Nuestros servicios para tu",
+      "para2": "éxito digital",
+      "service-card1": {
+        "para1": "Aplicación Móvil",
+        "para2": "Desarrollo"
+      },
+      "service-card2": {
+        "para1": "Desarrollo de",
+        "para2": "Sitios Web"
+      },
+      "service-card3": {
+        "para1": "SEO",
+        "para2": "Optimización"
+      },
+      "service-card4": {
+        "para1": "Gráficos",
+        "para2": "Creación"
+      },
+      "service-card5": {
+        "para1": "Contenido",
+        "para2": "Creación"
+      },
+      "service-card6": {
+        "para1": "Fotografía",
+        "para2": "Profesional"
+      }
+    },
+    "project-section": {
+      "main-heading": "PROYECTOS",
+      "heading1": "Nuestros proyectos",
+      "para1": "Explora nuestro portafolio y descubre la diversidad de proyectos que hemos completado recientemente para nuestros clientes. Desde la optimización de la presencia en línea hasta el diseño de estrategias digitales innovadoras, nuestros logros recientes reflejan nuestra experiencia y dedicación. Tu marca podría ser la próxima historia de éxito en nuestro portafolio en crecimiento.",
+      "btn": "Descubrir"
+    },
+    "testimonial-section": {
+      "heading1": "REFERENCIAS",
+      "heading2": "Hablan de nosotros",
+      "heading3": "mejor de lo que nosotros mismos hacemos!",
+      "review-card1": {
+        "text": "Diseñamos nuestro sitio web con <strong>DIGITALY</strong>. Ahora son nuestro proveedor de servicios de desarrollo para todos los cambios del sitio."
+      }
+    },
+    "footer": {
+      "heading": "Hacia tu futuro",
+      "para1": "¿Te gustaría saber más sobre nuestra experiencia, nuestra agencia y el talento detrás de ella?",
+      "para2": "Ven y discute tu proyecto con ellos, ¡y obtén las soluciones que necesitas!",
+      "btn": "Contáctanos",
+      "para3": "Construyamos juntos tu futuro en línea."
+    }
+  }
+  
