@@ -461,17 +461,18 @@ body {
 
 .rectangular-oval-white-prop {
   position: absolute;
-  z-index: -1;
+  z-index: 10;
   top: 0;
   left: 0;
 
-  opacity: 0;
+  opacity: 1;
 
   /* background: url('../../../public/images/Rectangle\ 9521.png') no-repeat center center;
   background-size: cover;
   background-attachment: fixed; */
 
-  display: none;
+  /* border: 2px solid red; */
+  /* display: none; */
 }
 
 .rectangular-oval-white-prop-2 {
