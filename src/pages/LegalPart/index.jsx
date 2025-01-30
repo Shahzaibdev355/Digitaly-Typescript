@@ -144,5 +144,3 @@ const LegalDigitaly = () => {
 };
 
 export default LegalDigitaly;
-
-// checking
