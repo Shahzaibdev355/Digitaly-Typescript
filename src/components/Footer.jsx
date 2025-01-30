@@ -17,7 +17,7 @@ const Footer = () => {
                     <div className="gradient-cus-box-sty p-5 my-5 mt-0">
                         <div className="row py-3">
                             <div className="col-12 col-md-9">
-                                <h1 className="fw-bold text-center text-lg-start" style={{ color: '#1F324E' }}>{t("footer.heading")}</h1>
+                                <h1 className="fw-bold text-center text-lg-start footer-div-heading" style={{ color: '#1F324E' }}>{t("footer.heading")}</h1>
                                 <p className="text-center text-md-start footer-contact-div-para">
                                 {t("footer.para1")}
                                 <span><br /></span> 
@@ -35,17 +35,18 @@ const Footer = () => {
             <section className="sec-6" id="footer">
                 <div className="footer-container">
                     <div className="footer-links-row">
-                        {/* <div className="col-12 col-md-3 text-center text-md-start">
-                            <img className="img-fluid text-center" src="./images/Group 1.png" alt />
-                            <p className="text-white fw-lighter" style={{ fontSize: 14 }}> {t("footer.para3")}</p>
-                            <a className="mx-1" href="#"><img className="img-fluid" src="./images/Facebook.png" alt /></a>
-                            <a className="mx-1" href="#"><img className="img-fluid" src="./images/Twitter.png" alt /></a>
-                            <a className="mx-1" href="#"><img className="img-fluid" src="./images/Instagram.png" alt /></a>
-                            <a className="mx-1" href="#"><img className="img-fluid" src="./images/LinkedIn.png" alt /></a>
-                            <a className="mx-1" href="#"><img className="img-fluid" src="./images/YouTube.png" alt /></a>
-                        </div> */}
+                       
+                    <div className="footer-sec-icons footer-sec-icons-mobile">
+                                <Link to="#"><FontAwesomeIcon icon={faLinkedinIn} /></Link>
+                                <Link to="#"><FontAwesomeIcon icon={faXTwitter} /></Link>
+                                <Link to="#"><FontAwesomeIcon icon={faYoutube} /></Link>
+                                <Link to="#"><FontAwesomeIcon icon={faDiscord} /></Link>
+                                <Link to="#"><FontAwesomeIcon icon={faInstagram} /></Link>
+                                <Link to="#"><FontAwesomeIcon icon={faTiktok} /></Link>
+                            </div>
+
                         <div className="col-12 col-md-2 text-center text-md-start footer-links">
-                            <h4 className="text-white mt-5 mt-md-0"> {t("footer.subHeading1")}</h4>
+                            <h4 className="text-white mt-4 mt-md-0"> {t("footer.subHeading1")}</h4>
                             <a className="d-block text-decoration-none fw-light mt-2" href="#">{t("footer.link1")}</a>
                             <a className="d-block text-decoration-none fw-light mt-2" href="#">{t("footer.link2")}</a>
                             <a className="d-block text-decoration-none fw-light mt-2" href="#">{t("footer.link3")}</a>
@@ -113,7 +114,6 @@ const Footer = () => {
                                 <Link to="#"><FontAwesomeIcon icon={faDiscord} /></Link>
                                 <Link to="#"><FontAwesomeIcon icon={faInstagram} /></Link>
                                 <Link to="#"><FontAwesomeIcon icon={faTiktok} /></Link>
-                                {/* <p className="mt-1 footer-copyright-para" style={{ color: 'rgba(255, 255, 255, 0.781)' }}>© 2024 DIGITALY - Agence digitale &amp; marketing</p> */}
                             </div>
 
                             <div className="footer-link-div footer-links">

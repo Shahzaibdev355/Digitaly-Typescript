@@ -135,8 +135,8 @@ const Contact = () => {
       <Header />
 
       <section className="contact-sec1" style={{ backgroundColor: "" }}>
-        <div className="containe" style={{ width: "90%", margin: "auto" }}>
-          <div className="row  contact-row align-items-center mt-5 mt-lg-0 pt-5 pt-lg-0">
+        <div className="contact-container">
+          <div className="row contact-row align-items-center mt-lg-0 pt-5 pt-lg-0">
             <div
               className="col-12 col-md-6 text-center text-lg-start"
               style={{ border: "" }}
@@ -240,15 +240,14 @@ const Contact = () => {
               {/* </p> */}
             </div>
 
-            {/* project image */}
             <div
               className="col-12 col-md- my- py- contact-form-col2"
-              style={{}}
+              style={{display: ""}}
             >
               <form onSubmit={handleSubmit}>
                 <div className="contact-us-row-formField">
-                  <div className="col-md-6 contact-us-input-left">
-                    <label htmlFor="" class="contact-form-input-label">
+                  <div className="col-12 col-md-6 contact-us-input-left">
+                    <label htmlFor="" className="contact-form-input-label">
                       Prénom<span>*</span>{" "}
                     </label>
                     <TextField
@@ -262,8 +261,8 @@ const Contact = () => {
                     />
                   </div>
 
-                  <div className="col-md-6 contact-us-input-right">
-                    <label htmlFor="" class="contact-form-input-label">
+                  <div className="col-12 col-md-6 contact-us-input-right">
+                    <label htmlFor="" className="contact-form-input-label">
                       Nom<span>*</span>{" "}
                     </label>
                     <TextField
@@ -287,7 +286,7 @@ const Contact = () => {
                     }}
                     className="col-md-6 contact-us-input-left"
                   >
-                    <label htmlFor="" class="contact-form-input-label">
+                    <label htmlFor="" className="contact-form-input-label">
                       Téléphone<span>*</span>{" "}
                     </label>
 
@@ -312,8 +311,8 @@ const Contact = () => {
                     />
                   </div>
 
-                  <div className="col-md-6 contact-us-input-right">
-                    <label htmlFor="" class="contact-form-input-label">
+                  <div className="col-12 col-md-6 contact-us-input-right">
+                    <label htmlFor="" className="contact-form-input-label">
                       Email<span>*</span>{" "}
                     </label>
                     <TextField
@@ -329,8 +328,8 @@ const Contact = () => {
                 </div>
 
                 <div className="contact-us-row-formField">
-                  <div className="col-md-6 contact-us-input-left">
-                    <label htmlFor="" class="contact-form-input-label">
+                  <div className="col-12 col-md-6 contact-us-input-left">
+                    <label htmlFor="" className="contact-form-input-label">
                       Fonction<span>*</span>{" "}
                     </label>
                     <TextField
@@ -344,8 +343,8 @@ const Contact = () => {
                     />
                   </div>
 
-                  <div className="col-md-6 contact-us-input-right">
-                    <label htmlFor="" class="contact-form-input-label">
+                  <div className="col-12 col-md-6 contact-us-input-right">
+                    <label htmlFor="" className="contact-form-input-label">
                       Enterprise<span>*</span>{" "}
                     </label>
                     <TextField

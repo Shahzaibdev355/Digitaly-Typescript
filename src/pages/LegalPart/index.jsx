@@ -48,7 +48,7 @@ const LegalDigitaly = () => {
 
       <section className="sec-1 mt-5">
         <div className="container" style={{ border: "" }}>
-          <div className="align-items-center mt-5 mt-lg-0 pt-5 pt-lg-0">
+          <div className="align-items-center mt- mt-lg-0 pt-5 pt-lg-0">
             <div
               className="col-12 col-lg-12 col-md-12 LegalHeading"
               style={{ border: "" }}

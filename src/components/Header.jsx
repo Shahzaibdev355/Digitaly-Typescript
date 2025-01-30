@@ -78,8 +78,6 @@ const Header = ({ scrollToSection }) => {
     "Développement durable": LEnterpriseImg3,
   };
 
-  
-
   // Handle hover event to change the image
   const LEnterprisehandleMouseEnter = (linkName) => {
     if (linkName === currentLink) {
@@ -180,8 +178,6 @@ const Header = ({ scrollToSection }) => {
     closeTimeout.current = setTimeout(() => setShowServiceDropdown(false), 200);
   };
 
-
-
   // ============================ //All Digitaly Dropdown work============================ //
   const AllDigitalyLinkArray = {
     Company: ["Discover Us", "Leadership", "Sustainability"],
@@ -213,10 +209,6 @@ const Header = ({ scrollToSection }) => {
   };
 
   // console.log(t("navbar.link1"));
-  
-
-  
-
 
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
@@ -224,15 +216,13 @@ const Header = ({ scrollToSection }) => {
     setServicesDropdownOpen(!servicesDropdownOpen);
   };
 
- 
-
   const [langDropDown, setLangDropDown] = useState(false);
   const dropdownRef = useRef(null);
 
   const closeTimeout = useRef(null);
 
   const handleMouseClick = () => {
-    setLangDropDown((prev) => !prev); 
+    setLangDropDown((prev) => !prev);
   };
 
   const handleMouseEnter = () => {
@@ -248,12 +238,9 @@ const Header = ({ scrollToSection }) => {
 
       console.log("hovered");
     }
-
-
   };
 
   const handleMouseLeave = () => {
-
     if (window.innerWidth > 768) {
       // Only enable hover for non-mobile screens
       closeTimeout.current = setTimeout(() => {
@@ -261,7 +248,6 @@ const Header = ({ scrollToSection }) => {
       }, 200); // Add a small delay
     }
   };
-
 
   const languages = [
     { name: "DE", code: "de", flag: deIcon },
@@ -282,24 +268,9 @@ const Header = ({ scrollToSection }) => {
   const selectedLanguage = languages.find((lang) => lang.code === selectedLang);
   console.log(selectedLanguage);
 
-
-
-
-
-
-
-
-
-
-
-
-
   // ================================Mobile Menu Working================================
 
-
-
-
-  const MOBILE_NAV_ITEMS =  [
+  const MOBILE_NAV_ITEMS = [
     {
       id: 0,
       navTitle: t("navbar.link1"),
@@ -321,10 +292,10 @@ const Header = ({ scrollToSection }) => {
         { id: 2, title: "Développement mobile", path: "#" },
         { id: 3, title: "Optimisation SEO", path: "#" },
         { id: 4, title: "Conception UX / UI", path: "#" },
-        { id: 5, title: "Logiciel personnalisé" , path: "#" },
+        { id: 5, title: "Logiciel personnalisé", path: "#" },
         { id: 6, title: "Développement MVP", path: "#" },
         { id: 7, title: "Conseil Web", path: "#" },
-        { id: 8, title: "Support & Maintenance", path: "#" }
+        { id: 8, title: "Support & Maintenance", path: "#" },
       ],
     },
     {
@@ -341,7 +312,7 @@ const Header = ({ scrollToSection }) => {
       id: 4,
       navTitle: t("navbar.link5"),
       path: "#",
-    }
+    },
   ];
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -454,41 +425,37 @@ const Header = ({ scrollToSection }) => {
     },
   };
 
-
-
-
+  
   const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setLangDropDown(false); // Close dropdown if clicked outside
+    if (window.innerWidth < 768) {
+    if ( dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setLangDropDown(false);
+      console.log("mobile");
+      
+      }
+      console.log("clckk");
+      
     }
-    // console.log("outside");
   };
 
+  // if (window.innerWidth > 768) {
   useEffect(() => {
-    // Attach click event listener to detect outside clicks
-    document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
 
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-
-
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, []);
+  // }
 
   const [openDropdowns, setOpenDropdowns] = useState({});
 
   const toggleDropdown = (navItemId) => {
-    setOpenDropdowns(prev => ({
+    setOpenDropdowns((prev) => ({
       ...prev,
-      [navItemId]: !prev[navItemId]
+      [navItemId]: !prev[navItemId],
     }));
   };
-
-
-
-
-
 
   const [openAllDigitalyDropdowns, setOpenAllDigitalyDropdowns] = useState({
     AllDigitaly: false,
@@ -498,15 +465,8 @@ const Header = ({ scrollToSection }) => {
     Careers: false,
     Store: false,
     Legal: false,
-    Other: false
+    Other: false,
   });
-
-
-
-
-
-
-
 
   // Add new state to track if we're in All Digitaly view
   const [isAllDigitalyView, setIsAllDigitalyView] = useState(false);
@@ -516,22 +476,17 @@ const Header = ({ scrollToSection }) => {
     if (category === "AllDigitaly") {
       setIsAllDigitalyView(true); // Set view to All Digitaly
     }
-    setOpenAllDigitalyDropdowns(prev => ({
+    setOpenAllDigitalyDropdowns((prev) => ({
       ...prev,
-      [category]: !prev[category]
+      [category]: !prev[category],
     }));
   };
 
-
-
-
-
-
   const handleBackFromAllDigitaly = () => {
     setIsAllDigitalyView(false);
-    setOpenAllDigitalyDropdowns(prev => ({
+    setOpenAllDigitalyDropdowns((prev) => ({
       ...prev,
-      AllDigitaly: false
+      AllDigitaly: false,
     }));
     // Reset all dropdowns
     setOpenDropdowns({});
@@ -543,7 +498,7 @@ const Header = ({ scrollToSection }) => {
       Careers: false,
       Store: false,
       Legal: false,
-      Other: false
+      Other: false,
     });
   };
 
@@ -559,22 +514,10 @@ const Header = ({ scrollToSection }) => {
       Careers: false,
       Store: false,
       Legal: false,
-      Other: false
+      Other: false,
     });
     setIsAllDigitalyView(false);
   };
-
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <>
@@ -727,10 +670,6 @@ const Header = ({ scrollToSection }) => {
         </div>
       </nav>
 
-
-
-
-
       {/* =================================================Links DropDowns works================================================= */}
 
       {/* Enterprise Dropdown content */}
@@ -877,14 +816,6 @@ const Header = ({ scrollToSection }) => {
           </motion.div>
         </div>
       )}
-
-
-
-
-
-
-
-
 
       {/* ================================Mobile Menu Working================================ */}
 
@@ -1112,11 +1043,6 @@ const Header = ({ scrollToSection }) => {
             </motion.div> */}
         </motion.div>
       </motion.nav>
-
-
-
-
-
     </>
   );
 };

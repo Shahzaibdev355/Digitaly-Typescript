@@ -25,14 +25,14 @@
 
 
 
-.LegalHeading p{
+.LegalHeading p {
     color: white;
     font-size: 16px;
     font-weight: 400;
     margin-top: 15px;
 }
 
-.gradient-text-Legal-heading{
+.gradient-text-Legal-heading {
     /* background: linear-gradient(to right, #003699, #8DB9FB, #003699); */
     background: linear-gradient(to right, #5A8FF1, #B3D4FF, #5A8FF1);
     /* background: linear-gradient(to right, #E6F0FF, #B3D4FF, #E6F0FF); */
@@ -40,38 +40,42 @@
 
 
 
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
 
-  font-size: 34px;
-  font-weight: 700;
+    font-size: 34px;
+    font-weight: 700;
 }
 
 
 
-.legalCard-container{
+.legalCard-container {
     width: 90%;
     margin: auto;
-    display: flex; /* Ensures centering alignment for the container */
-    justify-content: center; /* Centers the row inside */
+    display: flex;
+    /* Ensures centering alignment for the container */
+    justify-content: center;
+    /* Centers the row inside */
     margin-bottom: 4pc;
 }
 
-.legalCard-row{
+.legalCard-row {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
 
-    justify-content: center; /* Ensures the entire row stays centered */
-    gap: 20px; /* Adds space between the cards instead of using margin */
+    justify-content: center;
+    /* Ensures the entire row stays centered */
+    gap: 20px;
+    /* Adds space between the cards instead of using margin */
 }
 
 .legalCard-1,
 .legalCard-2,
 .legalCard-3,
-.legalCard-4{
+.legalCard-4 {
     background: rgba(0, 54, 153, 1);
     padding-left: 0px;
     padding-right: 0px;
@@ -82,33 +86,35 @@
 
     height: 470px;
 
-    flex: 1 1 calc(25% - 40px); /* Distributes cards evenly with space for gap */
-    box-sizing: border-box; /* Ensures padding doesn't break layout */
+    flex: 1 1 calc(25% - 40px);
+    /* Distributes cards evenly with space for gap */
+    box-sizing: border-box;
+    /* Ensures padding doesn't break layout */
 }
 
 .legalCard-1 img,
 .legalCard-2 img,
 .legalCard-3 img,
-.legalCard-4 img{
+.legalCard-4 img {
     width: 100%;
 }
 
 
-.legalCard-1-text{
+.legalCard-1-text {
     padding-top: 2.5pc;
     padding-left: 25px;
     padding-right: 25px;
     padding-bottom: 1.5pc;
 }
 
-.legalCard-1-text h2{
+.legalCard-1-text h2 {
     color: white;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
 }
 
-.legalCard-1-text p{
+.legalCard-1-text p {
     color: white;
     font-size: 14.5px;
     margin-bottom: 0px;
@@ -117,7 +123,31 @@
 
 
 .legalCard-2,
-.legalCard-3{
-     /* margin-left: 10px;
+.legalCard-3 {
+    /* margin-left: 10px;
     margin-right: 10px; */
+}
+
+
+
+@media screen and (max-width:768px) {
+
+    /* Legal pages */
+    .legalCard-row {
+        display: flex;
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        gap: 20px;
+    }
+
+    .LegalHeroImg img {
+        width: 100%;
+        height: 150px;
+    }
+
+    .LegalHeroImg h1 {
+        font-size: 22px;
+        font-weight: 600;
+    }
 }
