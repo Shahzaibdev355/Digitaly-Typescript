@@ -569,8 +569,8 @@ const Header = ({ scrollToSection }) => {
                   className="nav-link text-white mx-md-2"
                   onMouseEnter={handleServiceMouseEnterLink}
                   onMouseLeave={handleServiceMouseLeaveLink}
-                  onClick={() => scrollToSection("#service")}
-                  href="#service"
+                  // onClick={() => scrollToSection("#service")}
+                  href="#"
                 >
                   {t("navbar.link2")}
                 </a>
@@ -613,7 +613,7 @@ const Header = ({ scrollToSection }) => {
         <div style={{ border: "" }} className="header-All-Digitaly-btn-div">
           <Link
             className="btn header-All-Digitaly-btn"
-            to="/Contact"
+            to="#"
             onMouseEnter={handleAllDigitalyMouseEnterDropdown}
             onMouseLeave={handleAllDigitalyMouseLeaveDropdown}
           >

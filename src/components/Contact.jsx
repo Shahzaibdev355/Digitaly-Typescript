@@ -6,12 +6,16 @@ import { faArrowUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 import { useState, useEffect } from "react";
 
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 
-import { MuiTelInput } from "mui-tel-input";
+import { PhoneInput } from 'react-international-phone';
+import 'react-international-phone/style.css';
 
-import { Checkbox } from "@mui/material";
+import { Button } from "@/components/ui/button"; // ShadCN Button
+import { Input } from "@/components/ui/input"; // ShadCN Input
+import { Label } from "@/components/ui/label"; // ShadCN Label
+import { Checkbox } from "@/components/ui/checkbox"; // ShadCN Checkbox
+import { Textarea } from "@/components/ui/textarea"; // ShadCN Textarea
+
 
 import Swal from "sweetalert2";
 import axios from "axios";
@@ -240,158 +244,151 @@ const Contact = () => {
               {/* </p> */}
             </div>
 
-            <div
+            <div id="tailwind-container"
               className="col-12 col-md- my- py- contact-form-col2"
-              style={{display: ""}}
+              style={{ display: "" }}
             >
               <form onSubmit={handleSubmit}>
                 <div className="contact-us-row-formField">
                   <div className="col-12 col-md-6 contact-us-input-left">
-                    <label htmlFor="" className="contact-form-input-label">
-                      Prénom<span>*</span>{" "}
-                    </label>
-                    <TextField
-                      id=""
+                    <Label htmlFor="fname" className="contact-form-input-label">
+                      Prénom<span>*</span>
+                    </Label>
+                    <Input
+                      id="fname"
                       placeholder="Example: André"
                       type="text"
-                      className="contact-input"
                       name="fname"
                       value={formValues.fname}
                       onChange={handleChange}
+                      className="contact-input"
                     />
                   </div>
 
                   <div className="col-12 col-md-6 contact-us-input-right">
-                    <label htmlFor="" className="contact-form-input-label">
-                      Nom<span>*</span>{" "}
-                    </label>
-                    <TextField
-                      id="outlined-password-input"
+                    <Label htmlFor="Lname" className="contact-form-input-label">
+                      Nom<span>*</span>
+                    </Label>
+                    <Input
+                      id="Lname"
                       placeholder="Example: Dupont"
                       type="text"
                       name="Lname"
-                      className="contact-input"
                       value={formValues.Lname}
                       onChange={handleChange}
+                      className="contact-input"
                     />
                   </div>
                 </div>
 
                 <div className="contact-us-row-formField">
                   <div
-                    style={{
-                      position: "relative",
-                      display: "inline-block",
-                      border: "",
-                    }}
-                    className="col-md-6 contact-us-input-left"
+                    
+                    className="col-md-6 contact-phoneNumberInput-div contact-us-input-left"
                   >
-                    <label htmlFor="" className="contact-form-input-label">
-                      Téléphone<span>*</span>{" "}
-                    </label>
+                    <Label htmlFor="" className="contact-form-input-label">
+                      Téléphone<span>*</span>
+                    </Label>
 
-                    {/* <MuiPhoneNumber
-                      defaultCountry="fr"
-                      regions={["america", "europe", "asia", "africa"]}
-                      onChange={handlePhoneChange}
-                      className="contact-phoneNumberInput"
-                    />
-                    */}
+                    
 
-                    <MuiTelInput
-                      defaultCountry="FR"
-                      onChange={handlePhoneChange}
-                      value={formValues.phone}
-                      className="contact-phoneNumberInput"
-                    />
+                    
 
-                    <FontAwesomeIcon
-                      icon={faCaretDown} // Use the Font Awesome icon
-                      className="phoneNumber-arrow"
-                    />
+<PhoneInput
+        defaultCountry="fr"
+        onChange={handlePhoneChange}
+        value={formValues.phone}
+      />
                   </div>
 
                   <div className="col-12 col-md-6 contact-us-input-right">
-                    <label htmlFor="" className="contact-form-input-label">
-                      Email<span>*</span>{" "}
-                    </label>
-                    <TextField
-                      id="outlined-password-input"
+                    <Label htmlFor="email" className="contact-form-input-label">
+                      Email<span>*</span>
+                    </Label>
+                    <Input
+                      id="email"
                       placeholder="Exemple : contact@digitaly.fr"
                       type="email"
                       name="email"
-                      className="contact-input"
                       value={formValues.email}
                       onChange={handleChange}
+                      className="contact-input"
                     />
                   </div>
                 </div>
 
                 <div className="contact-us-row-formField">
                   <div className="col-12 col-md-6 contact-us-input-left">
-                    <label htmlFor="" className="contact-form-input-label">
-                      Fonction<span>*</span>{" "}
-                    </label>
-                    <TextField
-                      id="outlined-password-input"
+                    <Label
+                      htmlFor="fonction"
+                      className="contact-form-input-label"
+                    >
+                      Fonction<span>*</span>
+                    </Label>
+                    <Input
+                      id="fonction"
                       placeholder="Exemple : Chargé de communication"
                       type="text"
-                      className="contact-input"
                       name="fonction"
                       value={formValues.fonction}
                       onChange={handleChange}
+                      className="contact-input"
                     />
                   </div>
 
                   <div className="col-12 col-md-6 contact-us-input-right">
-                    <label htmlFor="" className="contact-form-input-label">
-                      Enterprise<span>*</span>{" "}
-                    </label>
-                    <TextField
-                      id="outlined-password-input"
+                    <Label
+                      htmlFor="enterprise"
+                      className="contact-form-input-label"
+                    >
+                      Enterprise<span>*</span>
+                    </Label>
+                    <Input
+                      id="enterprise"
                       placeholder="Exemple : Le nom de votre entreprise"
-                      className="contact-input"
                       type="text"
                       name="enterprise"
                       value={formValues.enterprise}
                       onChange={handleChange}
+                      className="contact-input"
                     />
                   </div>
                 </div>
 
                 <div className="col-md-12   contact-us-input-objet">
-                  <label htmlFor="" class="contact-form-input-label">
-                    Objet<span>*</span>{" "}
-                  </label>
-                  <TextField
-                    id="outlined-password-input"
+                  <Label htmlFor="object" className="contact-form-input-label">
+                    Objet<span>*</span>
+                  </Label>
+                  <Input
+                    id="object"
                     placeholder="Choississez votre type de demande"
                     type="text"
-                    className="contact-input"
                     name="object"
                     value={formValues.object}
                     onChange={handleChange}
+                    className="contact-input"
                   />
                 </div>
 
                 <div className="col-md-12 contact-us-message">
-                  <label htmlFor="" class="contact-form-input-label">
-                    Message<span>*</span>{" "}
-                  </label>
-                  <TextField
-                    id="outlined-textarea"
+                  <Label htmlFor="message" className="contact-form-input-label">
+                    Message<span>*</span>
+                  </Label>
+                  <Textarea
+                    id="message"
                     placeholder="Your Query"
-                    multiline
                     rows={4}
-                    className="contact-input"
                     name="message"
                     value={formValues.message}
                     onChange={handleChange}
+                    className="contact-input"
                   />
                 </div>
 
                 <div className="col-md-12 contact-us-checkbox ">
-                  <Checkbox {...label} style={{ paddingLeft: "0px" }} />
+                  {/* <Checkbox {...label} style={{ paddingLeft: "0px" }} /> */}
+
+                  <Checkbox style={{ paddingLeft: "0px" }} />
 
                   <p>
                     En envoyant ce formulaire, je donne mon accord pour être
@@ -405,7 +402,8 @@ const Contact = () => {
                 </div>
 
                 <div className="col-md-12 contact-us-submitBtn">
-                  <button type="submit">Envoyer le message</button>
+                  {/* <button type="submit">Envoyer le message</button> */}
+                  <Button type="submit">Envoyer le message</Button>
                 </div>
               </form>
             </div>

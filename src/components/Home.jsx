@@ -231,6 +231,10 @@ const Home = () => {
               style={{ border: "3px solid pink" }}
             >
               {/* =================3d model will be place here================= */}
+
+
+              
+
             </div>
           </div>
         </div>

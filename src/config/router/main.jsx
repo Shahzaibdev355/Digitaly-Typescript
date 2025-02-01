@@ -1,6 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 
+// import '@mui/material/styles'; 
+// Place this import at the top
+
 import "../../assets/css/style.css";
+
 
 import Home from "../../components/Home";
 import LAgence from "../../components/LAgence";
