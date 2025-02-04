@@ -531,7 +531,7 @@ const Header = ({ scrollToSection }) => {
         className="navbar navbar-expand-lg new-navbar"
         style={{ border: "" }}
       >
-        <div className="container  new-navbar-div">
+        <div className="containe  new-navbar-div">
           <Link className="nav-brand" to="/">
             <img className="digitaly-logo" src="./images/Group 1.png" alt />
           </Link>
@@ -664,7 +664,7 @@ const Header = ({ scrollToSection }) => {
         </div>
 
         <div style={{ border: "" }}>
-          <Link className="btn header-contact-btn px-md-5" to="/Contact">
+          <Link className="btn header-contact-btn" to="/Contact">
             Contact
           </Link>
         </div>

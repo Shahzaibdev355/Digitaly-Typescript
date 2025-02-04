@@ -139,12 +139,9 @@ const Contact = () => {
       <Header />
 
       <section className="contact-sec1" style={{ backgroundColor: "" }}>
-        <div className="contact-container">
-          <div className="row contact-row align-items-center mt-lg-0 pt-5 pt-lg-0">
-            <div
-              className="col-12 col-md-6 text-center text-lg-start"
-              style={{ border: "" }}
-            >
+        <div className="contact-container" id="tailwind-container">
+          <div className="flex flex-wrap items-center  contact-row mt-lg-0 pt-5 pt-lg-0">
+            <div className="w-full md:w-1/2 lg:text-left contact-form-col1">
               <h2 className="contact-col1-heading">
                 {t("contactPage.heading")}
               </h2>
@@ -244,11 +241,8 @@ const Contact = () => {
               {/* </p> */}
             </div>
 
-            <div id="tailwind-container"
-              className="col-12 col-md- my- py- contact-form-col2"
-              style={{ display: "" }}
-            >
-              <form onSubmit={handleSubmit}>
+            <div className="w-full md:w-1/2 flex justify-center items-center contact-form-col2">
+              <form onSubmit={handleSubmit} className="w-[96%]">
                 <div className="contact-us-row-formField">
                   <div className="col-12 col-md-6 contact-us-input-left">
                     <Label htmlFor="fname" className="contact-form-input-label">

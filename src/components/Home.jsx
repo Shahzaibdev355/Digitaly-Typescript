@@ -196,22 +196,19 @@ const Home = () => {
       {/* ====================Model work in this section==================== */}
       <section
         className="sec-1"
-        style={{ border: "", backgroundAttachment: "" }}
       >
-        <div className="container" style={{ border: "" }} id="testing">
-          <div className="row align-items-center mt-5 mt-lg-0 pt-5 pt-lg-0">
+        
+        <div className="section1-container" style={{ border: "" }} id="tailwind-container">
+          <div className="flex flex-wrap items-center row mt-5 mt-lg-0 pt-5 pt-lg-0">
             <div
-              className="col-12 col-lg-6 text-center text-lg-start"
+              className="w-full lg:w-1/2 text-center  text-lg-start"
               style={{ border: "3px solid red" }}
             >
               <h1 className="display-5 text-white fw-bold">
-                {/* Construisons ensemble votre */}
+
                 {t("section1.title1")}
 
-                {/* <span className="gradient-text-sec-1">
-                  {t("section1.title2")}
-                </span> */}
-
+              
                 <span
                   className="gradient-text-sec-1"
                   ref={textRef}
@@ -227,7 +224,7 @@ const Home = () => {
             </div>
 
             <div
-              className="col-12 col-lg-6 my-5 py-5 text-center text-lg-end"
+              className="w-full lg:w-1/2 my-5 py-5 text-center text-lg-end"
               style={{ border: "3px solid pink" }}
             >
               {/* =================3d model will be place here================= */}
