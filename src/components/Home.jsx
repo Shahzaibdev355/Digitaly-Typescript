@@ -202,7 +202,7 @@ const Home = () => {
           <div className="flex flex-wrap items-center row mt-5 mt-lg-0 pt-5 pt-lg-0">
             <div
               className="w-full lg:w-1/2 text-center  text-lg-start"
-              style={{ border: "3px solid red" }}
+              style={{ border: "" }}
             >
               <h1 className="display-5 text-white fw-bold">
 

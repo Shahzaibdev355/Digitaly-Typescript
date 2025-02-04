@@ -9,6 +9,7 @@ import {
   faChevronDown,
   faChevronUp,
   faChevronLeft,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { motion } from "framer-motion";
@@ -665,7 +666,8 @@ const Header = ({ scrollToSection }) => {
 
         <div style={{ border: "" }}>
           <Link className="btn header-contact-btn" to="/Contact">
-            Contact
+            <FontAwesomeIcon icon={faUser} style={{paddingRight: '5px'}}/>
+            Log In
           </Link>
         </div>
       </nav>
@@ -1032,7 +1034,8 @@ const Header = ({ scrollToSection }) => {
           {!isAllDigitalyView && (
             <div className="header-contact-btn-div">
               <Link className="btn header-contact-btn px-md-5" to="/Contact">
-                Contact
+              <FontAwesomeIcon icon={faUser} style={{paddingRight: '5px'}}/>
+                Log In
               </Link>
             </div>
           )}
