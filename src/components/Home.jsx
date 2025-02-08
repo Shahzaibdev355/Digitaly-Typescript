@@ -17,6 +17,27 @@ import Testimonial from "./Testimonial";
 import gsap from "gsap";
 import SplitType from "split-type";
 
+
+
+
+
+import Scene from "./ThreedModel";
+
+import LargeScreenModel from "./LargeScreenModel";
+import MediumModel from "./MediumModel";
+import ThreedModel from "./ThreedModel";
+
+
+
+
+
+
+
+
+
+
+
+
 const Home = () => {
   const { t, i18n } = useTranslation();
 
@@ -31,6 +52,19 @@ const Home = () => {
 
   const textRefs = useRef([]);
   const [animationsEnabled, setAnimationsEnabled] = useState(true);
+
+
+  // const [screenSize, setScreenSize] = useState(window.innerWidth);
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setScreenSize(window.innerWidth);
+  //   };
+
+  //   window.addEventListener("resize", handleResize);
+
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
+
 
   // useEffect(() => {
   //   const sections = document.querySelectorAll("#animate-text");
@@ -182,18 +216,35 @@ const Home = () => {
     setTimeout(() => setAnimationsEnabled(true), 1000);
   };
 
+
+
+  // const render3DModel = () => {
+  //   if (screenSize > 1024) {
+  //     return <LargeScreenModel />;
+  //   } else if (screenSize >= 425 && screenSize <= 1024) {
+  //     return <MediumModel />;
+  //   } else {
+  //     return <Scene />;
+  //   }
+  // };
+
+
+
+
+
+
   return (
     <>
       <Header scrollToSection={handleScrollToSection} />
 
-      <section
+      {/* <section
         className="rectangular-oval-white-prop"
-        style={{ backgroundAttachment: "" }}
       >
         <img className="w-75" src="./images/Rectangle 9521.png" alt />
-      </section>
+      </section> */}
     
       {/* ====================Model work in this section==================== */}
+
       <section
         className="sec-1"
       >
@@ -218,24 +269,37 @@ const Home = () => {
                 </span>
               </h1>
               <p className="text-white fs-5 fw-light">
-                {/* Découvrez nous au travers du digital  */}
                 {t("section1.description")}
               </p>
             </div>
 
+
+
+
+
+
             <div
-              className="w-full lg:w-1/2 my-5 py-5 text-center text-lg-end"
-              style={{ border: "3px solid pink" }}
+              className="w-full lg:w-1/2  text-center text-lg-end"
+              style={{ border: "" }}
             >
               {/* =================3d model will be place here================= */}
 
+              <ThreedModel/>
 
-              
 
             </div>
+
+
+
+
+
           </div>
         </div>
       </section>
+      
+
+
+      {/* <div>{render3DModel()}</div> */}
 
      
 

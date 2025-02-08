@@ -384,7 +384,11 @@ body {
 
 
 
-
+.DigitalyAll-sub-dropdown-column{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 
 
 .DigitalyAll-sub-dropdown-row {
@@ -455,7 +459,27 @@ body {
 }
 
 
+.DigitalyAll-sub-dropdown-sitemap{
+  background-color: rgba(10, 73, 189, 1);
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-align: center;
+  border-top-left-radius: 0px!important;
+  border-top-right-radius: 0px!important;
+  border-radius: 10px;
+}
 
+.DigitalyAll-sub-dropdown-sitemap a{
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.DigitalyAll-sub-dropdown-sitemap a:hover{
+  font-weight: 500;
+  transition: 0.3s;
+}
 
 
 
@@ -2779,3 +2803,63 @@ textarea {
     font-size: 16px !important;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* 3d work */
+
+
+.canvas {
+  position: fixed !important;
+  height: 100vh !important;
+  width: 100vw !important;
+  right: 0px;
+  z-index: 5 !important;
+}
+
+.section {
+  position: "absolute" !important;
+  z-index: 1 !important;
+}
+
+.mystyle {
+  position: absolute;
+  top: 500px !important;
+  height: 100vh !important;
+  width: 100vw !important;
+  right: 0px;
+  z-index: 5 !important;
+}
+
+
+.iconStyle{
+  z-index: -1;
+position: relative;
+top: -13rem;
+left: 5rem;
+width: 40%;
+}
+
+
+.icons-container img {
+  transition: transform 0.5s ease-in-out;
+}
+
+
+
+.icon {
+  width: 60px;
+  height: 60px;
+  pointer-events: none; /* Prevent pointer events on icons */
+}
+
+

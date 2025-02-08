@@ -792,6 +792,7 @@ const Header = ({ scrollToSection }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
           >
+            <div className="DigitalyAll-sub-dropdown-column">
             <div className="DigitalyAll-sub-dropdown-row">
               {Object.entries(AllDigitalyLinkArray).map(
                 ([heading, links], index) => (
@@ -815,9 +816,26 @@ const Header = ({ scrollToSection }) => {
                 )
               )}
             </div>
+            <div className="DigitalyAll-sub-dropdown-sitemap">
+              <Link to="#"> View Sitemap </Link>
+            </div>
+            </div>
           </motion.div>
         </div>
       )}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* ================================Mobile Menu Working================================ */}
 
