@@ -2,6 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import gsap from "gsap";
+
+import { a, useSpring } from "@react-spring/three";
+
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import facebook from "../assets/Updated Icons/Facebook-1.png";
 import instagram from "../assets/Updated Icons/Instagram-1.png";
@@ -9,10 +13,14 @@ import twitter from "../assets/Updated Icons/Twitter-1.png";
 import dribble from "../assets/Updated Icons/Dribble1.png";
 import Tiktok from "../assets/Updated Icons/Tiktok-1.png";
 import LinkedIn from "../assets/Updated Icons/LinkedIn-1.png";
-import Image2 from "../assets/images/newImage.png";
+
+
+import withMobile from "../assets/images/with-mobile.png";
+import withOutMobile from "../assets/images/without-mobile.png"
+
 import Tilt from "react-parallax-tilt";
 
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -47,6 +55,10 @@ const LargeScreenModel = () => {
     { src: dribble, alt: "Dribble" },
   ];
 
+
+
+  
+
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -64,6 +76,10 @@ const LargeScreenModel = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     container.appendChild(renderer.domElement);
 
+
+    const raycaster = new THREE.Raycaster(); // Raycaster for hover detection
+    const pointer = new THREE.Vector2();
+
     let model;
     const loader = new GLTFLoader();
     loader.load("/images/Digitally Iphone Mock up 3D.gltf", (gltf) => {
@@ -75,7 +91,7 @@ const LargeScreenModel = () => {
 
       model.rotation.set(-0.2, -0.6, -0.2); // Adjusted rotation
       model.scale.set(2.8, 4, 3); // Adjusted uniform scale
-      model.position.set(5,-2.3, 0); // Adjusted position
+      model.position.set(5,-2.5, 0); // Adjusted position
 
       // Traverse the scene and update material properties
       scene.traverse((child) => {
@@ -89,15 +105,8 @@ const LargeScreenModel = () => {
       scene.add(model);
 
       const car_anim = gsap.timeline();
+     
       car_anim
-        .to(model.position, {
-          y: "-=0.3", // Move down
-          duration: 2,
-
-          yoyo: true, // Enable the model to go back up
-          repeat: -1, // Repeat indefinitely for continuous floating
-          ease: "power1.inOut",
-        })
 
         .to(model.rotation, {
           x: "+=0.5",
@@ -115,14 +124,14 @@ const LargeScreenModel = () => {
         })
         .to(model.scale, {
           x: 5,
-          y: 5.5,
+          y: 6,
           z: 5,
           ease: "power1.inOut",
           scrollTrigger: {
             trigger: ".section-one",
-            scrub: 5, // Increase scrub to slow down the scroll-based animation
+            scrub: 8, // Increase scrub to slow down the scroll-based animation
             start: "top top", // Start zoom-in when the scroll starts
-            end: "20% 70%",
+            end: "50% 70%",
             invalidateOnRefresh: true,
           },
         })
@@ -132,7 +141,7 @@ const LargeScreenModel = () => {
           y: 3.5,
           z: 3,
 
-          duration: 3,
+          duration: 6,
           // Keep this slow for smooth effect
           ease: "power1.inOut",
 
@@ -152,8 +161,8 @@ const LargeScreenModel = () => {
 
           scrollTrigger: {
             trigger: ".section-two",
-            scrub: 5, // Increase scrub to slow down the scroll-based animation
-            start: "50% 90%", // Continue shrinking further down
+            scrub: 6, // Increase scrub to slow down the scroll-based animation
+            start: "70% 100%", // Continue shrinking further down
             end: "65% 100%",
             // markers: true,
             invalidateOnRefresh: true,
@@ -163,15 +172,21 @@ const LargeScreenModel = () => {
               console.log("Model reached the end point!");
             },
             onLeaveBack: () => {
-              setIsImageReplaced(false);
-              console.log("Scrolled back, image replaced is now false");
+              gsap.delayedCall(0, () => {
+                setIsImageReplaced(false);
+                console.log("Scrolled back, image replaced is now false with delay.");
+              });
             },
           },
         })
+
+
+
+
         .to(model.rotation, {
           x: "+=0",
 
-          duration: 15, // Increase duration to slow down the animation
+          duration: 8, // Increase duration to slow down the animation
           ease: "power1.inOut",
           scrollTrigger: {
             trigger: ".section-two",
@@ -255,28 +270,34 @@ const LargeScreenModel = () => {
      
 
 
-      window.addEventListener("pointermove");
+
+
+
+
+
+
+
+
+
+      const onPointerMove = (event) => {
+        if (!model) return;
+    
+        // Update pointer coordinates
+        pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
+        pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    
+        // Cast ray and check intersections
+        raycaster.setFromCamera(pointer, camera);
+        const intersects = raycaster.intersectObject(model, true); // Check against the model
+        setIsHovered(intersects.length > 0); // Set hover state based on intersection
+      };
+
+
+      window.addEventListener("pointermove", onPointerMove);
     });
+
+
     camera.position.set(0, 1.25, 5.5);
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -296,6 +317,12 @@ const LargeScreenModel = () => {
         camera.aspect = container.clientWidth / container.clientHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(container.clientWidth, container.clientHeight);
+
+    //     const aspect = container.clientWidth / container.clientHeight;
+    // camera.aspect = aspect;
+    // camera.updateProjectionMatrix();
+    // renderer.setSize(container.clientWidth, container.clientHeight);
+
       }
     };
     window.addEventListener("resize", onWindowResize);
@@ -311,11 +338,14 @@ const LargeScreenModel = () => {
     };
   }, []);
 
+
+
+  
   const AnimatedIcons = ({ isHovered, icons }) => {
     const iconVariants = {
       hidden: { opacity: 0, scale: 0.5, y: 0 },
       visible: (i) => {
-        const scatterX = Math.cos(i) * 200;
+        const scatterX = Math.cos(i) * 250;
         const scatterY = Math.sin(i) * 200 - 100;
 
         const customOffsets = {
@@ -335,7 +365,12 @@ const LargeScreenModel = () => {
           transition: { delay: i * 0.1, type: "spring", stiffness: 100 },
         };
       },
-      exit: { opacity: 0, scale: 0.5, y: 0, transition: { type: "spring" } },
+      exit: {
+        opacity: 0,
+        scale: 0.5,
+        y: 0, // Hide with same vertical position as "hidden"
+        transition: { delay: 0.1, type: "spring", stiffness: 100 }, // Same type and stiffness
+      },
     };
 
     return (
@@ -346,7 +381,7 @@ const LargeScreenModel = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          
+          border: ''
         }}
       >
         {icons.map((icon, i) => (
@@ -357,8 +392,8 @@ const LargeScreenModel = () => {
             className="icon"
             style={{
               position: "absolute",
-              left: "73%",
-              top: "60%",
+              left: "60%",
+              top: "50%",
               transform: "translate(-50%, -50%)",
             }}
             variants={iconVariants}
@@ -399,19 +434,37 @@ const LargeScreenModel = () => {
 
             <div
               className="w-full lg:w-1/2  text-center text-lg-end testing-3d"
-              style={{ border: "2px solid red" }}
+              style={{ border: "" }}
             >
               {/* =================3d model will be place here================= */}
 
-              {isHovered && <AnimatedIcons isHovered={isHovered} icons={icons} />}
 
               <div
-                style={{ border: "3px solid red" }}
+                style={{border: '', width: "100%", height: "100vh", position: "relative", zIndex: 10,   display: "flex", // Center the content
+                  justifyContent: "center",
+                  alignItems: "center",}}
+              >
+
+
+       {isHovered && <AnimatedIcons isHovered={isHovered} icons={icons} />}
+             
+
+              <div
+                style={{ border: "" }}
                 className="scene one"
                 ref={containerRef}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-              ></div>
+                
+              >
+
+
+                  
+
+              </div>
+
+
+</div>
+
+
             </div>
           </div>
         </div>
@@ -424,7 +477,7 @@ const LargeScreenModel = () => {
       <section
         id="agence"
         className="sec-2 section-two"
-        style={{ border: "3px solid green" }}
+        style={{ border: "" }}
       >
         <div className="container">
           <div className="row">
@@ -435,15 +488,43 @@ const LargeScreenModel = () => {
                 alt
               /> */}
 
-              {isImageReplaced ? (
-                <img className="img-fluid overlap-img" src={Image2} alt />
+              {/* {isImageReplaced ? (
+                <img className="img-fluid overlap-img" src={withMobile} alt />
               ) : (
                 <img
                   className="img-fluid overlap-img"
-                  src="./images/man-effect2.png"
+                  src={withOutMobile}
                   alt
                 />
-              )}
+              )} */}
+
+
+<AnimatePresence>
+  <motion.img
+    key={isImageReplaced ? "withMobile" : "withOutMobile"}
+    className="img-fluid overlap-img"
+    src={isImageReplaced ? withMobile : withOutMobile}
+    alt={isImageReplaced ? "With Mobile" : "Without Mobile"}
+    initial={{ opacity: 0, x: isImageReplaced ? 20 : -20 }} // Adjust based on the condition
+    animate={{ opacity: 1, x: 0 }} // Fade in and center position
+    exit={{ opacity: 0, x: isImageReplaced ? -20 : 20 }} // Adjust based on the condition
+    transition={{
+      duration: 0.5, // Smooth transition duration
+      ease: "easeInOut", // Smooth easing
+    }}
+  />
+</AnimatePresence>
+
+
+
+
+
+
+
+
+
+
+
             </div>
             <div className="col-12 col-lg-7 mb-5 mb-md-0 order-1 order-md-2">
               <div className="mt-md-3 mt-lg-2 mt-xl-4 mt-xxl-5 pt-md-3 pt-lg-2 pt-xl-4 pt-xxl-5">
@@ -471,3 +552,4 @@ const LargeScreenModel = () => {
 };
 
 export default LargeScreenModel;
+ 
