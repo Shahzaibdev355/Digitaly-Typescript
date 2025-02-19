@@ -2787,6 +2787,12 @@ textarea {
 
 
 
+  .icon {
+    width: 40px;
+    height: 40px;
+    pointer-events: none; /* Prevent pointer events on icons */
+  }
+
 
 
 
@@ -2885,13 +2891,21 @@ width: 40%;
 body, html {
   overflow: auto;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+  /* -webkit-overflow-scrolling: touch; */
+}
+
+* {
+  /* border: 2px solid red;  */
 }
 
 canvas {
-  touch-action: none;
+  /* touch-action: none; */
+  touch-action: pan-y!important; 
 }
 
+.testing{
+  touch-action: pan-y!important; 
+}
 
 .animated-icons-container {
   position: absolute;

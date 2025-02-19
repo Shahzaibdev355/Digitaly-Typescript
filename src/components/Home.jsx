@@ -54,16 +54,7 @@ const Home = () => {
   const [animationsEnabled, setAnimationsEnabled] = useState(true);
 
 
-  // const [screenSize, setScreenSize] = useState(window.innerWidth);
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setScreenSize(window.innerWidth);
-  //   };
-
-  //   window.addEventListener("resize", handleResize);
-
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
+  
 
 
   // useEffect(() => {
@@ -218,15 +209,26 @@ const Home = () => {
 
 
 
-  // const render3DModel = () => {
-  //   if (screenSize > 1024) {
-  //     return <LargeScreenModel />;
-  //   } else if (screenSize >= 425 && screenSize <= 1024) {
-  //     return <MediumModel />;
-  //   } else {
-  //     return <Scene />;
-  //   }
-  // };
+
+  const [screenSize, setScreenSize] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
+  const render3DModel = () => {
+    if (screenSize > 1080) {
+      return <LargeScreenModel />;
+    } else if(screenSize < 768) {
+      return <ThreedModel/>;
+    }
+  };
 
 
 
@@ -246,11 +248,13 @@ const Home = () => {
       {/* ====================Model work in this section==================== */}
 
     {/* <ThreedModel/> */}
-    <LargeScreenModel/>
+    {/* <LargeScreenModel/> */}
+
+    
       
 
 
-      {/* <div>{render3DModel()}</div> */}
+      {render3DModel()}
 
      
 

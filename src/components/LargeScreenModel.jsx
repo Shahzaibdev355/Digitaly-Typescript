@@ -5,7 +5,6 @@ import gsap from "gsap";
 
 import { a, useSpring } from "@react-spring/three";
 
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import facebook from "../assets/Updated Icons/Facebook-1.png";
 import instagram from "../assets/Updated Icons/Instagram-1.png";
@@ -14,9 +13,8 @@ import dribble from "../assets/Updated Icons/Dribble1.png";
 import Tiktok from "../assets/Updated Icons/Tiktok-1.png";
 import LinkedIn from "../assets/Updated Icons/LinkedIn-1.png";
 
-
 import withMobile from "../assets/images/with-mobile.png";
-import withOutMobile from "../assets/images/without-mobile.png"
+import withOutMobile from "../assets/images/without-mobile.png";
 
 import Tilt from "react-parallax-tilt";
 
@@ -55,10 +53,6 @@ const LargeScreenModel = () => {
     { src: dribble, alt: "Dribble" },
   ];
 
-
-
-  
-
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -76,7 +70,6 @@ const LargeScreenModel = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     container.appendChild(renderer.domElement);
 
-
     const raycaster = new THREE.Raycaster(); // Raycaster for hover detection
     const pointer = new THREE.Vector2();
 
@@ -85,13 +78,12 @@ const LargeScreenModel = () => {
     loader.load("/images/Digitally Iphone Mock up 3D.gltf", (gltf) => {
       model = gltf.scene;
       model.name = "iphoneModel"; // Set a name for the model
-      
 
       // Apply transformations
 
       model.rotation.set(-0.2, -0.6, -0.2); // Adjusted rotation
       model.scale.set(2.8, 4, 3); // Adjusted uniform scale
-      model.position.set(5,-2.5, 0); // Adjusted position
+      model.position.set(5, -2.5, 0); // Adjusted position
 
       // Traverse the scene and update material properties
       scene.traverse((child) => {
@@ -105,7 +97,7 @@ const LargeScreenModel = () => {
       scene.add(model);
 
       const car_anim = gsap.timeline();
-     
+
       car_anim
 
         .to(model.rotation, {
@@ -174,14 +166,13 @@ const LargeScreenModel = () => {
             onLeaveBack: () => {
               gsap.delayedCall(0, () => {
                 setIsImageReplaced(false);
-                console.log("Scrolled back, image replaced is now false with delay.");
+                console.log(
+                  "Scrolled back, image replaced is now false with delay."
+                );
               });
             },
           },
         })
-
-
-
 
         .to(model.rotation, {
           x: "+=0",
@@ -241,10 +232,6 @@ const LargeScreenModel = () => {
         },
       });
 
-
-
-     
-    
       const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
       scene.add(ambientLight);
       const directionalLight = new THREE.DirectionalLight(0xffffff, 10); // Strong white light
@@ -253,7 +240,7 @@ const LargeScreenModel = () => {
       directionalLight.shadow.mapSize.width = 2048; // Increase shadow quality
       directionalLight.shadow.mapSize.height = 2048;
       scene.add(directionalLight);
-  
+
       const spotLight = new THREE.SpotLight(0xffffff, 40); // Increase intensity
       spotLight.position.set(100, 100, 100);
       spotLight.castShadow = true;
@@ -262,53 +249,32 @@ const LargeScreenModel = () => {
       spotLight.shadow.mapSize.width = 2048;
       spotLight.shadow.mapSize.height = 2048;
       scene.add(spotLight);
-  
+
       // Spotlight target (can be a specific point or object)
       spotLight.target.position.set(100, 100, 100); // Target the center of the scene (or adjust to your model)
       scene.add(spotLight.target);
 
-     
-
-
-
-
-
-
-
-
-
-
-
       const onPointerMove = (event) => {
         if (!model) return;
-    
+
         // Update pointer coordinates
         pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
         pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    
+
         // Cast ray and check intersections
         raycaster.setFromCamera(pointer, camera);
         const intersects = raycaster.intersectObject(model, true); // Check against the model
         setIsHovered(intersects.length > 0); // Set hover state based on intersection
       };
 
-
       window.addEventListener("pointermove", onPointerMove);
     });
 
-
     camera.position.set(0, 1.25, 5.5);
-
-
-
-
-
-
 
     const animate = () => {
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
-    
     };
     animate();
 
@@ -318,11 +284,10 @@ const LargeScreenModel = () => {
         camera.updateProjectionMatrix();
         renderer.setSize(container.clientWidth, container.clientHeight);
 
-    //     const aspect = container.clientWidth / container.clientHeight;
-    // camera.aspect = aspect;
-    // camera.updateProjectionMatrix();
-    // renderer.setSize(container.clientWidth, container.clientHeight);
-
+        //     const aspect = container.clientWidth / container.clientHeight;
+        // camera.aspect = aspect;
+        // camera.updateProjectionMatrix();
+        // renderer.setSize(container.clientWidth, container.clientHeight);
       }
     };
     window.addEventListener("resize", onWindowResize);
@@ -338,9 +303,6 @@ const LargeScreenModel = () => {
     };
   }, []);
 
-
-
-  
   const AnimatedIcons = ({ isHovered, icons }) => {
     const iconVariants = {
       hidden: { opacity: 0, scale: 0.5, y: 0 },
@@ -381,7 +343,7 @@ const LargeScreenModel = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          border: ''
+          border: "",
         }}
       >
         {icons.map((icon, i) => (
@@ -438,31 +400,33 @@ const LargeScreenModel = () => {
             >
               {/* =================3d model will be place here================= */}
 
-
               <div
-                style={{border: '', width: "100%", height: "100vh", position: "relative", zIndex: 10,   display: "flex", // Center the content
+                style={{
+                  border: "",
+                  width: "100%",
+                  height: "100vh",
+                  position: "relative",
+                  zIndex: 10,
+                  display: "flex", // Center the content
                   justifyContent: "center",
-                  alignItems: "center",}}
+                  alignItems: "center",
+                }}
               >
+                {isHovered && (
+                  <AnimatedIcons isHovered={isHovered} icons={icons} />
+                )}
+
+                <div
+                  style={{ border: "" }}
+                  className="scene one"
+                  ref={containerRef}
+                ></div>
 
 
-       {isHovered && <AnimatedIcons isHovered={isHovered} icons={icons} />}
-             
 
-              <div
-                style={{ border: "" }}
-                className="scene one"
-                ref={containerRef}
-                
-              >
-
-
-                  
 
               </div>
 
-
-</div>
 
 
             </div>
@@ -474,11 +438,7 @@ const LargeScreenModel = () => {
         <img className="w-100" src="./images/Rectangle 9522.png" alt />
       </section>
 
-      <section
-        id="agence"
-        className="sec-2 section-two"
-        style={{ border: "" }}
-      >
+      <section id="agence" className="sec-2 section-two" style={{ border: "" }}>
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-5 order-2 order-md-1 text-center">
@@ -498,33 +458,21 @@ const LargeScreenModel = () => {
                 />
               )} */}
 
-
-<AnimatePresence>
-  <motion.img
-    key={isImageReplaced ? "withMobile" : "withOutMobile"}
-    className="img-fluid overlap-img"
-    src={isImageReplaced ? withMobile : withOutMobile}
-    alt={isImageReplaced ? "With Mobile" : "Without Mobile"}
-    initial={{ opacity: 0, x: isImageReplaced ? 20 : -20 }} // Adjust based on the condition
-    animate={{ opacity: 1, x: 0 }} // Fade in and center position
-    exit={{ opacity: 0, x: isImageReplaced ? -20 : 20 }} // Adjust based on the condition
-    transition={{
-      duration: 0.5, // Smooth transition duration
-      ease: "easeInOut", // Smooth easing
-    }}
-  />
-</AnimatePresence>
-
-
-
-
-
-
-
-
-
-
-
+              <AnimatePresence>
+                <motion.img
+                  key={isImageReplaced ? "withMobile" : "withOutMobile"}
+                  className="img-fluid overlap-img"
+                  src={isImageReplaced ? withMobile : withOutMobile}
+                  alt={isImageReplaced ? "With Mobile" : "Without Mobile"}
+                  initial={{ opacity: 0, x: isImageReplaced ? 20 : -20 }} // Adjust based on the condition
+                  animate={{ opacity: 1, x: 0 }} // Fade in and center position
+                  exit={{ opacity: 0, x: isImageReplaced ? -20 : 20 }} // Adjust based on the condition
+                  transition={{
+                    duration: 0.5, // Smooth transition duration
+                    ease: "easeInOut", // Smooth easing
+                  }}
+                />
+              </AnimatePresence>
             </div>
             <div className="col-12 col-lg-7 mb-5 mb-md-0 order-1 order-md-2">
               <div className="mt-md-3 mt-lg-2 mt-xl-4 mt-xxl-5 pt-md-3 pt-lg-2 pt-xl-4 pt-xxl-5">
@@ -552,4 +500,3 @@ const LargeScreenModel = () => {
 };
 
 export default LargeScreenModel;
- 
