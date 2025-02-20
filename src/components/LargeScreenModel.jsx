@@ -75,7 +75,7 @@ const LargeScreenModel = () => {
 
     let model;
     const loader = new GLTFLoader();
-    loader.load("/images/Digitally Iphone Mock up 3D.gltf", (gltf) => {
+    loader.load("https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/public/images/Digitally%20Iphone%20Mock%20up%203D.gltf", (gltf) => {
       model = gltf.scene;
       model.name = "iphoneModel"; // Set a name for the model
 
@@ -133,13 +133,13 @@ const LargeScreenModel = () => {
           y: 3.5,
           z: 3,
 
-          duration: 6,
+          duration: 5,
           // Keep this slow for smooth effect
           ease: "power1.inOut",
 
           scrollTrigger: {
             trigger: ".section-one",
-            scrub: 5,
+            scrub: 4,
             start: "80% 55%",
             end: "100% 100%", // End somewhere in section two
 
@@ -153,7 +153,7 @@ const LargeScreenModel = () => {
 
           scrollTrigger: {
             trigger: ".section-two",
-            scrub: 6, // Increase scrub to slow down the scroll-based animation
+            scrub: 5, // Increase scrub to slow down the scroll-based animation
             start: "70% 100%", // Continue shrinking further down
             end: "65% 100%",
             // markers: true,
@@ -177,12 +177,12 @@ const LargeScreenModel = () => {
         .to(model.rotation, {
           x: "+=0",
 
-          duration: 8, // Increase duration to slow down the animation
+          duration: 5, // Increase duration to slow down the animation
           ease: "power1.inOut",
           scrollTrigger: {
             trigger: ".section-two",
             scrub: 3, // Increase scrub to make the animation follow the scroll more slowly
-            start: "0% 80%", // Animation starts when top of sec-2 reaches 80% of the viewport
+            start: "0% 60%", // Animation starts when top of sec-2 reaches 80% of the viewport
             end: "10% 65%",
           },
         })

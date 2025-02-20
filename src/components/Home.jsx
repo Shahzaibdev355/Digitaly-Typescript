@@ -247,12 +247,6 @@ const Home = () => {
     
       {/* ====================Model work in this section==================== */}
 
-    {/* <ThreedModel/> */}
-    {/* <LargeScreenModel/> */}
-
-    
-      
-
 
       {render3DModel()}
 

@@ -17,6 +17,9 @@ import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 
 
+import withMobile from "../assets/images/with-mobile.png";
+
+
   
 
 const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd, onLoad }) => {
@@ -70,7 +73,7 @@ const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd, onLoad }) => {
   useFrame(() => {
     if (modelRef.current && !isHovered) {
       modelRef.current.rotation.x = 0; // Reset tilt
-      modelRef.current.rotation.y += 0.01; // Smooth rotation
+      modelRef.current.rotation.y += 0.02; // Smooth rotation
       modelRef.current.rotation.z = 0; // Reset spin
     }
   });
@@ -340,14 +343,14 @@ const ThreedModel = () => {
       <section id="agence"
         className="sec-2"
         
-        style={{ border: "3px solid green" }}
+        style={{ }}
       >
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-5 order-2 order-md-1 text-center">
               <img
                 className="img-fluid overlap-img"
-                src="./images/man-effect2.png"
+                src={withMobile}
                 alt
               />
             </div>
