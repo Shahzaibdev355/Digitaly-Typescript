@@ -18,20 +18,30 @@ import deIcon from "./DE-icon.jpg";
 import hiIcon from "./HI-icon.png";
 import zhIcon from "./CN-icon.png";
 
-import legalHeroImg from "./legal-images/hero-image.png"
-import legalCard1Img from "./legal-images/card-1-img.png"
-import legalCard2Img from "./legal-images/card-1-img.png"
-import legalCard3Img from "./legal-images/card-1-img.png"
-import legalCard4Img from "./legal-images/card-1-img.png"
+import serviceCardLogo1 from "./Dev App 1.png";
+import serviceCardLogo2 from "./Dev web  full stack 1.png";
+import serviceCardLogo3 from "./Web design 1.png";
+import serviceCardLogo4 from "./Web design 1.png";
 
-import modelShade from "./Rectangle-shade.png"
+import serviceCardLogo5 from "./Graphic design 2.png";
+import serviceCardLogo6 from "./Audiovisual creation 1.png";
+import serviceCardLogo7 from "./Community management 1.png";
+import serviceCardLogo8 from "./Community management 1.png";
 
-import robotProject from "./vetzeey-robot.png"
+import legalHeroImg from "./legal-images/hero-image.png";
+import legalCard1Img from "./legal-images/card-1-img.png";
+import legalCard2Img from "./legal-images/card-1-img.png";
+import legalCard3Img from "./legal-images/card-1-img.png";
+import legalCard4Img from "./legal-images/card-1-img.png";
+
+import modelShade from "./Rectangle-shade.png";
+import serviceShade from "./Rectangle 9544.png"
+
+import robotProject from "./vetzeey-robot.png";
 
 export {
-
   modelShade,
-
+  
   LEnterpriseImg1,
   LEnterpriseImg2,
   LEnterpriseImg3,
@@ -49,14 +59,19 @@ export {
   deIcon,
   hiIcon,
   zhIcon,
-
-
+  serviceCardLogo1,
+  serviceCardLogo2,
+  serviceCardLogo3,
+  serviceCardLogo4,
+  serviceCardLogo5,
+  serviceCardLogo6,
+  serviceCardLogo7,
+  serviceCardLogo8,
+  serviceShade,
   legalHeroImg,
   legalCard1Img,
   legalCard2Img,
   legalCard3Img,
   legalCard4Img,
-
-
-  robotProject
+  robotProject,
 };

@@ -11,6 +11,16 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+import { serviceCardLogo1,
+    serviceCardLogo2,
+    serviceCardLogo3,
+    serviceCardLogo4,
+    serviceCardLogo5,
+    serviceCardLogo6,
+    serviceCardLogo7,
+    serviceCardLogo8
+ } from "../assets/images";
+
 const ServiceCards = () => {
   const { t, i18n } = useTranslation();
 
@@ -36,42 +46,42 @@ const ServiceCards = () => {
 
   const services = [
     {
-      image: "./images/-_Dev App 1.png",
+      image: serviceCardLogo1,
       para1: t("services-section.service-card1.para1"),
       para2: t("services-section.service-card1.para2"),
     },
     {
-      image: "./images/-_Dev web  full stack 1.png",
+      image: serviceCardLogo2,
       para1: t("services-section.service-card2.para1"),
       para2: t("services-section.service-card2.para2"),
     },
     {
-      image: "./images/-_Web design 1.png",
+      image: serviceCardLogo3,
       para1: t("services-section.service-card3.para1"),
       para2: t("services-section.service-card3.para2"),
     },
     {
-      image: "./images/-_Graphic design 2.png",
+      image: serviceCardLogo4,
       para1: t("services-section.service-card4.para1"),
       para2: t("services-section.service-card4.para2"),
     },
     {
-      image: "./images/-_Audiovisual creation 1.png",
+      image: serviceCardLogo5,
       para1: t("services-section.service-card5.para1"),
       para2: t("services-section.service-card5.para2"),
     },
     {
-      image: "./images/-_Community management 1.png",
+      image: serviceCardLogo6,
       para1: t("services-section.service-card6.para1"),
       para2: t("services-section.service-card6.para2"),
     },
     {
-      image: "./images/-_Community management 1.png",
+      image: serviceCardLogo7,
       para1: t("services-section.service-card7.para1"),
       para2: t("services-section.service-card7.para2"),
     },
     {
-      image: "./images/-_Community management 1.png",
+      image: serviceCardLogo8,
       para1: t("services-section.service-card8.para1"),
       para2: t("services-section.service-card8.para2"),
     },
@@ -205,13 +215,14 @@ const ServiceCards = () => {
 
       ) : (
         <div className="row">
+
           <div className="col-12 col-sm-6 col-md-3">
             <div className="gradient-box-cus px-4 py-2 mx-2 my-3">
               <div className="row">
                 <div className="col-12">
                   <img
                     className="service-card-img"
-                    src="./images/-_Dev App 1.png"
+                    src={serviceCardLogo1}
                     alt
                   />
                 </div>
@@ -233,7 +244,7 @@ const ServiceCards = () => {
                 <div className="col-12">
                   <img
                     className="service-card-img"
-                    src="./images/-_Dev web  full stack 1.png"
+                    src={serviceCardLogo2}
                     alt
                   />
                 </div>
@@ -255,7 +266,7 @@ const ServiceCards = () => {
                 <div className="col-12">
                   <img
                     className="service-card-img"
-                    src="./images/-_Web design 1.png"
+                    src={serviceCardLogo3}
                     alt
                   />
                 </div>
@@ -278,7 +289,7 @@ const ServiceCards = () => {
                 <div className="col-12">
                   <img
                     className="service-card-img"
-                    src="./images/-_Web design 1.png"
+                    src={serviceCardLogo4}
                     alt
                   />
                 </div>
@@ -301,7 +312,7 @@ const ServiceCards = () => {
                 <div className="col-12">
                   <img
                     className="service-card-img"
-                    src="./images/-_Graphic design 2.png"
+                    src={serviceCardLogo5}
                     alt
                   />
                 </div>
@@ -323,7 +334,7 @@ const ServiceCards = () => {
                 <div className="col-12">
                   <img
                     className="service-card-img"
-                    src="./images/-_Audiovisual creation 1.png"
+                    src={serviceCardLogo6}
                     alt
                   />
                 </div>
@@ -345,7 +356,7 @@ const ServiceCards = () => {
                 <div className="col-12">
                   <img
                     className="service-card-img"
-                    src="./images/-_Community management 1.png"
+                    src={serviceCardLogo7}
                     alt
                   />
                 </div>
@@ -361,14 +372,13 @@ const ServiceCards = () => {
               </div>
             </div>
           </div>
-
           <div className="col-12 col-sm-6 col-md-3">
             <div className="gradient-box-cus px-4 py-2 mx-2 my-3">
               <div className="row">
                 <div className="col-12">
                   <img
                     className="service-card-img"
-                    src="./images/-_Community management 1.png"
+                    src={serviceCardLogo8}
                     alt
                   />
                 </div>
@@ -384,6 +394,8 @@ const ServiceCards = () => {
               </div>
             </div>
           </div>
+
+
         </div>
       )}
     </div>

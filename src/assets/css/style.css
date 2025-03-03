@@ -573,6 +573,13 @@ body {
   left: 0;
 }
 
+.rectangular-oval-white-prop-4 {
+  position: absolute;
+  z-index: -1;
+  top: -80%;
+  left: 0;
+}
+
 .phone-img {
   width: 100% !important;
   height: 90vh !important;
@@ -879,7 +886,9 @@ background: linear-gradient(100deg, rgba(0,54,153,1) 0%, rgba(22,104,255,1) 50%,
 }
 
 .gradient-cus-box-sty {
-  background-image: linear-gradient(to right, #FFFFFF, #84AEEC);
+  /* background-image: linear-gradient(to right, #FFFFFF, #84AEEC); */
+  background: rgb(255,255,255);
+background: linear-gradient(20deg, rgba(255,255,255,1) 0%, rgba(132,174,236,1) 100%);
   text-fill-color: transparent;
   border-radius: 20px;
 }
@@ -970,7 +979,10 @@ background: linear-gradient(100deg, rgba(0,54,153,1) 0%, rgba(22,104,255,1) 50%,
 
 
 
-
+.testimonial-container{
+  width: 90%;
+  margin: auto;
+}
 
 
 .fs-cus-sty-testimonial {
@@ -2842,7 +2854,7 @@ textarea {
 
 .footer-contact-div-contactBtn {
   width: max-content;
-  background-color: #112543;
+  background-color: #000E39;
 }
 
 .footer-contact-div-contactBtn:hover {
@@ -3086,6 +3098,7 @@ textarea {
 
   .p-text-adjust-sty-project h2{
     font-size: 23px;
+    /* width: 90%; */
   }
 
 
@@ -3213,6 +3226,18 @@ textarea {
   }
 
 
+  .rectangular-oval-white-prop-3 {
+    top: -14%;
+  }
+  
+  .rectangular-oval-white-prop-4 {
+    position: absolute;
+    z-index: -1;
+    top: -80%;
+    left: 0;
+  }
+
+
   .footer-sec {
     display: flex;
     flex-direction: column-reverse;
@@ -3251,7 +3276,7 @@ textarea {
 
   .p-text-adjust-sty-project {
     left: 11%;
-    width: 100%;
+    width: 90%;
 
   }
 
@@ -3293,6 +3318,11 @@ textarea {
     right: initial;
     margin-top: 12pc;
     z-index: 1018;
+  }
+
+  .testimonial-container{
+    width: 93%;
+    margin: auto;
   }
 
 

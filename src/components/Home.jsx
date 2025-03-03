@@ -21,11 +21,9 @@ import SplitType from "split-type";
 
 
 
-import Scene from "./MobileThreedModel";
 
-import LargeScreenModel from "./LargeScreenModel";
 import MobileThreedModel from "./MobileThreedModel";
-import { robotProject } from "../assets/images";
+import { robotProject, serviceShade } from "../assets/images";
 
 
 
@@ -277,14 +275,16 @@ const Home = () => {
         <img className="w-75" src="./images/Rectangle 9521.png" alt />
       </section> */}
     
-      {/* ====================Model work in this section==================== */}
 
+      {/* First section with 3d model work */}
 
       {render3DModel()}
 
      
 
      
+
+      {/* ==========================Sevice card section========================== */}
 
       <section
         className="sec-3-services"
@@ -296,7 +296,7 @@ const Home = () => {
       >
         <div className="services-container" id="service">
           <div className="rectangular-oval-white-prop-3">
-            <img className="img-fluid" src="./images/Rectangle 9544.png" alt />
+            <img className="img-fluid" src={serviceShade} alt />
           </div>
           <div
             className="text-overlay-services my-5"
@@ -324,6 +324,8 @@ const Home = () => {
 
 
 
+
+      {/* ==========================Community section========================== */}
 
       <section
         className="sec-4-projects py"
@@ -399,7 +401,7 @@ const Home = () => {
 
 
 
-
+      {/* ==========================Reference section========================== */}
 
       <section
         className="sec-3-services"
@@ -408,9 +410,9 @@ const Home = () => {
         ref={(el) => (textRefs.current[2] = el)}
         style={{ position: "relative" }}
       >
-        <div className="container">
-          <div className="rectangular-oval-white-prop-3">
-            <img className="img-fluid" src="./images/Rectangle 9544.png" alt />
+        <div className="testimonial-container">
+          <div className="rectangular-oval-white-prop-4">
+            <img className="img-fluid" src={serviceShade} alt />
           </div>
           <div
             className="text-overlay-reference my-5"
@@ -437,6 +439,8 @@ const Home = () => {
       </section>
 
       <Footer />
+
+
 
       {/* Back to Top */}
       <a
