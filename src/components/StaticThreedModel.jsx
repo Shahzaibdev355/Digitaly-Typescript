@@ -3,39 +3,28 @@ import { Canvas } from "@react-three/fiber";
 import { a, useSpring } from "@react-spring/three";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 
-import { useFrame } from "@react-three/fiber"; // Import useFrame hook
+import { AnimatePresence, motion } from "framer-motion"; // Import Framer Motion
 
-import { motion } from "framer-motion"; // Import Framer Motion
+const facebook = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Facebook-1.png";
+const instagram = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Instagram-1.png";
+const twitter = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Twitter-1.png";
+const dribble = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Dribble1.png";
+const Tiktok = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Tiktok-1.png";
+const LinkedIn = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/LinkedIn-1.png";
 
-import facebook from "../assets/Updated Icons/Facebook-1.png";
-import instagram from "../assets/Updated Icons/Instagram-1.png";
-import twitter from "../assets/Updated Icons/Twitter-1.png";
-import dribble from "../assets/Updated Icons/Dribble1.png";
-import Tiktok from "../assets/Updated Icons/Tiktok-1.png";
-import LinkedIn from "../assets/Updated Icons/LinkedIn-1.png";
+
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
-
+import { modelShade } from "../assets/images";
 
 import withMobile from "../assets/images/with-mobile.png";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
-
-  
-
-const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd, onLoad }) => {
+const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd }) => {
   useGLTF.preload(modelPath); // Preload the model
   const { scene } = useGLTF(modelPath);
-
-  const modelRef = useRef(); // Ref to access the model object
-
-
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    // Notify when the model is loaded
-    if (onLoad) onLoad();
-    setIsVisible(true);
-  }, [onLoad]);
 
   // Apply shininess to the edges or the entire model
   scene.traverse((child) => {
@@ -48,54 +37,20 @@ const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd, onLoad }) => {
 
   // React Spring for smooth scale animation
   const { scale } = useSpring({
-    scale: isHovered ? 2.5 : 2.8,
+    scale: isHovered ? 3 : 3.2,
     config: { mass: 1, tension: 200, friction: 20 }, // Adjust spring physics for smoothness
   });
 
-   // React Spring for fade-in animation
-   const { opacity } = useSpring({
-    opacity: isVisible ? 1 : 0, // Fade in when visible
-    config: { duration: 1000 }, // Duration of fade-in animation
-  });
-
-
-
-
-  // Transition for smooth position and rotation update
-  const { position, rotation } = useSpring({
-    position: isHovered ? [-0.1, -1, 0] : [0, -1, 0],
-    rotation: isHovered ? [-0.1, -0.3, -0.1] : [+0, 0, 0],
-    config: { mass: 1, tension: 200, friction: 20 },
-  });
-
-
-  // Rotation logic directly in `useFrame`
-  useFrame(() => {
-    if (modelRef.current && !isHovered) {
-      modelRef.current.rotation.x = 0; // Reset tilt
-      modelRef.current.rotation.y += 0.02; // Smooth rotation
-      modelRef.current.rotation.z = 0; // Reset spin
-    }
-  });
-
-
-  
-
- 
-  
-
   return (
     <a.primitive
-      ref={modelRef}
       object={scene}
       // Adjust the model's position
-      position= {position} // [x, y, z] to position the model in 3D space
+      position={[0, -1.8, 0]} // [x, y, z] to position the model in 3D space
       // Adjust the model's rotation (in radians)
-      rotation={rotation} 
+      rotation={[-0.1, -0.4, -0.1]} // [x, y, z] - x=tilt forward/back, y=rotate sideways, z=spin
+      // scale={3.2} // Optional: Adjust the size of the model
 
       scale={scale} // Bind animated scale
-      style={{ opacity }} // Apply fade-in animation
-
       onPointerOver={(e) => {
         console.log("Hover started on the model");
         if (onHoverStart) onHoverStart(e);
@@ -108,7 +63,7 @@ const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd, onLoad }) => {
   );
 };
 
-const ThreedModel = () => {
+const StaticThreedModel = () => {
   const { t, i18n } = useTranslation();
 
   const textRef = useRef(null);
@@ -123,35 +78,11 @@ const ThreedModel = () => {
   }, []);
 
   const [isHovered, setIsHovered] = useState(false);
-  const [isModelLoaded, setIsModelLoaded] = useState(false);
-
-
-
-
-  const [showModel, setShowModel] = useState(false);
-
-  useEffect(() => {
-    // if (isModelLoaded) {
-      // Add a 5-second delay before showing the model
-      const timer = setTimeout(() => setShowModel(true), 5000);
-      return () => clearTimeout(timer); // Cleanup timer
-    // }
-  }, []);
-
-
-
-
-
-
-
-
-
-
 
   useEffect(() => {
     // Set hover state to true initially for a few seconds
     setIsHovered(true);
-    const timer = setTimeout(() => setIsHovered(false), 5000); // Revert after 3 seconds
+    const timer = setTimeout(() => setIsHovered(false), 3000); // Revert after 3 seconds
 
     return () => clearTimeout(timer); // Cleanup timeout on component unmount
   }, []);
@@ -166,30 +97,23 @@ const ThreedModel = () => {
   ];
 
   const iconVariants = {
-    hidden: { opacity: 0, scale: 0.35, y: 0 },
+    hidden: { opacity: 0, scale: 0.5, y: 0 },
     visible: (i) => {
       // Default scatter logic
-      const scatterX = Math.cos(i) * 150;
-      const scatterY = Math.sin(i) * 200 - 150;
+      const scatterX = Math.cos(i) * 200;
+      const scatterY = Math.sin(i) * 200 - 100;
 
       // Define custom offsets for specific icons (based on index)
       const customOffsets = {
-        0: { x: scatterX - 45, y: scatterY+20 }, // Adjust Facebook
-        1: { x: scatterX + 18, y: scatterY+20 }, // Adjust Facebook
-        2: { x: scatterX - 90, y: scatterY + 30 },
-        
-        4: { x: scatterX - 40, y: scatterY - 0 }, // Adjust Instagram
-
-        5: { x: scatterX + 50, y: scatterY - 0 }, // Adjust Instagram
+        2: { x: scatterX - 80, y: scatterY + 20 },
+        1: { x: scatterX + 60, y: scatterY }, // Adjust Facebook
+        5: { x: scatterX + 100, y: scatterY - 0 }, // Adjust Instagram
         // Add more custom offsets for other icons if needed
       };
 
-      // // Apply custom offsets if defined, otherwise use default scatter logic
+      // Apply custom offsets if defined, otherwise use default scatter logic
       const x = customOffsets[i]?.x || scatterX;
       const y = customOffsets[i]?.y || scatterY;
-
-      // const x = scatterX;
-      // const y = scatterY;
 
       return {
         opacity: 1,
@@ -202,6 +126,37 @@ const ThreedModel = () => {
     exit: { opacity: 0, scale: 0.5, y: 0, transition: { type: "spring" } },
   };
 
+
+
+  const playIconRef = useRef(null);
+  const linkTextRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    gsap.to(playIconRef.current, {
+      x: 180, // Slide to the right
+      duration: 0.4,
+      ease: "power1.out",
+    });
+    gsap.to(linkTextRef.current, {
+      opacity: 0, // Fade out the text
+      duration: 0.4,
+      ease: "power1.out",
+    });
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(playIconRef.current, {
+      x: 0, // Reset position
+      duration: 0.4,
+      ease: "power1.in",
+    });
+    gsap.to(linkTextRef.current, {
+      opacity: 1, // Bring back the text
+      duration: 0.4,
+      ease: "power1.in",
+    });
+  };
+
   return (
     <>
       <section className="sec-1">
@@ -211,11 +166,12 @@ const ThreedModel = () => {
           id="tailwind-container"
         >
           <div className="flex flex-wrap items-center row mt-5 mt-lg-0 pt-5 pt-lg-0">
+
             <div
-              className="w-full lg:w-1/2 text-center  text-lg-start"
+              className="w-full lg:w-1/2 text-center  text-lg-start section1-first-column"
               style={{ border: "" }}
             >
-              <h1 className="display-5 text-white fw-bold">
+              <h1 className="section-1-main-outline text-white fw-bold">
                 {t("section1.title1")}
 
                 <span className="gradient-text-sec-1" ref={textRef}>
@@ -225,7 +181,26 @@ const ThreedModel = () => {
               <p className="text-white fs-5 fw-light">
                 {t("section1.description")}
               </p>
+
+              <div className="section1-contactus-row"
+              
+              >
+                  <Link to="/Contact" className="section1-contactus-btn">Contact Us</Link>
+                  
+                  <div className="section1-Presentation-row"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  >
+                    <FontAwesomeIcon icon={faPlay} ref={playIconRef}/>
+                    <Link to="/" ref={linkTextRef} >Presentation Video</Link>
+
+                  </div>
+                  
+              </div>
+
             </div>
+
+            
 
             <div
               className="w-full lg:w-1/2  text-center text-lg-end"
@@ -235,28 +210,15 @@ const ThreedModel = () => {
 
               <div
                 style={{ width: "100%", height: "100vh", position: "relative" }}
-                
+                onMouseEnter={() => {
+                  console.log("Hover started on outer div");
+                  setIsHovered(true);
+                }}
+                onMouseLeave={() => {
+                  console.log("Hover ended on outer div");
+                  setIsHovered(false);
+                }}
               >
-
-                  {/* Loader */}
-                  {/* {!showModel && (
-                          <div
-                            style={{
-                              position: "absolute",
-                              top: "50%",
-                              left: "50%",
-                              transform: "translate(-50%, -50%)",
-                              zIndex: 10,
-                              color: "#fff",
-                              fontSize: "24px",
-                            }}
-                          >
-                            Loading...
-                          </div>
-                        )} */}
-
-
-
                 {/* Animated Icons */}
                 <div
                   style={{
@@ -267,7 +229,7 @@ const ThreedModel = () => {
                     height: "100%",
                   }}
                 >
-                  { isModelLoaded && icons.map((icon, i) => (
+                  {icons.map((icon, i) => (
                     <motion.img
                       key={i}
                       src={icon.src}
@@ -286,11 +248,9 @@ const ThreedModel = () => {
                       exit="exit"
                     />
                   ))}
-
-
                 </div>
 
-                <Canvas className="testing">
+                <Canvas>
                   {/* Add interaction controls */}
                   <OrbitControls
                     enableZoom={false} // Disable zooming
@@ -315,44 +275,47 @@ const ThreedModel = () => {
                     castShadow={true} // Enable shadows
                   />
                   {/* Load the GLTF model */}
-
-                  {/* {showModel && ( */}
-
                   <Model
                     modelPath="https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/public/images/Digitally%20Iphone%20Mock%20up%203D.gltf"
                     isHovered={isHovered}
-                    onLoad={() => setIsModelLoaded(true)}
-                    
-                  />
-                  {/* )} */}
-                </Canvas>
 
-                
+                    // onHoverStart={() => setIsHovered(true)} // Set hover state on
+                    // onHoverEnd={() => setIsHovered(false)} // Set hover state off
+                  />
+                </Canvas>
 
                 
               </div>
             </div>
+
+
+
           </div>
         </div>
       </section>
 
       <section className="rectangular-oval-white-prop-2">
-        <img className="w-100" src="./images/Rectangle 9522.png" alt />
+        <img className="w-100" src={modelShade} alt />
       </section>
 
-      <section id="agence"
-        className="sec-2"
-        
-        style={{ }}
-      >
+      <section id="agence" className="sec-2 section-two" style={{ border: "" }}>
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-5 order-2 order-md-1 text-center">
-              <img
-                className="img-fluid overlap-img"
-                src={withMobile}
-                alt
-              />
+             
+              <AnimatePresence>
+                <motion.img
+                  key={"withMobile"}
+                  className="img-fluid overlap-img"
+                  src={withMobile}
+                  alt={"With Mobile"}
+                 
+                  transition={{
+                    duration: 0.5, // Smooth transition duration
+                    ease: "easeInOut", // Smooth easing
+                  }}
+                />
+              </AnimatePresence>
             </div>
             <div className="col-12 col-lg-7 mb-5 mb-md-0 order-1 order-md-2">
               <div className="mt-md-3 mt-lg-2 mt-xl-4 mt-xxl-5 pt-md-3 pt-lg-2 pt-xl-4 pt-xxl-5">
@@ -379,4 +342,4 @@ const ThreedModel = () => {
   );
 };
 
-export default ThreedModel;
+export default StaticThreedModel;

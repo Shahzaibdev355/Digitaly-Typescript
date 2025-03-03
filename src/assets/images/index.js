@@ -24,7 +24,14 @@ import legalCard2Img from "./legal-images/card-1-img.png"
 import legalCard3Img from "./legal-images/card-1-img.png"
 import legalCard4Img from "./legal-images/card-1-img.png"
 
+import modelShade from "./Rectangle-shade.png"
+
+import robotProject from "./vetzeey-robot.png"
+
 export {
+
+  modelShade,
+
   LEnterpriseImg1,
   LEnterpriseImg2,
   LEnterpriseImg3,
@@ -48,5 +55,8 @@ export {
   legalCard1Img,
   legalCard2Img,
   legalCard3Img,
-  legalCard4Img
+  legalCard4Img,
+
+
+  robotProject
 };

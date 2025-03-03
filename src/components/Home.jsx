@@ -21,18 +21,22 @@ import SplitType from "split-type";
 
 
 
-import Scene from "./ThreedModel";
+import Scene from "./MobileThreedModel";
 
 import LargeScreenModel from "./LargeScreenModel";
-import MediumModel from "./MediumModel";
-import ThreedModel from "./ThreedModel";
+import MobileThreedModel from "./MobileThreedModel";
+import { robotProject } from "../assets/images";
 
 
 
 
 
 
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ServiceCards from "./SeviceCards";
+import StaticThreedModel from "./StaticThreedModel";
 
+gsap.registerPlugin(ScrollTrigger);
 
 
 
@@ -224,11 +228,39 @@ const Home = () => {
 
   const render3DModel = () => {
     if (screenSize > 1080) {
-      return <LargeScreenModel />;
+      return <StaticThreedModel/>;
     } else if(screenSize < 768) {
-      return <ThreedModel/>;
+      return <MobileThreedModel/>;
     }
   };
+
+
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const buttons = sectionRef.current.querySelectorAll(
+      ".project-sec-btn4, .project-sec-btn3, .project-sec-btn2"
+    );
+
+    gsap.fromTo(
+      buttons,
+      {
+        scale: 0.5, // Start smaller
+        opacity: 0, // Start invisible
+      },
+      {
+        scale: 1, // Zoom to normal size
+        opacity: 1, // Fade in
+        duration: 1.5,
+        ease: "power2.out",
+        stagger: 0.2, // Animate buttons one after another
+        scrollTrigger: {
+          trigger: sectionRef.current, // Trigger animation when section is visible
+          start: "top 80%", // Start animation when top of section is 80% into the viewport
+        },
+      }
+    );
+  }, []);
 
 
 
@@ -259,9 +291,10 @@ const Home = () => {
         id="animate-text"
         key={i18n.language + "-1"} // Forces component to re-render when language changes
         ref={(el) => (textRefs.current[0] = el)}
-        style={{ position: "relative" }}
+        style={{ position: "relative", border: '' }}
+        
       >
-        <div className="container" id="service">
+        <div className="services-container" id="service">
           <div className="rectangular-oval-white-prop-3">
             <img className="img-fluid" src="./images/Rectangle 9544.png" alt />
           </div>
@@ -283,155 +316,26 @@ const Home = () => {
               </h2>
             </div>
           </div>
-          <div className="row">
-            <div className="col-12 col-sm-6 col-md-4">
-              <div className="gradient-box-cus px-4 py-2 mx-2 my-3">
-                <div className="row">
-                  <div className="col-12">
-                    <img
-                      className="img-fluid"
-                      src="./images/-_Dev App 1.png"
-                      alt
-                    />
-                  </div>
-                  <div className="col-12">
-                    <div className="mx-4">
-                      <p className="fw-bold" style={{ color: "#1F324E" }}>
-                        {/* Développement
-                        <br />
-                        D'Applications Mobiles */}
-                        {t("services-section.service-card1.para1")}
-                        <br />
-                        {t("services-section.service-card1.para2")}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-sm-6 col-md-4">
-              <div className="gradient-box-cus px-4 py-2 mx-2 my-3">
-                <div className="row">
-                  <div className="col-12">
-                    <img
-                      className="img-fluid"
-                      src="./images/-_Dev web  full stack 1.png"
-                      alt
-                    />
-                  </div>
-                  <div className="col-12">
-                    <div className="mx-4">
-                      <p className="fw-bold" style={{ color: "#1F324E" }}>
-                        {t("services-section.service-card2.para1")}
-                        <br />
-                        {t("services-section.service-card2.para2")}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-sm-6 col-md-4">
-              <div className="gradient-box-cus px-4 py-2 mx-2 my-3">
-                <div className="row">
-                  <div className="col-12">
-                    <img
-                      className="img-fluid"
-                      src="./images/-_Web design 1.png"
-                      alt
-                    />
-                  </div>
-                  <div className="col-12">
-                    <div className="mx-4">
-                      <p className="fw-bold" style={{ color: "#1F324E" }}>
-                        {t("services-section.service-card3.para1")}
-                        <br />
-                        {t("services-section.service-card3.para2")}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-sm-6 col-md-4">
-              <div className="gradient-box-cus px-4 py-2 mx-2 my-3">
-                <div className="row">
-                  <div className="col-12">
-                    <img
-                      className="img-fluid"
-                      src="./images/-_Graphic design 2.png"
-                      alt
-                    />
-                  </div>
-                  <div className="col-12">
-                    <div className="mx-4">
-                      <p className="fw-bold" style={{ color: "#1F324E" }}>
-                        {t("services-section.service-card4.para1")}
-                        <br />
-                        {t("services-section.service-card4.para2")}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-sm-6 col-md-4">
-              <div className="gradient-box-cus px-4 py-2 mx-2 my-3">
-                <div className="row">
-                  <div className="col-12">
-                    <img
-                      className="img-fluid"
-                      src="./images/-_Audiovisual creation 1.png"
-                      alt
-                    />
-                  </div>
-                  <div className="col-12">
-                    <div className="mx-4">
-                      <p className="fw-bold" style={{ color: "#1F324E" }}>
-                        {t("services-section.service-card5.para1")}
-                        <br />
-                        {t("services-section.service-card5.para2")}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-sm-6 col-md-4">
-              <div className="gradient-box-cus px-4 py-2 mx-2 my-3">
-                <div className="row">
-                  <div className="col-12">
-                    <img
-                      className="img-fluid"
-                      src="./images/-_Community management 1.png"
-                      alt
-                    />
-                  </div>
-                  <div className="col-12" id="project">
-                    <div className="mx-4">
-                      <p className="fw-bold" style={{ color: "#1F324E" }}>
-                        {t("services-section.service-card6.para1")}
-                        <br />
-                        {t("services-section.service-card6.para2")}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+          <ServiceCards/>
+         
         </div>
       </section>
 
+
+
+
       <section
-        className="sec-4-projects py-5"
+        className="sec-4-projects py"
         id="animate-text"
         key={i18n.language + "-2"}
         ref={(el) => (textRefs.current[1] = el)}
+
+        
       >
-        <div className="project-container">
+        <div className="project-container" >
           <div className="row justify-content-evenly">
-            <div className="col-12 col-lg-5">
+            <div className="col-12 col-lg-7 align-self-center community-column-div">
               <div
                 className="text-overlay-projects mt-0 mt-md-1 mt-lg-0  project-heading-div"
                 style={{ position: "relative" }}
@@ -439,32 +343,63 @@ const Home = () => {
                 <h1
                   className="fw-bold fs-cus-sty-projects"
                   style={{ color: "rgba(255, 255, 255, 0.192)" }}
+                 
                 >
                   {t("project-section.main-heading")}
                 </h1>
                 <div className="p-text-adjust-sty-project text-to-animate">
-                  <h2 className="text-white fw-semibold">
-                    {" "}
-                    {t("project-section.heading1")}
+                  <h2 className="text-white fw-semibold "
+                   dangerouslySetInnerHTML={{ __html: t("project-section.heading1") }}
+                  >
+                    
                   </h2>
                 </div>
               </div>
               <div className="text-white mt-4 mt-md-0 text-center text-md-start">
-                <p className="projects-para">{t("project-section.para1")}</p>
+                <p className="projects-para" dangerouslySetInnerHTML={{ __html: t("project-section.para1") }}></p>
+
+
+               
+
               </div>
-              <div className="text-center text-md-start">
-                <button className="mt-5 py-2 px-5 btn fw-bold fs-4 rounded-3 project-sec-btn">
+              <div className="text-center text-md-start community-btn-row">
+                <button className="mt-4 py-2 px-5 btn fw-bold fs-4 rounded-3 project-sec-btn">
                   {t("project-section.btn")}
                 </button>
+
+
+               
               </div>
             </div>
 
-            <div className="col-12 col-lg-6  align-self-center">
-              <ProjectSlider />
+            <div className="col-12 col-lg-5  align-self-end community-section" ref={sectionRef}>
+              {/* <ProjectSlider /> */}
+
+              <button className=" py-2 px-4 btn rounded-3 project-sec-btn4">
+                  {t("project-section.btn4")}
+                </button>
+
+              <img src={robotProject} alt="" className="community-section-img"/>
+
+              <button className=" py-2 px-4 btn rounded-3 project-sec-btn3">
+                  {t("project-section.btn3")}
+                </button>
+
+
+              <button className=" py-2 px-4 btn rounded-3 project-sec-btn2">
+                  {t("project-section.btn2")}
+                </button>
             </div>
           </div>
         </div>
       </section>
+
+
+
+
+
+
+
 
       <section
         className="sec-3-services"

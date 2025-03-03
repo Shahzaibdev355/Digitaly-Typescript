@@ -6,12 +6,12 @@
     "link3": "Communauté",
     "link4": "Carrières",
     "link5": "Shop",
-    "link6": "Contact"
+    "link6": "Soutien"
   },
 
   "section1": {
-    "title1": "Construisons ensemble votre ",
-    "title2": "futur en ligne",
+    "title1": "CONSTRUISONS ENSEMBLE VOTRE ",
+    "title2": "FUTUR EN LIGNE",
     "description": "Découvrez nous au travers du digital"
   },
 
@@ -37,25 +37,36 @@
       "para1": "Optimisation",
       "para2": "SEO"
     },
-    "service-card4": {
-      "para1": "Création",
-      "para2": "Graphique"
-    },
-    "service-card5": {
-      "para1": "Création",
-      "para2": "de Contenu"
-    },
-    "service-card6": {
-      "para1": "Photographie",
-      "para2": "Professionnelle"
-    }
+   "service-card4": {
+    "para1": "UI / UX",
+    "para2": "Conception"
+  },
+  "service-card5": {
+    "para1": "Logiciel",
+    "para2": "Personnalisé"
+  },
+  "service-card6": {
+    "para1": "MVP",
+    "para2": "Développement"
+  },
+  "service-card7": {
+    "para1": "Consultation",
+    "para2": "Web"
+  },
+  "service-card8": {
+    "para1": "Support &",
+    "para2": "Maintenance"
+  }
   },
 
   "project-section": {
-    "main-heading" : "PROJETS",
-    "heading1": "Nos Réalisations",
-    "para1": "Explorez notre portfolio, découvrez la diversité des projets que nous avons récemment menés à bien pour nos clients. De l'optimisation de la présence en ligne à la conception de stratégies digitale novatrices, nos réalisations récentes reflètent notre expertise et notre dévouement. Votre marque pourrait être la prochaine success story dans notre portfolio en expansion.",
-    "btn": "Découvrir"
+    "main-heading" : "COMMUNITY",
+    "heading1": "<span class='community-digitaly-heading'>DIGITALY</span>, au cœur de la communauté digitale",
+    "para1": "Le programme DIGITALY COMMUNITY, une initiative visant à rassembler <span class='custom-br'><br></span> les passionnés du digital et ceux qui souhaitent découvrir cet univers de <span class='custom-br'><br></span> manière plus accessible. Nous rassemblons une communauté visionnaire <span class='custom-br'><br></span> où chaque membre peut échanger, collaborer et innover. Découvrez ce <span class='custom-br'><br></span> mouvement exclusif et participez à construire l’avenir du digital <span class='custom-br'><br></span> à nos côtés.",
+    "btn": "Découvrir",
+    "btn2": "Espace Interactif",
+    "btn3": "Programme Créateur",
+    "btn4":"Open Ressources"
   },
 
   "testimonial-section": {

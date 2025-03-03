@@ -5,11 +5,12 @@
     "link2": "Services",
     "link3": "Achievements",
     "link4": "Recruitment",
-    "link5": "Contact"
+    "link5": "Shop",
+    "link6": "Support"
   },
   "section1": {
-    "title1": "Let's build your online ",
-    "title2": "future together",
+    "title1": "LET'S bUILD YOUR ONLINE ",
+    "title2": "FUTURE TOGETHER",
     "description": "Discover us through digital"
   },
 
@@ -25,29 +26,36 @@
     "para2": "digital success",
 
     "service-card1": {
-      "para1": "Mobile Application",
-      "para2": "Development"
+      "para1": "Application Mobile",
+      "para2": "Développement"
     },
     "service-card2": {
-      "para1": "Website",
-      "para2": "Development"
+      "para1": "Site Web",
+      "para2": "Développement"
     },
     "service-card3": {
       "para1": "SEO",
-      "para2": "Optimization"
+      "para2": "Optimisation"
     },
     "service-card4": {
-      "para1": "Graphics",
-      "para2": "Creation"
+      "para1": "UI / UX",
+      "para2": "Conception"
     },
     "service-card5": {
-      "para1": "Content",
-      "para2": "Creation"
-      
+      "para1": "Logiciel",
+      "para2": "Personnalisé"
     },
     "service-card6": {
-      "para1": "Professional",
-      "para2": "Photography"
+      "para1": "MVP",
+      "para2": "Développement"
+    },
+    "service-card7": {
+      "para1": "Consultation",
+      "para2": "Web"
+    },
+    "service-card8": {
+      "para1": "Support &",
+      "para2": "Maintenance"
     }
   },
 

@@ -6,12 +6,24 @@ import gsap from "gsap";
 import { a, useSpring } from "@react-spring/three";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import facebook from "../assets/Updated Icons/Facebook-1.png";
-import instagram from "../assets/Updated Icons/Instagram-1.png";
-import twitter from "../assets/Updated Icons/Twitter-1.png";
-import dribble from "../assets/Updated Icons/Dribble1.png";
-import Tiktok from "../assets/Updated Icons/Tiktok-1.png";
-import LinkedIn from "../assets/Updated Icons/LinkedIn-1.png";
+
+
+// import facebook from "../assets/Updated Icons/Facebook-1.png";
+// import instagram from "../assets/Updated Icons/Instagram-1.png";
+// import twitter from "../assets/Updated Icons/Twitter-1.png";
+// import dribble from "../assets/Updated Icons/Dribble1.png";
+// import Tiktok from "../assets/Updated Icons/Tiktok-1.png";
+// import LinkedIn from "../assets/Updated Icons/LinkedIn-1.png";
+
+
+const facebook = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Facebook-1.png";
+const instagram = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Instagram-1.png";
+const twitter = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Twitter-1.png";
+const dribble = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Dribble1.png";
+const Tiktok = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Tiktok-1.png";
+const LinkedIn = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/LinkedIn-1.png";
+
+
 
 import withMobile from "../assets/images/with-mobile.png";
 import withOutMobile from "../assets/images/without-mobile.png";
@@ -20,6 +32,10 @@ import Tilt from "react-parallax-tilt";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { modelShade } from "../assets/images";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -257,6 +273,18 @@ const LargeScreenModel = () => {
       const onPointerMove = (event) => {
         if (!model) return;
 
+
+        // Get the element that the pointer is currently hovering over
+        const hoveredElement = document.elementFromPoint(event.clientX, event.clientY);
+        
+
+        // Check if the hovered element is inside your specific div
+        if (hoveredElement && (hoveredElement.closest('.language-change-dropdown-column') ||  hoveredElement.closest('.lenterprise-sub-dropdown'))  ) {
+          // If hovering over the div, prevent raycaster interaction
+          setIsHovered(false);
+          return;
+        }
+
         // Update pointer coordinates
         pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
         pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -301,6 +329,14 @@ const LargeScreenModel = () => {
       }
       renderer.dispose(); // Ensure renderer resources are freed
     };
+  }, []);
+
+  useEffect(() => {
+    // Set hover state to true initially for a few seconds
+    setIsHovered(true);
+    const timer = setTimeout(() => setIsHovered(false), 4000); // Revert after 3 seconds
+
+    return () => clearTimeout(timer); // Cleanup timeout on component unmount
   }, []);
 
   const AnimatedIcons = ({ isHovered, icons }) => {
@@ -369,6 +405,39 @@ const LargeScreenModel = () => {
     );
   };
 
+
+
+
+  const playIconRef = useRef(null);
+  const linkTextRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    gsap.to(playIconRef.current, {
+      x: 180, // Slide to the right
+      duration: 0.4,
+      ease: "power1.out",
+    });
+    gsap.to(linkTextRef.current, {
+      opacity: 0, // Fade out the text
+      duration: 0.4,
+      ease: "power1.out",
+    });
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(playIconRef.current, {
+      x: 0, // Reset position
+      duration: 0.4,
+      ease: "power1.in",
+    });
+    gsap.to(linkTextRef.current, {
+      opacity: 1, // Bring back the text
+      duration: 0.4,
+      ease: "power1.in",
+    });
+  };
+
+
   return (
     <>
       <section className="sec-1 section-one">
@@ -379,10 +448,10 @@ const LargeScreenModel = () => {
         >
           <div className="flex flex-wrap items-center row mt-5 mt-lg-0 pt-5 pt-lg-0">
             <div
-              className="w-full lg:w-1/2 text-center  text-lg-start"
+              className="w-full lg:w-1/2 text-center  text-lg-start section1-first-column"
               style={{ border: "" }}
             >
-              <h1 className="display-5 text-white fw-bold">
+              <h1 className="section-1-main-outline text-white fw-bold">
                 {t("section1.title1")}
 
                 <span className="gradient-text-sec-1" ref={textRef}>
@@ -392,6 +461,23 @@ const LargeScreenModel = () => {
               <p className="text-white fs-5 fw-light">
                 {t("section1.description")}
               </p>
+
+              <div className="section1-contactus-row"
+              
+              >
+                  <Link to="/Contact" className="section1-contactus-btn">Contact Us</Link>
+                  
+                  <div className="section1-Presentation-row"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  >
+                    <FontAwesomeIcon icon={faPlay} ref={playIconRef}/>
+                    <Link to="/" ref={linkTextRef} >Presentation Video</Link>
+
+                  </div>
+                  
+              </div>
+
             </div>
 
             <div
@@ -400,16 +486,17 @@ const LargeScreenModel = () => {
             >
               {/* =================3d model will be place here================= */}
 
-              <div
+              {/* <div
                 style={{
                   border: "",
                   width: "100%",
                   height: "100vh",
                   position: "relative",
-                  zIndex: 10,
-                  display: "flex", // Center the content
+                  zIndex: 0,
+                  display: "flex", 
                   justifyContent: "center",
                   alignItems: "center",
+
                 }}
               >
                 {isHovered && (
@@ -425,7 +512,7 @@ const LargeScreenModel = () => {
 
 
 
-              </div>
+              </div> */}
 
 
 
@@ -435,29 +522,14 @@ const LargeScreenModel = () => {
       </section>
 
       <section className="rectangular-oval-white-prop-2">
-        <img className="w-100" src="./images/Rectangle 9522.png" alt />
+        <img className="w-100" src={modelShade} alt />
       </section>
 
       <section id="agence" className="sec-2 section-two" style={{ border: "" }}>
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-5 order-2 order-md-1 text-center">
-              {/* <img
-                className="img-fluid overlap-img"
-                src="./images/man-effect2.png"
-                alt
-              /> */}
-
-              {/* {isImageReplaced ? (
-                <img className="img-fluid overlap-img" src={withMobile} alt />
-              ) : (
-                <img
-                  className="img-fluid overlap-img"
-                  src={withOutMobile}
-                  alt
-                />
-              )} */}
-
+             
               <AnimatePresence>
                 <motion.img
                   key={isImageReplaced ? "withMobile" : "withOutMobile"}

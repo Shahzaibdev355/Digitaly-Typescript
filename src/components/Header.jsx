@@ -314,6 +314,11 @@ const Header = ({ scrollToSection }) => {
       navTitle: t("navbar.link5"),
       path: "#",
     },
+    {
+      id: 5,
+      navTitle: t("navbar.link6"),
+      path: "#",
+    },
   ];
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -607,6 +612,16 @@ const Header = ({ scrollToSection }) => {
                 </a>
                 <div className="links-border"></div>
               </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link text-white mx-md-2"
+                  onClick={() => scrollToSection("#footer")}
+                  href="#footer"
+                >
+                  {t("navbar.link6")}
+                </a>
+                <div className="links-border"></div>
+              </li>
             </ul>
           </div>
         </div>
@@ -665,7 +680,7 @@ const Header = ({ scrollToSection }) => {
         </div>
 
         <div style={{ border: "" }}>
-          <Link className="btn header-contact-btn" to="/Contact">
+          <Link className="btn header-login-btn" to="/">
             <FontAwesomeIcon icon={faUser} style={{paddingRight: '5px'}}/>
             Log In
           </Link>
@@ -793,6 +808,11 @@ const Header = ({ scrollToSection }) => {
             exit={{ opacity: 0, y: -10 }}
           >
             <div className="DigitalyAll-sub-dropdown-column">
+
+            <div className="DigitalyAll-sub-dropdown-digitaly">
+              <Link to="/"> DIGITALY </Link>
+            </div>
+
             <div className="DigitalyAll-sub-dropdown-row">
               {Object.entries(AllDigitalyLinkArray).map(
                 ([heading, links], index) => (
@@ -1050,8 +1070,8 @@ const Header = ({ scrollToSection }) => {
           )}
 
           {!isAllDigitalyView && (
-            <div className="header-contact-btn-div">
-              <Link className="btn header-contact-btn px-md-5" to="/Contact">
+            <div className="header-login-btn-div">
+              <Link className="btn header-login-btn px-md-5" to="/Contact">
               <FontAwesomeIcon icon={faUser} style={{paddingRight: '5px'}}/>
                 Log In
               </Link>
