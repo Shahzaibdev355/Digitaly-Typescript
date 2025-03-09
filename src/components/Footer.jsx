@@ -24,7 +24,7 @@ const Footer = () => {
                                 {t("footer.para2")}</p>
                             </div>
                             <div className="col-12 col-md-3 text-center text-lg-start m-auto">
-                                <button className="py-2 py-lg-4 px-5 mt-2 text-white btn fs-5 rounded-3 footer-contact-div-contactBtn">{t("footer.btn")}</button>
+                                <Link to="/contact" className="py-2 py-lg-4 px-5 mt-2 text-white btn fs-5 rounded-3 footer-contact-div-contactBtn">{t("footer.btn")}</Link>
                             </div>
                         </div>
                     </div>

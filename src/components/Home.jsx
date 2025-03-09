@@ -404,7 +404,7 @@ const Home = () => {
       {/* ==========================Reference section========================== */}
 
       <section
-        className="sec-3-services"
+        className="sec-4-reference"
         id="animate-text"
         key={i18n.language + "-3"}
         ref={(el) => (textRefs.current[2] = el)}
@@ -412,7 +412,7 @@ const Home = () => {
       >
         <div className="testimonial-container">
           <div className="rectangular-oval-white-prop-4">
-            <img className="img-fluid" src={serviceShade} alt />
+            <img className="img-flui" src={serviceShade} alt />
           </div>
           <div
             className="text-overlay-reference my-5"

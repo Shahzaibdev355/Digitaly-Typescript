@@ -139,7 +139,7 @@ const ServiceCards = () => {
                       </div>
                       <div className="col-12">
                         <div className="mx-4">
-                          <p className="fw-bold" style={{ color: "#1F324E" }}>
+                          <p className="fw-bold" style={{ color: "#000E39" }}>
                             {t(`services-section.service-card${index + 1}.para1`)}
                             <br />
                             {t(`services-section.service-card${index + 1}.para2`)}
@@ -194,7 +194,7 @@ const ServiceCards = () => {
                             <div className="mx-4">
                               <p
                                 className="fw-bold"
-                                style={{ color: "#1F324E" }}
+                                style={{ color: "#000E39" }}
                               >
                                 {service.para1}
                                 <br />
@@ -228,7 +228,7 @@ const ServiceCards = () => {
                 </div>
                 <div className="col-12">
                   <div className="mx-4">
-                    <p className="fw-bold" style={{ color: "#1F324E" }}>
+                    <p className="fw-bold" style={{ color: "#000E39" }}>
                       {t("services-section.service-card1.para1")}
                       <br />
                       {t("services-section.service-card1.para2")}
@@ -250,7 +250,7 @@ const ServiceCards = () => {
                 </div>
                 <div className="col-12">
                   <div className="mx-4">
-                    <p className="fw-bold" style={{ color: "#1F324E" }}>
+                    <p className="fw-bold" style={{ color: "#000E39" }}>
                       {t("services-section.service-card2.para1")}
                       <br />
                       {t("services-section.service-card2.para2")}
@@ -272,7 +272,7 @@ const ServiceCards = () => {
                 </div>
                 <div className="col-12">
                   <div className="mx-4">
-                    <p className="fw-bold" style={{ color: "#1F324E" }}>
+                    <p className="fw-bold" style={{ color: "#000E39" }}>
                       {t("services-section.service-card3.para1")}
                       <br />
                       {t("services-section.service-card3.para2")}
@@ -295,7 +295,7 @@ const ServiceCards = () => {
                 </div>
                 <div className="col-12">
                   <div className="mx-4">
-                    <p className="fw-bold" style={{ color: "#1F324E" }}>
+                    <p className="fw-bold" style={{ color: "#000E39" }}>
                       {t("services-section.service-card4.para1")}
                       <br />
                       {t("services-section.service-card4.para2")}
@@ -318,7 +318,7 @@ const ServiceCards = () => {
                 </div>
                 <div className="col-12">
                   <div className="mx-4">
-                    <p className="fw-bold" style={{ color: "#1F324E" }}>
+                    <p className="fw-bold" style={{ color: "#000E39" }}>
                       {t("services-section.service-card5.para1")}
                       <br />
                       {t("services-section.service-card5.para2")}
@@ -340,7 +340,7 @@ const ServiceCards = () => {
                 </div>
                 <div className="col-12">
                   <div className="mx-4">
-                    <p className="fw-bold" style={{ color: "#1F324E" }}>
+                    <p className="fw-bold" style={{ color: "#000E39" }}>
                       {t("services-section.service-card6.para1")}
                       <br />
                       {t("services-section.service-card6.para2")}
@@ -362,7 +362,7 @@ const ServiceCards = () => {
                 </div>
                 <div className="col-12" id="project">
                   <div className="mx-4">
-                    <p className="fw-bold" style={{ color: "#1F324E" }}>
+                    <p className="fw-bold" style={{ color: "#000E39" }}>
                       {t("services-section.service-card7.para1")}
                       <br />
                       {t("services-section.service-card7.para2")}
@@ -384,7 +384,7 @@ const ServiceCards = () => {
                 </div>
                 <div className="col-12" id="project">
                   <div className="mx-4">
-                    <p className="fw-bold" style={{ color: "#1F324E" }}>
+                    <p className="fw-bold" style={{ color: "#000E39" }}>
                       {t("services-section.service-card8.para1")}
                       <br />
                       {t("services-section.service-card8.para2")}

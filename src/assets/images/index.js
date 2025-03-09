@@ -37,7 +37,17 @@ import legalCard4Img from "./legal-images/card-1-img.png";
 import modelShade from "./Rectangle-shade.png";
 import serviceShade from "./Rectangle 9544.png"
 
+import refShade from "./Rectangle-shade-ref.png"
+
 import robotProject from "./vetzeey-robot.png";
+
+import referenceLogo1 from "./reference-logo/Aveda-Logo.png"
+import referenceLogo2 from "./reference-logo/Blackberry-logo.png"
+import referenceLogo3 from "./reference-logo/Bose-logo.png"
+import referenceLogo4 from "./reference-logo/Columbia-logo.png"
+import referenceLogo5 from "./reference-logo/Continental-Logo.png"
+import referenceLogo6 from "./reference-logo/Gillette-Logo.png"
+import referenceLogo7 from "./reference-logo/Roblox-Logo.png"
 
 export {
   modelShade,
@@ -74,4 +84,14 @@ export {
   legalCard3Img,
   legalCard4Img,
   robotProject,
+
+  referenceLogo1,
+  referenceLogo2,
+  referenceLogo3,
+  referenceLogo4,
+  referenceLogo5,
+  referenceLogo6,
+  referenceLogo7,
+
+  refShade
 };

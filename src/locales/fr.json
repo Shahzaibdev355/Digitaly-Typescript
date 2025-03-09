@@ -6,13 +6,15 @@
     "link3": "Communauté",
     "link4": "Carrières",
     "link5": "Shop",
-    "link6": "Soutien"
+    "link6": "Support"
   },
 
   "section1": {
     "title1": "CONSTRUISONS ENSEMBLE VOTRE ",
     "title2": "FUTUR EN LIGNE",
-    "description": "Découvrez nous au travers du digital"
+    "description": "Découvrez nous au travers du digital",
+    "btn1": "Nous Contacter",
+    "btn2": "Vidéo Présentation"
   },
 
   "home-Section2": {

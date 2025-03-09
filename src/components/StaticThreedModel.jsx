@@ -185,14 +185,14 @@ const StaticThreedModel = () => {
               <div className="section1-contactus-row"
               
               >
-                  <Link to="/Contact" className="section1-contactus-btn">Contact Us</Link>
+                  <Link to="/Contact" className="section1-contactus-btn">{t("section1.btn1")}</Link>
                   
                   <div className="section1-Presentation-row"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                   >
                     <FontAwesomeIcon icon={faPlay} ref={playIconRef}/>
-                    <Link to="/" ref={linkTextRef} >Presentation Video</Link>
+                    <Link to="/" ref={linkTextRef} >{t("section1.btn2")}</Link>
 
                   </div>
                   
