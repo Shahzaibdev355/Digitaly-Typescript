@@ -9,7 +9,8 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
-// import 'bootstrap-icons/font/bootstrap-icons.css';
+
+import Slider from "react-infinite-logo-slider";
 
 import {
   referenceLogo1,
@@ -69,18 +70,19 @@ const Testimonial = () => {
     referenceLogo7,
   ];
 
-  useEffect(() => {
-    const slideTrack = document.querySelector('.review-slide-track');
-    const slides = document.querySelectorAll('.review-slide');
+  //   useEffect(() => {
+  //     const slideTrack = document.querySelector(".review-slide-track");
+  //     const slides = document.querySelectorAll(".review-slide");
 
-    slides.forEach((slide) => {
-        const clone = slide.cloneNode(true);
-        slideTrack.appendChild(clone);
-    });
+  //     slides.forEach((slide) => {
+  //       const clone = slide.cloneNode(true);
+  //       slideTrack.appendChild(clone);
+  //     });
+  //   }, []);
 
-}, []);
+  const duplicatedLogos = [...CompanyLogo, ...CompanyLogo]; // Pre-cloning logos in JSX
 
-
+  const duplicatedLogos2 = [...CompanyLogo, ...CompanyLogo]; // Pre-cloning logos in JSX
 
   return (
     <>
@@ -135,74 +137,33 @@ const Testimonial = () => {
                 ))}
             </OwlCarousel> */}
 
-      {/* <div className="logos">
-        <div className="logo_items">
-          {CompanyLogo.map((logo, index) => (
-            <img
-              key={`original-${index}`}
-              src={logo}
-              alt={`Logo ${index + 1}`}
-            />
-          ))}
-          {CompanyLogo.map((logo, index) => (
-            <img
-              key={`duplicate-${index}`}
-              src={logo}
-              alt={`Logo ${index + 1}`}
-            />
-          ))}
-        </div> */}
-
-
-        <div className="review-slider">
-            <div className="review-slide-track">
-
-               
-               
-                {CompanyLogo.map((logo, index) => (
-                    <div className="review-slide" key={`review-slide-${index}`}>
-                        <img
-                        key={`original-${index}`}
-                        src={logo}
-                        alt={`Logo ${index + 1}`}
-                        />
-                    </div>
-                ))}
-
+      <div className="review-slider">
+        <div className="review-slide-track">
+          {duplicatedLogos.map((logo, index) => (
+            <div className="review-slide" key={`review-slide-${index}`}>
+              <img
+                key={`original-${index}`}
+                src={logo}
+                alt={`Logo ${index + 1}`}
+              />
             </div>
+          ))}
         </div>
+      </div>
 
-        {/* <div className="logo_items">
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-    <img src="https://navneetdwivedi.github.io/Logo_Slider/logo.png" />
-  </div> */}
-
-
-
-      {/* </div> */}
+      <div className="review-slider2">
+        <div className="review-slide-track2">
+          {duplicatedLogos2.map((logo, index) => (
+            <div className="review-slide2" key={`review-slide-${index}`}>
+              <img
+                key={`original-${index}`}
+                src={logo}
+                alt={`Logo ${index + 1}`}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 };

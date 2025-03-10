@@ -162,7 +162,7 @@ const MobileThreedModel = () => {
   useEffect(() => {
     // Set hover state to true initially for a few seconds
     setIsHovered(true);
-    const timer = setTimeout(() => setIsHovered(false), 5000); // Revert after 3 seconds
+    const timer = setTimeout(() => setIsHovered(false), 7000); // Revert after 3 seconds
 
     return () => clearTimeout(timer); // Cleanup timeout on component unmount
   }, []);

@@ -82,7 +82,7 @@ const StaticThreedModel = () => {
   useEffect(() => {
     // Set hover state to true initially for a few seconds
     setIsHovered(true);
-    const timer = setTimeout(() => setIsHovered(false), 3000); // Revert after 3 seconds
+    const timer = setTimeout(() => setIsHovered(false), 6000); // Revert after 3 seconds
 
     return () => clearTimeout(timer); // Cleanup timeout on component unmount
   }, []);
