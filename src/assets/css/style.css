@@ -1090,11 +1090,9 @@ background: linear-gradient(180deg, rgba(0,14,57,1) 0%, rgba(0,54,153,1) 100%);
 
 
 .review-slider .review-slide-track {
-  animation: slides 2s linear infinite;
+  animation: slides 25s linear infinite;
   display: flex;
   width: fit-content;
-
-  
 }
 
 .review-slider .review-slide-track:hover{
@@ -1201,7 +1199,9 @@ height: auto;
   height: 40px;
   opacity: 0.5;
 }
-
+.review-slide2 img:hover {
+  opacity: 1;
+}
 
 
 

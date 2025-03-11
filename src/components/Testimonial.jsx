@@ -80,9 +80,9 @@ const Testimonial = () => {
   //     });
   //   }, []);
 
-  const duplicatedLogos = [...CompanyLogo, ...CompanyLogo]; // Pre-cloning logos in JSX
+  const duplicatedLogos = [...CompanyLogo, ...CompanyLogo, ...CompanyLogo]; // Pre-cloning logos in JSX
 
-  const duplicatedLogos2 = [...CompanyLogo, ...CompanyLogo]; // Pre-cloning logos in JSX
+  const duplicatedLogos2 = [...CompanyLogo, ...CompanyLogo, ...CompanyLogo]; // Pre-cloning logos in JSX
 
   return (
     <>
@@ -136,6 +136,8 @@ const Testimonial = () => {
                     </div>
                 ))}
             </OwlCarousel> */}
+
+            
 
       <div className="review-slider">
         <div className="review-slide-track">
