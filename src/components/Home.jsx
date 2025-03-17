@@ -1,25 +1,14 @@
-import { useState, useEffect, useRef, useCallback } from "react";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp, faStar } from "@fortawesome/free-solid-svg-icons";
-// import { Parallax } from "react-scroll-parallax";
+import { useState, useEffect, useRef } from "react";
 
 import { useTranslation } from "react-i18next";
 
-// import SimpleParallax from "simple-parallax-js";
 
 import Header from "./Header";
-import ProjectSlider from "./ProjectSlider";
-import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import Testimonial from "./Testimonial";
 
 import gsap from "gsap";
 import SplitType from "split-type";
-
-
-
-
 
 
 import MobileThreedModel from "./MobileThreedModel";
@@ -44,30 +33,27 @@ const Home = () => {
   const { t, i18n } = useTranslation();
 
   // Log the current language when the component mounts or language changes
-  useEffect(() => {
-    console.log("Current Language in Home:", i18n.language);
-    console.log("Title 1:", t("section1.title1"));
-    console.log("Title 2:", t("section1.title2"));
-    console.log("Description:", t("section1.description"));
-    console.log(t("services-section.para1"));
-  }, [i18n.language]);
+  // useEffect(() => {
+  //   console.log("Current Language in Home:", i18n.language);
+  //   console.log("Title 1:", t("section1.title1"));
+  //   console.log("Title 2:", t("section1.title2"));
+  //   console.log("Description:", t("section1.description"));
+  //   console.log(t("services-section.para1"));
+  // }, [i18n.language]);
 
   const textRefs = useRef([]);
   const [animationsEnabled, setAnimationsEnabled] = useState(true);
 
 
-  
 
-
-  // useEffect(() => {
+  // const runAnimations = () => {
   //   const sections = document.querySelectorAll("#animate-text");
 
   //   const handleIntersection = (entries) => {
   //     entries.forEach((entry) => {
   //       if (entry.isIntersecting && animationsEnabled) {
-  //         const splitText = new SplitType(
-  //           entry.target.querySelector(".text-to-animate")
-  //         );
+
+  //         const splitText = new SplitType( entry.target.querySelector(".text-to-animate"));
 
   //         gsap.fromTo(
   //           splitText.chars,
@@ -86,7 +72,7 @@ const Home = () => {
   //   };
 
   //   const observer = new IntersectionObserver(handleIntersection, {
-  //     threshold: 0.1, // Adjust as needed
+  //     threshold: 0.2, 
   //   });
 
   //   sections.forEach((section) => {
@@ -98,68 +84,57 @@ const Home = () => {
   //       observer.unobserve(section);
   //     });
   //   };
-  // }, [animationsEnabled]); // Add animationsEnabled as a dependency
-
-  const runAnimations = () => {
-    const sections = document.querySelectorAll("#animate-text");
-
-    const handleIntersection = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && animationsEnabled) {
-          const splitText = new SplitType(
-            entry.target.querySelector(".text-to-animate")
-          );
-
-          gsap.fromTo(
-            splitText.chars,
-            { opacity: 0 },
-            {
-              opacity: 1,
-              stagger: 0.07,
-              ease: "power2.out",
-              onComplete: () => {
-                entry.target.classList.add("animated");
-              },
-            }
-          );
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.1, // Adjust as needed
-    });
-
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => {
-      sections.forEach((section) => {
-        observer.unobserve(section);
-      });
-    };
-  };
+  // };
 
   // Re-run animations whenever the language changes
-  useEffect(() => {
-    runAnimations();
-  }, [i18n.language]); // Trigger animation re-initialization on language change
+  // useEffect(() => {
+  //   runAnimations();
+  // }, [i18n.language]); // Trigger animation re-initialization on language change
 
-  useEffect(() => {
-    runAnimations();
-  }, []); // Initial animation on component mount
+  // useEffect(() => {
+  //   runAnimations();
+  // }, []); // Initial animation on component mount
 
-  const textRef = useRef(null);
 
-  useEffect(() => {
-    gsap.to(textRef.current, {
-      backgroundPosition: "200% center",
-      duration: 6,
-      ease: "power1.inOut",
-      repeat: -1,
-    });
-  }, []);
+
+
+
+
+
+
+
+
+
+
+
+  // const textRef = useRef(null);
+
+  // useEffect(() => {
+  //   gsap.to(textRef.current, {
+  //     backgroundPosition: "200% center",
+  //     duration: 6,
+  //     ease: "power1.inOut",
+  //     repeat: -1,
+  //   });
+  // }, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // Header Links Function passed as prop (To disable animation while scroll on specific section)
   const handleScrollToSection = (id) => {
@@ -211,15 +186,33 @@ const Home = () => {
 
 
 
+  const debounce = (func, wait) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+  };
+
 
   const [screenSize, setScreenSize] = useState(window.innerWidth);
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setScreenSize(window.innerWidth);
+  //   };
+
+  //   window.addEventListener("resize", handleResize);
+
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
+
   useEffect(() => {
-    const handleResize = () => {
+    const handleResize = debounce(() => {
       setScreenSize(window.innerWidth);
-    };
-
+    }, 200);
+  
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -296,7 +289,7 @@ const Home = () => {
       >
         <div className="services-container" id="service">
           <div className="rectangular-oval-white-prop-3">
-            <img className="img-fluid" src={serviceShade} alt />
+            <img className="img-fluid" src={serviceShade} alt loading="lazy"/>
           </div>
           <div
             className="text-overlay-services my-5"
@@ -322,7 +315,7 @@ const Home = () => {
         </div>
       </section>
 
-
+      
 
 
       {/* ==========================Community section========================== */}
@@ -381,7 +374,7 @@ const Home = () => {
                   {t("project-section.btn4")}
                 </button>
 
-              <img src={robotProject} alt="" className="community-section-img"/>
+              <img src={robotProject} alt="" className="community-section-img" loading="lazy"/>
 
               <button className=" py-2 px-4 btn rounded-3 project-sec-btn3">
                   {t("project-section.btn3")}
@@ -412,7 +405,7 @@ const Home = () => {
       >
         <div className="testimonial-container">
           <div className="rectangular-oval-white-prop-4">
-            <img className="img-flui" src={serviceShade} alt />
+            <img className="img-flui" src={serviceShade} alt loading="lazy"/>
           </div>
           <div
             className="text-overlay-reference my-5"
@@ -443,7 +436,8 @@ const Home = () => {
 
 
       {/* Back to Top */}
-      <a
+
+      {/* <a
         href=""
         className={`btn btn-lg btn-lg-square rounded-circle back-to-top ${
           isVisible ? "show" : "hide"
@@ -451,18 +445,9 @@ const Home = () => {
         onClick={scrollToTop}
       >
         <FontAwesomeIcon icon={faArrowUp} className="text-white" />
-      </a>
+      </a> */}
 
-      {/* {isVisible && (
-          <a
-            href="#"
-            className="btn btn-lg btn-lg-square rounded-circle back-to-top show"
-            onClick={scrollToTop}
-          >
-            <FontAwesomeIcon icon={faArrowUp} className="text-white" />
-          </a>
-        )} */}
-      {/* </SmoothScrollbarWrapper> */}
+     
     </>
   );
 };

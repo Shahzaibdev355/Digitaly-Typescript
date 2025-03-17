@@ -135,6 +135,7 @@ const ServiceCards = () => {
                           className="service-card-img"
                           src={service.image}
                           alt={`Service ${index + 1}`}
+                          loading="lazy"
                         />
                       </div>
                       <div className="col-12">

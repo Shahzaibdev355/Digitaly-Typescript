@@ -1,4 +1,4 @@
-import React, { useEffect, useTransition } from "react";
+import React, { useEffect, useMemo, useState, useTransition } from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -80,12 +80,64 @@ const Testimonial = () => {
   //     });
   //   }, []);
 
-  const duplicatedLogos = [...CompanyLogo, ...CompanyLogo, ...CompanyLogo]; // Pre-cloning logos in JSX
+    const duplicatedLogos = [...CompanyLogo, ...CompanyLogo, ...CompanyLogo];
 
-  const duplicatedLogos2 = [...CompanyLogo, ...CompanyLogo, ...CompanyLogo]; // Pre-cloning logos in JSX
+  //   console.log('duplicatedLogos recalculated:', duplicatedLogos.length);
 
-  return (
+  //   const duplicatedLogos2 = [...CompanyLogo, ...CompanyLogo];
+
+
+
+//   const duplicatedLogos = useMemo(
+//     () => [...CompanyLogo, ...CompanyLogo, ...CompanyLogo],
+//     [CompanyLogo]
+//   );
+
+
+
+  const MobileReferenceLogos = useMemo(
+    () => [...CompanyLogo, ...CompanyLogo],
+    [CompanyLogo]
+  );
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
+  return !isMobile ? (
     <>
+      <div className="review-slider">
+        <div className="review-slide-track">
+          {duplicatedLogos.map((logo, index) => (
+            <div className="review-slide" key={`review-slide-${index}`}>
+              <img
+                key={`original-${index}`}
+                src={logo}
+                alt={`Logo ${index + 1}`}
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="review-slider2">
+        <div className="review-slide-track2">
+          {duplicatedLogos.map((logo, index) => (
+            <div className="review-slide2" key={`review-slide-${index}`}>
+              <img
+                key={`original-${index}`}
+                src={logo}
+                alt={`Logo ${index + 1}`}
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* <OwlCarousel
                 className="owl-theme"
                 loop
@@ -136,17 +188,18 @@ const Testimonial = () => {
                     </div>
                 ))}
             </OwlCarousel> */}
-
-            
-
-      <div className="review-slider">
+    </>
+  ) : (
+    <>
+      <div className="review-slider" >
         <div className="review-slide-track">
-          {duplicatedLogos.map((logo, index) => (
+          {MobileReferenceLogos.map((logo, index) => (
             <div className="review-slide" key={`review-slide-${index}`}>
               <img
                 key={`original-${index}`}
                 src={logo}
                 alt={`Logo ${index + 1}`}
+                loading="lazy"
               />
             </div>
           ))}
@@ -155,12 +208,13 @@ const Testimonial = () => {
 
       <div className="review-slider2">
         <div className="review-slide-track2">
-          {duplicatedLogos2.map((logo, index) => (
+          {MobileReferenceLogos.map((logo, index) => (
             <div className="review-slide2" key={`review-slide-${index}`}>
               <img
                 key={`original-${index}`}
                 src={logo}
                 alt={`Logo ${index + 1}`}
+                loading="lazy"
               />
             </div>
           ))}

@@ -260,12 +260,12 @@ const StaticThreedModel = () => {
                     minPolarAngle={0} // Restrict downward rotation
                   />
                   {/* Add lighting */}
-                  <ambientLight intensity={1.5} color={"0xffffff"} />{" "}
+                  <ambientLight intensity={1.5} color="#ffffff" />{" "}
                   {/* General ambient light */}
                   <directionalLight
                     position={[150, 150, 150]}
                     intensity={6}
-                    color={"0xffffff"}
+                    color="#ffffff"
                   />
                   <spotLight
                     position={[100, 100, 100]} // Position of the light

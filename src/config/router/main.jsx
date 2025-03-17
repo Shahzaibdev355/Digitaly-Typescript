@@ -14,6 +14,7 @@ import Error404 from "../../components/Error404";
 
 
 import { LegalDigitaly } from "../../pages";
+import Support from "../../components/Support";
 
 
 
@@ -29,6 +30,8 @@ const Main = () => {
           {/* <Route path="/trans" element={<Translate/>}/> */}
 
         <Route path="/Legal" element={<LegalDigitaly/>}></Route>
+
+        <Route path="/support" element={<Support/>} /> 
 
         </Routes>
      

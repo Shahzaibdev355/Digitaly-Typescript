@@ -11,13 +11,16 @@ import { LanguageProvider } from "./components/LanguageContext";
 
 function App() {
 
-  console.log("test");
+ 
+  console.log("app ki wat lag gai")
 
   return (
+
+    
     <>
+
      
 
-     {/* <h1>test</h1> */}
 
       <LanguageProvider>
 
