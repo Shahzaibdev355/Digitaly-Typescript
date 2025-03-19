@@ -13,7 +13,7 @@ import Contact from "../../components/Contact";
 import Error404 from "../../components/Error404";
 
 
-import { LegalDigitaly } from "../../pages";
+import { LegalDigitaly, Testing } from "../../pages";
 import Support from "../../components/Support";
 
 
@@ -32,6 +32,9 @@ const Main = () => {
         <Route path="/Legal" element={<LegalDigitaly/>}></Route>
 
         <Route path="/support" element={<Support/>} /> 
+
+        <Route path="/test" element={<Testing/>} /> 
+
 
         </Routes>
      

@@ -2,4 +2,6 @@
 
 import LegalDigitaly from "./LegalPart";
 
-export { LegalDigitaly };
+import Testing from "./Testing";
+
+export { LegalDigitaly, Testing };

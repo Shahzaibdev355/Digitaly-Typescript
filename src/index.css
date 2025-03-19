@@ -1,10 +1,14 @@
 /* Tailwind CSS */
 /* wrap div with id="tailwind-container" */
-#tailwind-container {
+/* #tailwind-container{
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
-}
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 @import "tailwindcss";
