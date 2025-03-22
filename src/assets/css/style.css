@@ -3847,6 +3847,36 @@ canvas {
   width: 90%;
 }
 
+
+.Support-Help-row{
+  background: rgb(22,104,255);
+  background: linear-gradient(90deg, rgba(22,104,255,1) 50%, rgba(12,79,202,1) 100%);  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.5pc;
+  margin-bottom: 5pc;
+}
+
+.Support-Help-row svg{
+  color: white;
+  font-size: 32px;
+  background-color: #0C4FCA;
+  padding: 16px 14px 16px 14px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.Support-Help-row p{
+  align-self: center;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 0px;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+
+
 .support-input-error-text{
   color: red;
   font-size: 14px;
@@ -3928,6 +3958,16 @@ canvas {
 
 
 
+.support-assistance-bg {
+  background: #EBF3FF;
+  text-fill-color: transparent;
+  border-radius: 20px;
+  padding: 15px 55px 15px 55px;
+  margin-top: 3pc;
+  margin-bottom: 6pc;
+}
+
+
 .support-assistance-column{
   display: flex;
   flex-direction: column;
@@ -3938,6 +3978,7 @@ canvas {
   color: #000E39;
   font-size: 20px;
     font-weight: 500;
+    letter-spacing: 3.5px;
 }
 
 .support-assistance-column-para2{
@@ -3957,6 +3998,8 @@ canvas {
 
   outline: none !important; /* Disable browser outline */
   box-shadow: none !important; /* Disable any shadow */
+
+  border-radius: 10px;
   
 }
 
@@ -3969,7 +4012,7 @@ canvas {
 
 
 .support-enableBtn-row{
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 
@@ -3979,7 +4022,7 @@ canvas {
   background-color: rgba(0, 54, 153, 1) !important;
   border: none !important;
   border-radius: 10px !important;
-  padding: 10px 20px 10px 20px !important;
+  padding: 20px 20px 20px 20px !important;
   color: white !important;
   transition: 0.3s !important;
   width: 25%;
@@ -3995,5 +4038,29 @@ canvas {
 .support-enableBtn-row p{
   margin-bottom: 0px;
   font-size: 13.5px;
-  line-height: 1.4;
+  line-height: 1.3;
+  color: #000E39;
 }
+
+
+
+.support-Enable-div-Btns {
+  width: max-content;
+  color: #000E39;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid #000E39;
+  padding: 8px 10px 8px 10px;
+  width: 65%;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.support-Enable-div-Btns:hover {
+  background-color: #6F9FDD;
+  color: white;
+}
+

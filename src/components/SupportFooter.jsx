@@ -16,12 +16,12 @@ const SupportFooter = () => {
 
             <section className="sec-5" id="footer" >
                 <div className="containe  footer-contact-div">
-                    <div className="gradient-cus-box-sty p-5 my-5 mt-0">
+                    <div className="support-assistance-bg">
 
                         <div className="flex flex-col md:flex-row py-3 gap-4">
 
                             
-                            <div className="flex-1 border-2 border-red-500 space-y-4  support-assistance-column">
+                            <div className="flex-1 space-y-4  support-assistance-column">
                                
                                <p className="support-assistance-column-para1">ASSISTANCE PRIORITAIRE</p>
                                <p className="support-assistance-column-para2">Saisissez votre code client pour déclencher la procédure d’assistance prioritaire</p>
@@ -42,8 +42,11 @@ const SupportFooter = () => {
 
 
 
-                            <div className="flex-1 flex justify-center md:justify-start items-center border-2 border-red-500">
-                                <Link to="/contact" className="py-2 py-lg-4 px-5 mt-2 text-white btn fs-5 rounded-3 footer-contact-div-contactBtn">{t("footer.btn")}</Link>
+                            <div className="flex-1 flex flex-col justify-end md:justify-end items-end">
+                                <Link to="/contact" className="support-Enable-div-Btns mb-3">Les Services d’Assistances</Link>
+                                <Link to="/contact" className="support-Enable-div-Btns mb-3">Je ne trouve pas mon code Client</Link>
+                                <Link to="/contact" className="support-Enable-div-Btns mb-3">Parcourir mon historique d’assistance</Link>
+                                <Link to="/contact" className="support-Enable-div-Btns">En Savoir plus</Link>
                             </div>
 
 

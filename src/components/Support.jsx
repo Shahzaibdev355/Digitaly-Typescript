@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import SupportForm from "./SupportForm";
 import Footer from "./Footer";
 import SupportFooter from "./SupportFooter";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeadset } from "@fortawesome/free-solid-svg-icons";
 
 
 const Support = () => {
@@ -56,6 +58,12 @@ const Support = () => {
         className="support-container mx-auto p- mt-4 "
         id="tailwind-container"
       >
+
+      <div className="Support-Help-row">
+        <FontAwesomeIcon icon={faHeadset}/>
+        <p>Nous sommes là pour vous aider ! Si vous avez des questions ou des préoccupations qui ne sont pas couvertes dans nos articles contacter nous directement</p>
+      </div>
+
         {/* defines how many columns per screen ; grid-cols-1 */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
