@@ -1,75 +1,7 @@
-# name: Deploy React App
-
-# on:
-#   workflow_dispatch: # Allow manual trigger of the workflow
-
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       # 1. Checkout the repository
-#       - name: Checkout Code
-#         uses: actions/checkout@v3
-
-#       # 2. Install Node.js and dependencies
-#       - name: Set up Node.js
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: 18 # Use the version you need
-          
-#       - name: Install dependencies
-#         run: npm install
-
-#       # 3. Build the React app
-#       - name: Build React App
-#         run: npm run build
-
-#       # 4. Debug the dist directory (output folder for Vite)
-#       - name: Debug Dist Directory
-#         run: |
-#           echo "Checking dist directory..."
-#           ls -l ./dist
-
-#       # 5. Deploy only the contents of the dist folder to the FTP server
-#       - name: Deploy to FTP Server
-#         env:
-#           FTP_HOST: ${{ secrets.FTP_HOST }}
-#           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-#           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-#           REMOTE_DIR: ${{ secrets.REMOTE_DIR }}
-#         run: |
-#           # Install lftp
-#           sudo apt-get update && sudo apt-get install -y lftp
-          
-#           # Sync files to the remote server, uploading only modified files
-#           lftp -c "
-#           open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST;
-#           mirror -R -P 5 --verbose --delete ./dist/ $REMOTE_DIR;
-#           bye;
-#           "
-
-#           # Sync files to the remote server, uploading only modified files
-#           lftp -c "
-#           open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST;
-#           mirror -R -P 5 --verbose --delete ./dist/ $REMOTE_DIR --no-empty-dirs;
-#           bye;
-#           "
-
-
-
-
-
-
-
-
-
-
-
 name: Deploy React App
 
 on:
-  workflow_dispatch: # Allow manual trigger of the workflow
+  workflow_dispatch: # manual trigger of the workflow
 
 jobs:
   deploy:
