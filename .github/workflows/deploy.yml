@@ -36,7 +36,7 @@ jobs:
         sudo apt-get update && sudo apt-get install -y lftp
         
         # Deploy only changed files
-        lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_HOST" <<EOF
-        mirror -R -P 4 --only-newer build/ $FTP_REMOTE_PATH
-        quit
+        lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_HOST" <<-EOF
+          mirror -R -P 4 --only-newer build/ $FTP_REMOTE_PATH
+          quit
 EOF
