@@ -3535,6 +3535,8 @@ textarea {
 
   .review-slider{
     margin-top: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .review-slider::before {
@@ -3545,6 +3547,11 @@ textarea {
     width: 50px;
   }
 
+
+  .review-slider2{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 
   .review-slider2::before {
     width: 50px;

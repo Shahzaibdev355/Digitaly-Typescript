@@ -267,7 +267,7 @@ const Header = ({ scrollToSection }) => {
 
   // Get the selected language object
   const selectedLanguage = languages.find((lang) => lang.code === selectedLang);
-  console.log(selectedLanguage);
+  // console.log(selectedLanguage);
 
   // ================================Mobile Menu Working================================
 

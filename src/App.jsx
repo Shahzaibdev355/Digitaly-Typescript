@@ -12,7 +12,6 @@ import { LanguageProvider } from "./components/LanguageContext";
 function App() {
 
  
-  console.log("app ki wat lag gai")
 
   return (
 

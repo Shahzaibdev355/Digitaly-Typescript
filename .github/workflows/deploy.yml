@@ -1,0 +1,42 @@
+name: Deploy React App to OVH Cloud
+
+on:
+  workflow_dispatch: # Manually triggered workflow
+  push:
+    branches:
+      - main # Change this to your default branch if needed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18' # Use the version your React app requires
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Build React App
+      run: npm run build
+
+    - name: Deploy to OVH Cloud
+      env:
+        FTP_HOST: ${{ secrets.FTP_HOST }}
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        FTP_REMOTE_PATH: ${{ secrets.FTP_REMOTE_PATH }}
+      run: |
+        # Install lftp
+        sudo apt-get update && sudo apt-get install -y lftp
+        
+        # Deploy only changed files
+        lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_HOST" <<EOF
+        mirror -R -P 4 --only-newer build/ $FTP_REMOTE_PATH
+        quit
+EOF
