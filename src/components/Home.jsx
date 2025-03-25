@@ -371,7 +371,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="col-12 col-lg-5  align-self-end community-section" style={{border: '3px solid red'}}>
+            <div className="col-12 col-lg-5  align-self-end community-section" style={{border: '6px solid yellow'}}>
               {/* <ProjectSlider /> */}
 
               <button className=" py-2 px-4 btn rounded-3 project-sec-btn4">
