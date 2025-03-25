@@ -1,42 +1,44 @@
-name: Deploy React App to OVH Cloud
+name: Deploy React App
 
 on:
-  workflow_dispatch: # Manually triggered workflow
-  push:
-    branches:
-      - master # Change this to your default branch if needed
+  workflow_dispatch: # Allow manual trigger of the workflow
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      # 1. Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Install Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18' # Use the version your React app requires
+      # 2. Install Node.js and dependencies
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # Use the version you need
+          
+      - name: Install dependencies
+        run: npm install
 
-    - name: Install Dependencies
-      run: npm install
+      # 3. Build the React app
+      - name: Build React App
+        run: npm run build
 
-    - name: Build React App
-      run: npm run build
-
-    - name: Deploy to OVH Cloud
-      env:
-        FTP_HOST: ${{ secrets.FTP_HOST }}
-        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        FTP_REMOTE_PATH: ${{ secrets.FTP_REMOTE_PATH }}
-      run: |
-        # Install lftp
-        sudo apt-get update && sudo apt-get install -y lftp
-        
-        # Deploy only changed files
-        lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_HOST" <<-EOF
-          mirror -R -P 4 --only-newer build/ $FTP_REMOTE_PATH
-          quit
-EOF
+      # 4. Deploy only changed files using lftp
+      - name: Deploy to FTP Server
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          REMOTE_DIR: ${{ secrets.REMOTE_DIR }}
+        run: |
+          # Install lftp
+          sudo apt-get update && sudo apt-get install -y lftp
+          
+          # Sync files to the remote server, uploading only modified files
+          lftp -c "
+          open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST;
+          mirror -R -P 5 --verbose ./build $REMOTE_DIR;
+          bye;
+          "
