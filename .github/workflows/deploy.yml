@@ -31,7 +31,7 @@ jobs:
           echo "Checking dist directory..."
           ls -l ./dist
 
-      # 5. Deploy only changed files using lftp
+      # 5. Deploy only the contents of the dist folder to the FTP server
       - name: Deploy to FTP Server
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
@@ -45,6 +45,11 @@ jobs:
           # Sync files to the remote server, uploading only modified files
           lftp -c "
           open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST;
-          mirror -R -P 5 --verbose ./dist $REMOTE_DIR;
+          mirror -R -P 5 --verbose --delete ./dist/ $REMOTE_DIR;
           bye;
           "
+
+
+
+
+
