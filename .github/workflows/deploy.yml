@@ -105,7 +105,7 @@ jobs:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          REMOTE_DIR: /home/digitaj
+          REMOTE_DIR: /
         run: |
           # Install lftp
           sudo apt-get update && sudo apt-get install -y lftp
