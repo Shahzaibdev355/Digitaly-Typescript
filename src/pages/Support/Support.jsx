@@ -1,4 +1,5 @@
 import SupportHeader from "./SupportHeader";
+import "./index.css"
 
 import { useState, useEffect } from "react";
 
@@ -6,7 +7,7 @@ import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 import SupportForm from "./SupportForm";
-import Footer from "./Footer";
+import Footer from "../../components/Footer";
 import SupportFooter from "./SupportFooter";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeadset } from "@fortawesome/free-solid-svg-icons";

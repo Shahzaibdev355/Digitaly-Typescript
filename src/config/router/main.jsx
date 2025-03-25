@@ -13,8 +13,9 @@ import Contact from "../../components/Contact";
 import Error404 from "../../components/Error404";
 
 
-import { LegalDigitaly } from "../../pages";
-import Support from "../../components/Support";
+import { LegalDigitaly, Support } from "../../pages";
+
+// import Support from "../../pages/Support/Support";
 
 
 

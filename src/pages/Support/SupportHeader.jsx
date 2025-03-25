@@ -18,8 +18,8 @@ import gsap from "gsap";
 
 import { useTranslation } from "react-i18next";
 
-import "../assets/css/mobile-nav.css";
-import { useLanguage } from "./LanguageContext";
+import "../../assets/css/mobile-nav.css";
+import { useLanguage } from "../../components/LanguageContext";
 
 import {
   deIcon,
@@ -39,7 +39,7 @@ import {
   serviceImg7,
   serviceImg8,
   zhIcon,
-} from "../assets/images";
+} from "../../assets/images";
 
 const SupportHeader = ({ scrollToSection }) => {
   

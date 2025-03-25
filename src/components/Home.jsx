@@ -226,32 +226,36 @@ const Home = () => {
   };
 
 
-  const sectionRef = useRef(null);
 
-  useEffect(() => {
-    const buttons = sectionRef.current.querySelectorAll(
-      ".project-sec-btn4, .project-sec-btn3, .project-sec-btn2"
-    );
 
-    gsap.fromTo(
-      buttons,
-      {
-        scale: 0.5, // Start smaller
-        opacity: 0, // Start invisible
-      },
-      {
-        scale: 1, // Zoom to normal size
-        opacity: 1, // Fade in
-        duration: 1.5,
-        ease: "power2.out",
-        stagger: 0.2, // Animate buttons one after another
-        scrollTrigger: {
-          trigger: sectionRef.current, // Trigger animation when section is visible
-          start: "top 80%", // Start animation when top of section is 80% into the viewport
-        },
-      }
-    );
-  }, []);
+
+
+  // const sectionRef = useRef(null);
+
+  // useEffect(() => {
+  //   const buttons = sectionRef.current.querySelectorAll(
+  //     ".project-sec-btn4, .project-sec-btn3, .project-sec-btn2"
+  //   );
+
+  //   gsap.fromTo(
+  //     buttons,
+  //     {
+  //       scale: 0.5, // Start smaller
+  //       opacity: 0, // Start invisible
+  //     },
+  //     {
+  //       scale: 1, // Zoom to normal size
+  //       opacity: 1, // Fade in
+  //       duration: 1.5,
+  //       ease: "power2.out",
+  //       stagger: 0.2, // Animate buttons one after another
+  //       scrollTrigger: {
+  //         trigger: sectionRef.current, // Trigger animation when section is visible
+  //         start: "top 80%", // Start animation when top of section is 80% into the viewport
+  //       },
+  //     }
+  //   );
+  // }, []);
 
 
 
@@ -367,7 +371,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="col-12 col-lg-5  align-self-end community-section" ref={sectionRef}>
+            <div className="col-12 col-lg-5  align-self-end community-section">
               {/* <ProjectSlider /> */}
 
               <button className=" py-2 px-4 btn rounded-3 project-sec-btn4">
@@ -426,7 +430,10 @@ const Home = () => {
           </div>
 
           <div className="row">
+
             <Testimonial />
+
+
           </div>
         </div>
       </section>

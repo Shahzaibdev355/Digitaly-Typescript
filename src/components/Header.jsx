@@ -317,7 +317,7 @@ const Header = ({ scrollToSection }) => {
     {
       id: 5,
       navTitle: t("navbar.link6"),
-      path: "#",
+      path: "/support",
     },
   ];
 
@@ -613,13 +613,12 @@ const Header = ({ scrollToSection }) => {
                 <div className="links-border"></div>
               </li>
               <li className="nav-item">
-                <a
+                <Link
                   className="nav-link text-white mx-md-2"
-                  onClick={() => scrollToSection("#footer")}
-                  href="#footer"
+                  to="/support"
                 >
                   {t("navbar.link6")}
-                </a>
+                </Link>
                 <div className="links-border"></div>
               </li>
             </ul>
