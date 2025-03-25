@@ -4,7 +4,7 @@ on:
   workflow_dispatch: # Manually triggered workflow
   push:
     branches:
-      - main # Change this to your default branch if needed
+      - master # Change this to your default branch if needed
 
 jobs:
   deploy:
