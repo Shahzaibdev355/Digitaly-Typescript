@@ -56,7 +56,7 @@ const SupportForm = () => {
     email: z.string().email("Email address is required"),
     category: z.string().min(1, "Catégorie is required"),
     subCategory: z.string().min(1, "Sous-catégorie is required"),
-    categoryDetails: z.string().min(1, "Détail de catégorie is required"),
+    // categoryDetails: z.string().min(1, "Détail de catégorie is required"),
     object: z.string().min(1, "Objet is required"),
     message: z.string().min(1, "Message is required"),
   });
@@ -79,7 +79,7 @@ const SupportForm = () => {
       email: "",
       category: "",
       subCategory: "",
-      categoryDetails: "",
+      // categoryDetails: "",
       object: "",
       message: "",
     },
@@ -242,16 +242,21 @@ const SupportForm = () => {
             defaultValue={getValues("category")}
           >
             <SelectTrigger className="w-full bg-white">
-              <SelectValue placeholder="Select a fruit" />
+              <SelectValue placeholder="Select Support" />
             </SelectTrigger>
             <SelectContent className="">
               <SelectGroup>
-                <SelectLabel>Fruits</SelectLabel>
-                <SelectItem value="apple">Apple</SelectItem>
-                <SelectItem value="banana">Banana</SelectItem>
-                <SelectItem value="blueberry">Blueberry</SelectItem>
-                <SelectItem value="grapes">Grapes</SelectItem>
-                <SelectItem value="pineapple">Pineapple</SelectItem>
+                <SelectLabel>Catégorie</SelectLabel>
+                <SelectItem value="General">General</SelectItem>
+                <SelectItem value="Account & Login">Account & Login</SelectItem>
+                <SelectItem value="Legal & Privacy Support">Legal & Privacy Support</SelectItem>
+                <SelectItem value="Partners & Affiliates">Partners & Affiliates</SelectItem>
+                <SelectItem value="Shop & Purchases">Shop & Purchases</SelectItem>
+                <SelectItem value="Services">Services</SelectItem>
+
+                <SelectItem value="Community & Feedback">Community & Feedback</SelectItem>
+                <SelectItem value="Media & News">Media & News</SelectItem>
+
               </SelectGroup>
             </SelectContent>
           </Select>
@@ -262,7 +267,7 @@ const SupportForm = () => {
           )}
         </div>
 
-        <div className="col-md-12   contact-us-input-objet">
+        {/* <div className="col-md-12   contact-us-input-objet">
           <Label
             htmlFor="subCategory"
             className="contact-form-input-label"
@@ -296,9 +301,9 @@ const SupportForm = () => {
               {errors.subCategory.message}
             </p>
           )}
-        </div>
+        </div> */}
 
-        <div className="col-md-12   contact-us-input-objet">
+        {/* <div className="col-md-12   contact-us-input-objet">
           <Label
             htmlFor="categoryDetails"
             className="contact-form-input-label"
@@ -332,7 +337,7 @@ const SupportForm = () => {
               {errors.categoryDetails.message}
             </p>
           )}
-        </div>
+        </div> */}
 
         <div className="col-md-12   contact-us-input-objet">
           <Label htmlFor="object" className="contact-form-input-label">

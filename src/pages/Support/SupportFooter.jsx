@@ -42,7 +42,7 @@ const SupportFooter = () => {
 
 
 
-                            <div className="flex-1 flex flex-col justify-end md:justify-end items-end">
+                            <div className="flex-1 flex flex-col justify-end md:justify-end items-end support-assistance-column2">
                                 <Link to="/contact" className="support-Enable-div-Btns mb-3">Les Services d’Assistances</Link>
                                 <Link to="/contact" className="support-Enable-div-Btns mb-3">Je ne trouve pas mon code Client</Link>
                                 <Link to="/contact" className="support-Enable-div-Btns mb-3">Parcourir mon historique d’assistance</Link>
