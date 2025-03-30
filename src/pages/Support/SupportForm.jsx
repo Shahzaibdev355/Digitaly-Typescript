@@ -343,6 +343,8 @@ const SupportForm = () => {
                 </SelectItem>
               ))}
             
+
+
             </SelectGroup>
           </SelectContent>
         </Select>
@@ -350,6 +352,8 @@ const SupportForm = () => {
           <p className="support-input-error-text">{errors.category.message}</p>
         )}
       </div>
+
+     
 
       {getValues("category") && ( 
 

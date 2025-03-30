@@ -248,6 +248,13 @@
 }
 
 
+.support-selectItem:focus{
+    background-color: #F4F4F5!important;
+  color: #212529!important; 
+  
+}
+
+
 /* #212529 */
 
 
