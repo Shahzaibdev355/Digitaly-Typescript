@@ -84,14 +84,7 @@ const SupportForm = () => {
 
   const [hasInteracted, setHasInteracted] = useState(false);
 
-  // General
-  //               Account & Login
-  //               Legal & Privacy Support
-  //               Partners & Affiliates
-  //               Shop & Purchases
-  //               Services
-  //               Community & Feedback
-  //               Media & News
+  
 
   const subCategoryData = {
     General: [
@@ -178,19 +171,21 @@ const SupportForm = () => {
 
   const handleCategoryChange = (value) => {
     setValue("category", value); // Update category
-    setValue("subCategory", ""); // Reset subcategory
+    setValue("subCategory", ""); 
     trigger("category"); // Trigger validation
   };
 
+  
+
+  
 
  
 
   
 
   const onSubmit = async (data) => {
-    // event.preventDefault();
 
-    console.log(data);
+    // console.log(data);
 
     try {
       const response = await axios.post(
@@ -219,6 +214,7 @@ const SupportForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-[96%]">
+
       <div className="contact-us-row-formField">
         <div className="col-12 col-md-6 contact-us-input-left">
           <Label htmlFor="fname" className="contact-form-input-label">
@@ -335,10 +331,11 @@ const SupportForm = () => {
           <SelectContent portal={true}>
             <SelectGroup>
               <SelectLabel>Catégorie</SelectLabel>
+
               {CategoryData.map((category) => (
                 
                 
-                <SelectItem key={category} value={category.toString()} className="support-selectItem">
+                <SelectItem key={category} value={category} className="support-selectItem">
                   {category}
                 </SelectItem>
               ))}
@@ -367,18 +364,25 @@ const SupportForm = () => {
                 setValue("subCategory", value);
                 trigger("subCategory");
               }}
-              defaultValue={getValues("subCategory")}
+              // defaultValue={getValues("subCategory")}
+              value={getValues("subCategory")}
+              
             >
               <SelectTrigger className="w-full bg-white">
-                <SelectValue placeholder="Select Support Type" />
+
+
+              <SelectValue placeholder={getValues("subCategory") || "Select Support Type"} />
+                
               </SelectTrigger>
+
+
               <SelectContent className="">
                 <SelectGroup>
                   <SelectLabel>Sous-catégorie</SelectLabel>
 
                   {(subCategoryData[getValues("category")] || []).map(
                     (subCategory, index) => (
-                      <SelectItem key={index} value={subCategory}>
+                      <SelectItem key={index} value={subCategory} className="support-selectItem">
                         {subCategory}
                       </SelectItem>
                     )
@@ -387,6 +391,8 @@ const SupportForm = () => {
                 </SelectGroup>
               </SelectContent>
             </Select>
+
+
             {errors.subCategory && (
               <p className="support-input-error-text">
                 {errors.subCategory.message}
