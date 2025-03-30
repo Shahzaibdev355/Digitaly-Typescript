@@ -316,7 +316,7 @@ const SupportForm = () => {
         )}
       </div>
 
-      <div className="col-md-12   contact-us-input-objet">
+      <div className="col-md-12   contact-us-input-objet" style={{border: '3px solid red'}}>
         <Label htmlFor="category" className="contact-form-input-label">
           {" "}
           Catégorie <span>*</span>{" "}
@@ -326,6 +326,7 @@ const SupportForm = () => {
           onValueChange={(value) => handleCategoryChange(value)}
            defaultValue={getValues("category")}
 
+           
           
         >
           <SelectTrigger className="w-full bg-white">
