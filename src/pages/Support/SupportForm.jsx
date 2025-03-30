@@ -163,6 +163,16 @@ const SupportForm = () => {
     ],
   };
 
+  const CategoryData = [
+   "General",
+   "Account & Login", 
+   "Legal & Privacy Support",
+   "Partners & Affiliates",
+   "Shop & Purchases",
+   "Services",
+   "Community & Feedback",
+   "Media & News"
+  ]
 
  
 
@@ -324,7 +334,7 @@ const SupportForm = () => {
           <SelectContent className="support-selectContent" portal={true}>
             <SelectGroup>
               <SelectLabel>Catégorie</SelectLabel>
-              {Object.keys(subCategoryData).map((category) => (
+              {CategoryData.map((category) => (
                 
                 
                 <SelectItem key={category} value={category.toString()} >
