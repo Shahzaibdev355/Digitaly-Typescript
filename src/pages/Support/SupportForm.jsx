@@ -332,13 +332,13 @@ const SupportForm = () => {
           <SelectTrigger className="w-full bg-white">
             <SelectValue placeholder="Select Support" />
           </SelectTrigger>
-          <SelectContent className="support-selectContent" portal={true}>
+          <SelectContent portal={true}>
             <SelectGroup>
               <SelectLabel>Catégorie</SelectLabel>
               {CategoryData.map((category) => (
                 
                 
-                <SelectItem key={category} value={category.toString()} >
+                <SelectItem key={category} value={category.toString()} className="support-selectItem">
                   {category}
                 </SelectItem>
               ))}

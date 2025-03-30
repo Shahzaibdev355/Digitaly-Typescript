@@ -242,8 +242,13 @@
     border: 3px solid red!important;
 }
 
+.support-selectItem{
+    color: #212529!important;
+    /* font-size: 25px!important; */
+}
 
 
+/* #212529 */
 
 
 @media screen and (max-width:768px) {
