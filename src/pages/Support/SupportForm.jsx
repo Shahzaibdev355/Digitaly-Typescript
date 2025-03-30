@@ -313,12 +313,6 @@ const SupportForm = () => {
         </Label>
 
         <Select
-          // onValueChange={(value) => {
-          //   setValue("category", value); 
-          //   trigger("category"); 
-          // }}
-          // defaultValue={getValues("category")}
-
           onValueChange={(value) => handleCategoryChange(value)}
            defaultValue={getValues("category")}
 
@@ -327,11 +321,13 @@ const SupportForm = () => {
           <SelectTrigger className="w-full bg-white">
             <SelectValue placeholder="Select Support" />
           </SelectTrigger>
-          <SelectContent className="">
+          <SelectContent className="support-selectContent" portal={true}>
             <SelectGroup>
               <SelectLabel>Catégorie</SelectLabel>
               {Object.keys(subCategoryData).map((category) => (
-                <SelectItem key={category} value={category}>
+                
+                
+                <SelectItem key={category} value={category.toString()} >
                   {category}
                 </SelectItem>
               ))}

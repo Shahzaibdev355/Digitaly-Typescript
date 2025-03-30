@@ -417,10 +417,10 @@ const SupportHeader = ({ scrollToSection }) => {
     if (window.innerWidth < 768) {
     if ( dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setLangDropDown(false);
-      console.log("mobile");
+      // console.log("mobile");
       
       }
-      console.log("clckk");
+      // console.log("clckk");
       
     }
   };
@@ -535,7 +535,7 @@ const SupportHeader = ({ scrollToSection }) => {
           </button>
 
           <div
-            className="collapse navbar-collapse new-navbar-collapse"
+            className="hidden md:flex flex-grow-0 items-end justify-end space-x-6"
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav m-auto mb-2 mb-lg-0">
