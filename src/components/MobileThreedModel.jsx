@@ -213,6 +213,20 @@ const MobileThreedModel = () => {
     exit: { opacity: 0, scale: 0.5, y: 0, transition: { type: "spring" } },
   };
 
+
+
+  let ticking = false;
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      // Handle scroll-related animations here
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+
+
   return (
     <>
       <section className="sec-1">
@@ -285,7 +299,7 @@ const MobileThreedModel = () => {
 
                 </div>
 
-                {/* <Canvas className="testing">
+                <Canvas className="testing">
                   Add interaction controls
                   <OrbitControls
                     enableZoom={false} // Disable zooming
@@ -318,7 +332,7 @@ const MobileThreedModel = () => {
                     onLoad={() => setIsModelLoaded(true)}
                     
                   />
-                </Canvas> */}
+                </Canvas>
 
                 
 
