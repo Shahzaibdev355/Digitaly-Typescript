@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { a, useSpring } from "@react-spring/three";
 import { OrbitControls, useGLTF } from "@react-three/drei";
@@ -82,11 +82,11 @@ const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd, onLoad }) => {
 
 
   // Rotation logic directly in `useFrame`
-  useFrame(() => {
+  useFrame(({ clock }) => {
     if (modelRef.current && !isHovered) {
-      modelRef.current.rotation.x = 0; // Reset tilt
+      // modelRef.current.rotation.x = 0; // Reset tilt
       modelRef.current.rotation.y += 0.02; // Smooth rotation
-      modelRef.current.rotation.z = 0; // Reset spin
+      // modelRef.current.rotation.z = 0; // Reset spin
     }
   });
 
@@ -219,11 +219,11 @@ const MobileThreedModel = () => {
 
 
   // const [hasLoadedOnce, setHasLoadedOnce] = useState(false); // Persistent state
-  const { ref: canvasRef, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+  // const { ref: canvasRef, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
-  useEffect(() => {
-    if (inView && !isModelLoaded) setIsModelLoaded(true); // Ensure model is loaded only once
-  }, [inView, isModelLoaded]);
+  // useEffect(() => {
+  //   if (inView && !isModelLoaded) setIsModelLoaded(true); // Ensure model is loaded only once
+  // }, [inView, isModelLoaded]);
 
 
 
@@ -263,7 +263,7 @@ const MobileThreedModel = () => {
 
               <div
                 style={{ width: "100%", height: "100vh", position: "relative" }}
-                ref={canvasRef}
+                
               >
 
                  
@@ -302,10 +302,15 @@ const MobileThreedModel = () => {
 
                 </div>
 
-                {isModelLoaded && (
+                {/* {isModelLoaded && ( */}
 
-                <Canvas className="testing" >
+                <Canvas className="testing"
+                
+                shadows
+        dpr={Math.min(window.devicePixelRatio, 2)} // Limit resolution for performance
+        gl={{ antialias: true }}>
                   {/* Add interaction controls */}
+                  <Suspense fallback={null}>
                   <OrbitControls
                     enableZoom={false} // Disable zooming
                     enableRotate={false} // Disable rotation
@@ -337,9 +342,10 @@ const MobileThreedModel = () => {
                     // onLoad={() => setIsModelLoaded(true)}
                     onLoad={() => console.log("Model loaded!")}                    
                   />
+                  </Suspense>
                 </Canvas>
 
-                )}
+                {/* )} */}
 
                 
 
