@@ -11,7 +11,7 @@ import { LanguageProvider } from "./components/LanguageContext";
 
 function App() {
 
- 
+
   
 
   return (
@@ -19,8 +19,7 @@ function App() {
     
     <>
 
-     
-
+    
 
       <LanguageProvider>
 
