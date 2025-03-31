@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { a, useSpring } from "@react-spring/three";
 import { OrbitControls, useGLTF } from "@react-three/drei";
+import { useInView } from "react-intersection-observer";
 
 import { useFrame } from "@react-three/fiber"; // Import useFrame hook
 
@@ -137,6 +138,9 @@ const MobileThreedModel = () => {
   const [isModelLoaded, setIsModelLoaded] = useState(false);
 
 
+  
+  
+
 
 
   const [showModel, setShowModel] = useState(false);
@@ -214,17 +218,16 @@ const MobileThreedModel = () => {
   };
 
 
+  // const [hasLoadedOnce, setHasLoadedOnce] = useState(false); // Persistent state
+  const { ref: canvasRef, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
-  let ticking = false;
-window.addEventListener("scroll", () => {
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      // Handle scroll-related animations here
-      ticking = false;
-    });
-    ticking = true;
-  }
-});
+  useEffect(() => {
+    if (inView && !isModelLoaded) setIsModelLoaded(true); // Ensure model is loaded only once
+  }, [inView, isModelLoaded]);
+
+
+
+ 
 
 
   return (
@@ -260,7 +263,7 @@ window.addEventListener("scroll", () => {
 
               <div
                 style={{ width: "100%", height: "100vh", position: "relative" }}
-                
+                ref={canvasRef}
               >
 
                  
@@ -299,8 +302,10 @@ window.addEventListener("scroll", () => {
 
                 </div>
 
-                <Canvas className="testing">
-                  Add interaction controls
+                {isModelLoaded && (
+
+                <Canvas className="testing" >
+                  {/* Add interaction controls */}
                   <OrbitControls
                     enableZoom={false} // Disable zooming
                     enableRotate={false} // Disable rotation
@@ -308,9 +313,9 @@ window.addEventListener("scroll", () => {
                     maxPolarAngle={Math.PI / 2} // Restrict upward rotation
                     minPolarAngle={0} // Restrict downward rotation
                   />
-                  Add lighting
+                  {/* Add lighting */}
                   <ambientLight intensity={1.5} color={"0xffffff"} />{" "}
-                  General ambient light
+                  {/* General ambient light */}
                   <directionalLight
                     position={[150, 150, 150]}
                     intensity={6}
@@ -321,7 +326,7 @@ window.addEventListener("scroll", () => {
                     angle={0.8} // Spread of the light beam
                     penumbra={1} // Soft edges
                     intensity={40} // Brightness
-                    castShadow={true} // Enable shadows
+                    castShadow={false} // Enable shadows
                   />
 
 
@@ -329,10 +334,12 @@ window.addEventListener("scroll", () => {
                   <Model
                     modelPath="https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/public/images/Digitally%20Iphone%20Mock%20up%203D.gltf"
                     isHovered={isHovered}
-                    onLoad={() => setIsModelLoaded(true)}
-                    
+                    // onLoad={() => setIsModelLoaded(true)}
+                    onLoad={() => console.log("Model loaded!")}                    
                   />
                 </Canvas>
+
+                )}
 
                 
 
