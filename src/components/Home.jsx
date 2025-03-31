@@ -275,7 +275,7 @@ const Home = () => {
 
       {/* First section with 3d model work */}
 
-      {render3DModel()}
+      {/* {render3DModel()} */}
 
      
 
@@ -314,7 +314,7 @@ const Home = () => {
             </div>
           </div>
 
-          {/* <ServiceCards/> */}
+          <ServiceCards/>
          
         </div>
       </section>
