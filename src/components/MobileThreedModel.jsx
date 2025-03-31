@@ -7,20 +7,20 @@ import { useFrame } from "@react-three/fiber"; // Import useFrame hook
 
 import { motion } from "framer-motion"; // Import Framer Motion
 
-// import facebook from "../assets/Updated Icons/Facebook-1.png";
-// import instagram from "../assets/Updated Icons/Instagram-1.png";
-// import twitter from "../assets/Updated Icons/Twitter-1.png";
-// import dribble from "../assets/Updated Icons/Dribble1.png";
-// import Tiktok from "../assets/Updated Icons/Tiktok-1.png";
-// import LinkedIn from "../assets/Updated Icons/LinkedIn-1.png";
+import facebook from "../assets/Updated Icons/Facebook-1.png";
+import instagram from "../assets/Updated Icons/Instagram-1.png";
+import twitter from "../assets/Updated Icons/Twitter-1.png";
+import dribble from "../assets/Updated Icons/Dribble1.png";
+import Tiktok from "../assets/Updated Icons/Tiktok-1.png";
+import LinkedIn from "../assets/Updated Icons/LinkedIn-1.png";
 
 
-const facebook = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Facebook-1.png";
-const instagram = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Instagram-1.png";
-const twitter = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Twitter-1.png";
-const dribble = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Dribble1.png";
-const Tiktok = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Tiktok-1.png";
-const LinkedIn = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/LinkedIn-1.png";
+// const facebook = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Facebook-1.png";
+// const instagram = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Instagram-1.png";
+// const twitter = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Twitter-1.png";
+// const dribble = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Dribble1.png";
+// const Tiktok = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/Tiktok-1.png";
+// const LinkedIn = "https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/src/assets/Updated%20Icons/LinkedIn-1.png";
 
 
 import { useTranslation } from "react-i18next";
@@ -249,23 +249,7 @@ const MobileThreedModel = () => {
                 
               >
 
-                  {/* Loader */}
-                  {/* {!showModel && (
-                          <div
-                            style={{
-                              position: "absolute",
-                              top: "50%",
-                              left: "50%",
-                              transform: "translate(-50%, -50%)",
-                              zIndex: 10,
-                              color: "#fff",
-                              fontSize: "24px",
-                            }}
-                          >
-                            Loading...
-                          </div>
-                        )} */}
-
+                 
 
 
                 {/* Animated Icons */}
@@ -301,8 +285,8 @@ const MobileThreedModel = () => {
 
                 </div>
 
-                <Canvas className="testing">
-                  {/* Add interaction controls */}
+                {/* <Canvas className="testing">
+                  Add interaction controls
                   <OrbitControls
                     enableZoom={false} // Disable zooming
                     enableRotate={false} // Disable rotation
@@ -310,9 +294,9 @@ const MobileThreedModel = () => {
                     maxPolarAngle={Math.PI / 2} // Restrict upward rotation
                     minPolarAngle={0} // Restrict downward rotation
                   />
-                  {/* Add lighting */}
+                  Add lighting
                   <ambientLight intensity={1.5} color={"0xffffff"} />{" "}
-                  {/* General ambient light */}
+                  General ambient light
                   <directionalLight
                     position={[150, 150, 150]}
                     intensity={6}
@@ -325,9 +309,8 @@ const MobileThreedModel = () => {
                     intensity={40} // Brightness
                     castShadow={true} // Enable shadows
                   />
-                  {/* Load the GLTF model */}
 
-                  {/* {showModel && ( */}
+
 
                   <Model
                     modelPath="https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/public/images/Digitally%20Iphone%20Mock%20up%203D.gltf"
@@ -335,8 +318,7 @@ const MobileThreedModel = () => {
                     onLoad={() => setIsModelLoaded(true)}
                     
                   />
-                  {/* )} */}
-                </Canvas>
+                </Canvas> */}
 
                 
 
