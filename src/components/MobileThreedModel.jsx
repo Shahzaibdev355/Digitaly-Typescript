@@ -337,7 +337,7 @@ const MobileThreedModel = () => {
 
 
                   <Model
-                    modelPath={model3d}
+                    modelPath="https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/master/src/assets/images/model.glb"
                     isHovered={isHovered}
                     onLoad={() => setIsModelLoaded(true)}
                     // onLoad={() => console.log("Model loaded!")}                    
