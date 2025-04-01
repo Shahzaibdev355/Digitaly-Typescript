@@ -29,7 +29,7 @@ import gsap from "gsap";
 
 
 import withMobile from "../assets/images/with-mobile.png";
-import { model3d, modelShade } from "../assets/images";
+import { model3d, modelDraco, modelShade } from "../assets/images";
 
 
   
@@ -304,7 +304,7 @@ const MobileThreedModel = () => {
 
                 {/* {isModelLoaded && ( */}
 
-                {/* <Canvas className="testing"
+                <Canvas className="testing"
                   shadows
                   dpr={Math.min(window.devicePixelRatio, 2)} // Limit resolution for performance
                   gl={{ antialias: true }}>
@@ -334,14 +334,16 @@ const MobileThreedModel = () => {
                         castShadow={false} // Enable shadows
                       />
 
+{/* https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/master/src/assets/images/model.glb */}
+
                       <Model
-                        modelPath="https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/master/src/assets/images/model.glb"
+                        modelPath={modelDraco}
                         isHovered={isHovered}
                         onLoad={() => setIsModelLoaded(true)}
                         // onLoad={() => console.log("Model loaded!")}                    
                       />
                   </Suspense>
-                </Canvas> */}
+                </Canvas>
 
                 {/* )} */}
 

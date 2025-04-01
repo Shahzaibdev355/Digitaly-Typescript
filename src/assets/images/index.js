@@ -55,6 +55,8 @@ import referenceLogo7 from "./reference-logo/Roblox-Logo.png"
 
 import model3d from  "./model.glb"
 
+import modelDraco from "./model_draco.glb"
+
 export {
   digitalyLogo,
   modelShade,
@@ -102,5 +104,6 @@ export {
 
   refShade,
   model3d,
-  Shade2
+  Shade2,
+  modelDraco
 };
