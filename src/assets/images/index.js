@@ -55,7 +55,7 @@ import referenceLogo7 from "./reference-logo/Roblox-Logo.png"
 
 import model3d from  "./model.glb"
 
-import modelDraco from "./model_draco.glb"
+import modelDraco from "./model_simplified.glb"
 
 export {
   digitalyLogo,

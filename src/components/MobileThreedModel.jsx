@@ -305,11 +305,12 @@ const MobileThreedModel = () => {
                 {/* {isModelLoaded && ( */}
 
                 <Canvas className="testing"
+               
                   shadows
                   dpr={Math.min(window.devicePixelRatio, 2)} // Limit resolution for performance
                   gl={{ antialias: true }}>
 
-                  <Suspense fallback={null}>
+                  {/* <Suspense fallback={null}> */}
 
                       <OrbitControls
                         enableZoom={false} // Disable zooming
@@ -334,15 +335,15 @@ const MobileThreedModel = () => {
                         castShadow={false} // Enable shadows
                       />
 
-{/* https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/master/src/assets/images/model.glb */}
+{/* https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/master/src/assets/images/model_simplified.glb */}
 
                       <Model
-                        modelPath={modelDraco}
+                        modelPath="https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/master/src/assets/images/model_simplified.glb"
                         isHovered={isHovered}
                         onLoad={() => setIsModelLoaded(true)}
                         // onLoad={() => console.log("Model loaded!")}                    
                       />
-                  </Suspense>
+                  {/* </Suspense> */}
                 </Canvas>
 
                 {/* )} */}
