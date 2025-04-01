@@ -29,7 +29,7 @@ import gsap from "gsap";
 
 
 import withMobile from "../assets/images/with-mobile.png";
-import { modelShade } from "../assets/images";
+import { model3d, modelShade } from "../assets/images";
 
 
   
@@ -337,10 +337,10 @@ const MobileThreedModel = () => {
 
 
                   <Model
-                    modelPath="https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/refs/heads/master/public/images/Digitally%20Iphone%20Mock%20up%203D.gltf"
+                    modelPath={model3d}
                     isHovered={isHovered}
-                    // onLoad={() => setIsModelLoaded(true)}
-                    onLoad={() => console.log("Model loaded!")}                    
+                    onLoad={() => setIsModelLoaded(true)}
+                    // onLoad={() => console.log("Model loaded!")}                    
                   />
                   </Suspense>
                 </Canvas>

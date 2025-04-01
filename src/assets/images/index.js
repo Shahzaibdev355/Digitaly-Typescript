@@ -49,6 +49,9 @@ import referenceLogo5 from "./reference-logo/Continental-Logo.png"
 import referenceLogo6 from "./reference-logo/Gillette-Logo.png"
 import referenceLogo7 from "./reference-logo/Roblox-Logo.png"
 
+
+import model3d from  "./model.glb"
+
 export {
   modelShade,
   
@@ -93,5 +96,7 @@ export {
   referenceLogo6,
   referenceLogo7,
 
-  refShade
+  refShade,
+
+  model3d
 };
