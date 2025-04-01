@@ -304,46 +304,44 @@ const MobileThreedModel = () => {
 
                 {/* {isModelLoaded && ( */}
 
-                <Canvas className="testing"
-                
-                shadows
-        dpr={Math.min(window.devicePixelRatio, 2)} // Limit resolution for performance
-        gl={{ antialias: true }}>
-                  {/* Add interaction controls */}
+                {/* <Canvas className="testing"
+                  shadows
+                  dpr={Math.min(window.devicePixelRatio, 2)} // Limit resolution for performance
+                  gl={{ antialias: true }}>
+
                   <Suspense fallback={null}>
-                  <OrbitControls
-                    enableZoom={false} // Disable zooming
-                    enableRotate={false} // Disable rotation
-                    enablePan={true} // Allow panning
-                    maxPolarAngle={Math.PI / 2} // Restrict upward rotation
-                    minPolarAngle={0} // Restrict downward rotation
-                  />
-                  {/* Add lighting */}
-                  <ambientLight intensity={1.5} color={"0xffffff"} />{" "}
-                  {/* General ambient light */}
-                  <directionalLight
-                    position={[150, 150, 150]}
-                    intensity={6}
-                    color={"0xffffff"}
-                  />
-                  <spotLight
-                    position={[100, 100, 100]} // Position of the light
-                    angle={0.8} // Spread of the light beam
-                    penumbra={1} // Soft edges
-                    intensity={40} // Brightness
-                    castShadow={false} // Enable shadows
-                  />
 
+                      <OrbitControls
+                        enableZoom={false} // Disable zooming
+                        enableRotate={false} // Disable rotation
+                        enablePan={true} // Allow panning
+                        maxPolarAngle={Math.PI / 2} // Restrict upward rotation
+                        minPolarAngle={0} // Restrict downward rotation
+                      />
 
+                      <ambientLight intensity={1.5} color={"0xffffff"} />
 
-                  <Model
-                    modelPath="https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/master/src/assets/images/model.glb"
-                    isHovered={isHovered}
-                    onLoad={() => setIsModelLoaded(true)}
-                    // onLoad={() => console.log("Model loaded!")}                    
-                  />
+                      <directionalLight
+                        position={[150, 150, 150]}
+                        intensity={6}
+                        color={"0xffffff"}
+                      />
+                      <spotLight
+                        position={[100, 100, 100]} // Position of the light
+                        angle={0.8} // Spread of the light beam
+                        penumbra={1} // Soft edges
+                        intensity={40} // Brightness
+                        castShadow={false} // Enable shadows
+                      />
+
+                      <Model
+                        modelPath="https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/master/src/assets/images/model.glb"
+                        isHovered={isHovered}
+                        onLoad={() => setIsModelLoaded(true)}
+                        // onLoad={() => console.log("Model loaded!")}                    
+                      />
                   </Suspense>
-                </Canvas>
+                </Canvas> */}
 
                 {/* )} */}
 
