@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { a, useSpring } from "@react-spring/three";
 import { OrbitControls, useGLTF } from "@react-three/drei";
@@ -49,14 +49,42 @@ const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd, onLoad }) => {
     setIsVisible(true);
   }, [onLoad]);
 
+
+
+
+
   // Apply shininess to the edges or the entire model
-  scene.traverse((child) => {
-    if (child.isMesh) {
-      child.material.metalness = 0.2; // Increase shininess
-      child.material.roughness = 0.2; // Make the surface smoother
-      // child.material.color.set("0xffffff");
-    }
-  });
+  // scene.traverse((child) => {
+  //   if (child.isMesh) {
+  //     child.material.metalness = 0.2; // Increase shininess
+  //     child.material.roughness = 0.2; // Make the surface smoother
+  //     // child.material.color.set("0xffffff");
+  //   }
+  // });
+
+
+  const processedScene = useMemo(() => {
+    const clonedScene = scene.clone(); // Clone the scene to prevent mutations
+    clonedScene.traverse((child) => {
+        if (child.isMesh) {
+            child.material.metalness = 0.2;
+            child.material.roughness = 0.2;
+        }
+    });
+    return clonedScene;
+}, [scene]);
+
+
+
+
+
+
+
+
+
+
+
+
 
   // React Spring for smooth scale animation
   const { scale } = useSpring({
@@ -99,7 +127,13 @@ const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd, onLoad }) => {
   return (
     <a.primitive
       ref={modelRef}
-      object={scene}
+
+
+      // object={scene}
+      object={processedScene}
+
+
+
       // Adjust the model's position
       position= {position} // [x, y, z] to position the model in 3D space
       // Adjust the model's rotation (in radians)
@@ -307,15 +341,15 @@ const MobileThreedModel = () => {
                 <Canvas className="testing"
                
                   shadows
-                  dpr={Math.min(window.devicePixelRatio, 2)} // Limit resolution for performance
-                  gl={{ antialias: true }}>
+                  dpr={Math.min(window.devicePixelRatio, 1.5)} // Current
+  gl={{ antialias: true }}>
 
                   {/* <Suspense fallback={null}> */}
 
                       <OrbitControls
                         enableZoom={false} // Disable zooming
                         enableRotate={false} // Disable rotation
-                        enablePan={true} // Allow panning
+                        enablePan={false} // Allow panning
                         maxPolarAngle={Math.PI / 2} // Restrict upward rotation
                         minPolarAngle={0} // Restrict downward rotation
                       />
@@ -335,7 +369,6 @@ const MobileThreedModel = () => {
                         castShadow={false} // Enable shadows
                       />
 
-{/* https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/master/src/assets/images/model_simplified.glb */}
 
                       <Model
                         modelPath="https://raw.githubusercontent.com/Shahzaibdev355/Digitaly-Typescript/master/src/assets/images/model_simplified.glb"
