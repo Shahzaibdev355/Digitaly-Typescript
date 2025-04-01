@@ -20,6 +20,7 @@ import { Textarea } from "@/components/ui/textarea"; // ShadCN Textarea
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
+import { Shade2 } from "../assets/images";
 
 const Contact = () => {
   const { t, i18n } = useTranslation();
@@ -408,7 +409,7 @@ const Contact = () => {
       <section className="rectangular-oval-white-sec1" style={{ border: "" }}>
         <img
           className="lagence-sec1-img1-2"
-          src="./images/Rectangle 9543-new.png"
+          src={Shade2}
           alt
           style={{ border: "" }}
         />

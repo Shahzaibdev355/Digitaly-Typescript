@@ -1,3 +1,5 @@
+import digitalyLogo from "./digitaly-logo.png";
+
 import LEnterpriseImg1 from "./L-enterprise-discover.png";
 import LEnterpriseImg2 from "./lenterprise-leadership.png";
 import LEnterpriseImg3 from "./L-enterprise-sustain.png";
@@ -35,6 +37,7 @@ import legalCard3Img from "./legal-images/card-1-img.png";
 import legalCard4Img from "./legal-images/card-1-img.png";
 
 import modelShade from "./Rectangle-shade.png";
+import Shade2 from "./Rectangle 9543-new.png";
 import serviceShade from "./Rectangle 9544.png"
 
 import refShade from "./Rectangle-shade-ref.png"
@@ -53,6 +56,7 @@ import referenceLogo7 from "./reference-logo/Roblox-Logo.png"
 import model3d from  "./model.glb"
 
 export {
+  digitalyLogo,
   modelShade,
   
   LEnterpriseImg1,
@@ -97,6 +101,6 @@ export {
   referenceLogo7,
 
   refShade,
-
-  model3d
+  model3d,
+  Shade2
 };

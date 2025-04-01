@@ -23,6 +23,7 @@ import { useLanguage } from "../../components/LanguageContext";
 
 import {
   deIcon,
+  digitalyLogo,
   enIcon,
   esIcon,
   frIcon,
@@ -520,7 +521,7 @@ const SupportHeader = ({ scrollToSection }) => {
       >
         <div className="containe  new-navbar-div">
           <Link className="nav-brand" to="/">
-            <img className="digitaly-logo" src="./images/Group 1.png" alt />
+            <img className="digitaly-logo" src={digitalyLogo} alt />
           </Link>
           <button
             className="navbar-toggler bg-white"
@@ -818,7 +819,7 @@ const SupportHeader = ({ scrollToSection }) => {
           <Link className="nav-brand" to="/">
             <motion.img
               className="img-fluid mobile-logo"
-              src="./images/Group 1.png"
+              src={digitalyLogo}
               alt
               variants={hideNavItemsVariant}
             />
