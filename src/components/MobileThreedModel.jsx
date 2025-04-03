@@ -35,7 +35,12 @@ import { model3d, modelDraco, modelShade } from "../assets/images";
   
 
 const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd, onLoad }) => {
+
+  
+
   useGLTF.preload(modelPath); // Preload the model
+
+
   const { scene } = useGLTF(modelPath);
 
   const modelRef = useRef(); // Ref to access the model object
@@ -179,19 +184,40 @@ const MobileThreedModel = () => {
 
   const [showModel, setShowModel] = useState(false);
 
+  // useEffect(() => {
+  //   // if (isModelLoaded) {
+  //     // Add a 5-second delay before showing the model
+  //     const timer = setTimeout(() => setShowModel(true), 5000);
+  //     return () => clearTimeout(timer); // Cleanup timer
+  //   // }
+  // }, []);
+
+
+
   useEffect(() => {
-    // if (isModelLoaded) {
-      // Add a 5-second delay before showing the model
-      const timer = setTimeout(() => setShowModel(true), 5000);
-      return () => clearTimeout(timer); // Cleanup timer
-    // }
+    const handleScroll = () => {
+      const scrollY = window.scrollY; // Get current scroll position
+
+      if (scrollY > 300) {
+        // Hide model when scrolled past 700px
+        setShowModel(false);
+      } else {
+        // Show model when scrolled above 700px
+        setShowModel(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
 
 
 
 
-
+  console.log("testing");
+  
 
 
 
@@ -296,7 +322,7 @@ const MobileThreedModel = () => {
               {/* =================3d model will be place here================= */}
 
               <div
-                style={{ width: "100%", height: "100vh", position: "relative" }}
+                style={{ width: "100%", height: "100vh", position: "relative", display: showModel ? "block" : "none", border: '3px solid red' }}
                 
               >
 
