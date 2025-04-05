@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 
 import { useTranslation } from "react-i18next";
 
@@ -242,7 +242,7 @@ useEffect(() => {
 }, []); // 👈 Only runs once on mount
 
 
-
+const MemoModel = useMemo(() => <MobileThreedModel />, []);
 
 
 
@@ -294,7 +294,7 @@ useEffect(() => {
       {/* {render3DModel()}  */}
 
       {modelType === "static" && <StaticThreedModel />}
-{modelType === "mobile" && <MobileThreedModel />}
+{modelType === "mobile" && MemoModel}
 
      
 

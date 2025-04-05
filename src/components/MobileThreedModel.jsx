@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { a, useSpring } from "@react-spring/three";
 import { OrbitControls, useGLTF } from "@react-three/drei";
@@ -118,11 +118,11 @@ const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd, onLoad }) => {
   // });
 
 
-  useFrame(({ clock }) => {
-    if (!isVisible || !modelRef.current || isHovered) return;
+  // useFrame(({ clock }) => {
+  //   if (!isVisible || !modelRef.current || isHovered) return;
   
-    modelRef.current.rotation.y += 0.02;
-  });
+  //   modelRef.current.rotation.y += 0.02;
+  // });
 
 
   
@@ -166,7 +166,7 @@ const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd, onLoad }) => {
 
 
 
-const MobileThreedModel = React.memo( () => {
+const MobileThreedModel = () => {
   const { t, i18n } = useTranslation();
 
   const textRef = useRef(null);
@@ -302,7 +302,7 @@ const MobileThreedModel = React.memo( () => {
               {/* =================3d model will be place here================= */}
 
               <div
-                style={{ width: "100%", height: "100vh", position: "relative", border: '3px solid red' }}
+                style={{ width: "100%", height: "100vh", position: "relative", border: '' }}
                 
               >
 
@@ -437,6 +437,6 @@ const MobileThreedModel = React.memo( () => {
       </section>
     </>
   );
-});
+};
 
 export default MobileThreedModel;
