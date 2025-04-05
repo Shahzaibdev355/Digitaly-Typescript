@@ -275,7 +275,7 @@ const Home = () => {
 
       {/* First section with 3d model work */}
 
-      {render3DModel()}
+      {render3DModel()} 
 
      
 
@@ -292,7 +292,7 @@ const Home = () => {
         
       >
         <div className="services-container" id="service">
-          <div className="rectangular-oval-white-prop-3">
+          <div className="rectangular-oval-white-prop-3" id="agence">
             <img className="img-fluid" src={serviceShade} alt loading="lazy"/>
           </div>
           <div

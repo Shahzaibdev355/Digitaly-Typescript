@@ -182,7 +182,7 @@ const MobileThreedModel = () => {
 
 
 
-  const [showModel, setShowModel] = useState(false);
+  const [showModel, setShowModel] = useState(true);
 
   // useEffect(() => {
   //   // if (isModelLoaded) {
@@ -193,27 +193,25 @@ const MobileThreedModel = () => {
   // }, []);
 
 
-
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY; // Get current scroll position
+    const section = document.getElementById('agence');
 
-      if (scrollY > 300) {
-        // Hide model when scrolled past 700px
-        setShowModel(false);
-      } else {
-        // Show model when scrolled above 700px
-        setShowModel(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    if (!section) return;
+  
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        console.log("Intersecting:", entry.isIntersecting);
+        setShowModel(!entry.isIntersecting); // Hide if visible
+      },
+      { threshold: 0.1 } // Trigger when 10% visible
+    );
+  
+    observer.observe(section);
+  
+    return () => observer.disconnect();
   }, []);
-
-
-
+  
 
 
   console.log("testing");
@@ -278,13 +276,7 @@ const MobileThreedModel = () => {
   };
 
 
-  // const [hasLoadedOnce, setHasLoadedOnce] = useState(false); // Persistent state
-  // const { ref: canvasRef, inView } = useInView({ threshold: 0.1, triggerOnce: true });
-
-  // useEffect(() => {
-  //   if (inView && !isModelLoaded) setIsModelLoaded(true); // Ensure model is loaded only once
-  // }, [inView, isModelLoaded]);
-
+  
 
 
  
@@ -322,7 +314,7 @@ const MobileThreedModel = () => {
               {/* =================3d model will be place here================= */}
 
               <div
-                style={{ width: "100%", height: "100vh", position: "relative", display: showModel ? "block" : "none", border: '3px solid red' }}
+                style={{ width: "100%", height: "100vh", position: "relative", border: '3px solid red' }}
                 
               >
 
@@ -364,8 +356,8 @@ const MobileThreedModel = () => {
 
                 {/* {isModelLoaded && ( */}
 
-                <Canvas className="testing"
-               
+                <Canvas className="testing shahzaib"
+               style={{display: showModel ? "block" : "none"}}
                   shadows
                   dpr={Math.min(window.devicePixelRatio, 1.5)} // Current
   gl={{ antialias: true }}>
@@ -420,14 +412,14 @@ const MobileThreedModel = () => {
         <img className="w-100" src={modelShade} alt />
       </section>
 
-      <section id="agence"
+      <section 
         className="sec-2"
         
         style={{ }}
       >
         <div className="container">
           <div className="row">
-            <div className="col-12 col-lg-5 order-2 order-md-1 text-center">
+            <div className="col-12 col-lg-5 order-2 order-md-1 text-center" >
               <img
                 className="img-fluid overlap-img"
                 src={withMobile}
