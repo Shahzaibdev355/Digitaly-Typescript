@@ -217,13 +217,29 @@ const Home = () => {
   }, []);
 
 
-  const render3DModel = () => {
-    if (screenSize > 1080) {
-      return <StaticThreedModel/>;
-    } else if(screenSize < 768) {
-      return <MobileThreedModel/>;
-    }
-  };
+  // const render3DModel = () => {
+  //   if (screenSize > 1080) {
+  //     return <StaticThreedModel/>;
+  //   } else if(screenSize < 768) {
+  //     return <MobileThreedModel/>;
+  //   }
+  // };
+
+
+  const [modelType, setModelType] = useState(null);
+
+// useEffect(() => {
+//   if (screenSize > 1080) {
+//     setModelType("static");
+//   } else if (screenSize < 768) {
+//     setModelType("mobile");
+//   }
+// }, [screenSize]); // Only runs when screenSize changes
+
+useEffect(() => {
+  if (screenSize > 1080) setModelType("static");
+  else if (screenSize < 768) setModelType("mobile");
+}, []); // 👈 Only runs once on mount
 
 
 
@@ -275,7 +291,10 @@ const Home = () => {
 
       {/* First section with 3d model work */}
 
-      {render3DModel()} 
+      {/* {render3DModel()}  */}
+
+      {modelType === "static" && <StaticThreedModel />}
+{modelType === "mobile" && <MobileThreedModel />}
 
      
 

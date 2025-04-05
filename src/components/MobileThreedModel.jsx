@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useMemo, useRef, useState } from "react";
+import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { a, useSpring } from "@react-spring/three";
 import { OrbitControls, useGLTF } from "@react-three/drei";
@@ -84,13 +84,6 @@ const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd, onLoad }) => {
 
 
 
-
-
-
-
-
-
-
   // React Spring for smooth scale animation
   const { scale } = useSpring({
     scale: isHovered ? 2.5 : 2.8,
@@ -115,12 +108,20 @@ const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd, onLoad }) => {
 
 
   // Rotation logic directly in `useFrame`
+
+  // useFrame(({  }) => {
+  //   if (modelRef.current && !isHovered) {
+  //     // modelRef.current.rotation.x = 0; // Reset tilt
+  //     modelRef.current.rotation.y += 0.02; // Smooth rotation
+  //     // modelRef.current.rotation.z = 0; // Reset spin
+  //   }
+  // });
+
+
   useFrame(({ clock }) => {
-    if (modelRef.current && !isHovered) {
-      // modelRef.current.rotation.x = 0; // Reset tilt
-      modelRef.current.rotation.y += 0.02; // Smooth rotation
-      // modelRef.current.rotation.z = 0; // Reset spin
-    }
+    if (!isVisible || !modelRef.current || isHovered) return;
+  
+    modelRef.current.rotation.y += 0.02;
   });
 
 
@@ -159,7 +160,13 @@ const Model = ({ modelPath, isHovered, onHoverStart, onHoverEnd, onLoad }) => {
   );
 };
 
-const MobileThreedModel = () => {
+
+
+
+
+
+
+const MobileThreedModel = React.memo( () => {
   const { t, i18n } = useTranslation();
 
   const textRef = useRef(null);
@@ -193,33 +200,14 @@ const MobileThreedModel = () => {
   // }, []);
 
 
-  // useEffect(() => {
-  //   const section = document.getElementById('agence');
 
-    
-  //   if (!section) return;
   
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       console.log("Intersecting:", entry.isIntersecting);
-  //       setShowModel(!entry.isIntersecting); // Hide if visible
-  //     },
-  //     { threshold: 0.1 } // Trigger when 10% visible
-  //   );
-  
-  //   observer.observe(section);
-  
-  //   return () => observer.disconnect();
-  // }, []);
-  
+
 
 
   console.log("testing");
   
-
-
-
-
+  
 
   useEffect(() => {
     // Set hover state to true initially for a few seconds
@@ -356,8 +344,10 @@ const MobileThreedModel = () => {
 
                 {/* {isModelLoaded && ( */}
 
-                {/* <Canvas className="testing shahzaib"
+                <Canvas className="testing shahzaib"
               //  style={{display: showModel ? "block" : "none"}}
+              // frameloop={showModel ? "always" : "never"}
+              frameloop="always"
                   shadows
                   dpr={Math.min(window.devicePixelRatio, 1.5)} // Current
   gl={{ antialias: true }}>
@@ -393,7 +383,7 @@ const MobileThreedModel = () => {
                         onLoad={() => setIsModelLoaded(true)}
                         // onLoad={() => console.log("Model loaded!")}                    
                       />
-                </Canvas> */}
+                </Canvas>
 
                 {/* )} */}
 
@@ -447,6 +437,6 @@ const MobileThreedModel = () => {
       </section>
     </>
   );
-};
+});
 
 export default MobileThreedModel;

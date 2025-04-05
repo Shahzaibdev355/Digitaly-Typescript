@@ -3727,6 +3727,7 @@ textarea {
   }
 
 
+  
 
 
 
@@ -3820,14 +3821,19 @@ width: 40%;
 
 
 
-canvas {
-  /* touch-action: none; */
+/* canvas {
   touch-action: pan-y!important; 
+} */
+
+canvas {
+  touch-action: manipulation;
+  -webkit-overflow-scrolling: touch;
+  will-change: transform, opacity;
 }
 
-.testing{
+/* .testing{
   touch-action: pan-y!important; 
-}
+} */
 
 .animated-icons-container {
   position: absolute;
