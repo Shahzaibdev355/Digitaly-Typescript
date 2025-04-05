@@ -193,24 +193,24 @@ const MobileThreedModel = () => {
   // }, []);
 
 
-  useEffect(() => {
-    const section = document.getElementById('agence');
+  // useEffect(() => {
+  //   const section = document.getElementById('agence');
 
     
-    if (!section) return;
+  //   if (!section) return;
   
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        console.log("Intersecting:", entry.isIntersecting);
-        setShowModel(!entry.isIntersecting); // Hide if visible
-      },
-      { threshold: 0.1 } // Trigger when 10% visible
-    );
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       console.log("Intersecting:", entry.isIntersecting);
+  //       setShowModel(!entry.isIntersecting); // Hide if visible
+  //     },
+  //     { threshold: 0.1 } // Trigger when 10% visible
+  //   );
   
-    observer.observe(section);
+  //   observer.observe(section);
   
-    return () => observer.disconnect();
-  }, []);
+  //   return () => observer.disconnect();
+  // }, []);
   
 
 
@@ -356,13 +356,12 @@ const MobileThreedModel = () => {
 
                 {/* {isModelLoaded && ( */}
 
-                <Canvas className="testing shahzaib"
-               style={{display: showModel ? "block" : "none"}}
+                {/* <Canvas className="testing shahzaib"
+              //  style={{display: showModel ? "block" : "none"}}
                   shadows
                   dpr={Math.min(window.devicePixelRatio, 1.5)} // Current
   gl={{ antialias: true }}>
 
-                  {/* <Suspense fallback={null}> */}
 
                       <OrbitControls
                         enableZoom={false} // Disable zooming
@@ -394,8 +393,7 @@ const MobileThreedModel = () => {
                         onLoad={() => setIsModelLoaded(true)}
                         // onLoad={() => console.log("Model loaded!")}                    
                       />
-                  {/* </Suspense> */}
-                </Canvas>
+                </Canvas> */}
 
                 {/* )} */}
 
